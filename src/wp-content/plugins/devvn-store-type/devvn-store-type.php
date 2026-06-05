@@ -86,6 +86,54 @@ function sdt_create_default_terms()
 }
 
 // ════════════════════════════════════════════════════════════
+//  2b. ACF GALLERY — Ảnh slide cửa hàng
+//      Cần ACF Pro để dùng Gallery field
+// ════════════════════════════════════════════════════════════
+
+add_action('acf/include_fields', 'sdt_register_store_gallery_field');
+function sdt_register_store_gallery_field()
+{
+    if (!function_exists('acf_add_local_field_group')) return;
+
+    acf_add_local_field_group([
+        'key'      => 'group_store_gallery',
+        'title'    => 'Hình ảnh cửa hàng',
+        'fields'   => [
+            [
+                'key'           => 'field_store_gallery',
+                'label'         => 'Gallery ảnh',
+                'name'          => 'store_gallery',
+                'type'          => 'gallery',
+                'instructions'  => 'Upload nhiều ảnh cho slide hình ảnh trang chi tiết cửa hàng. Ảnh đầu tiên sẽ là ảnh chính.',
+                'required'      => 0,
+                'return_format' => 'id',
+                'library'       => 'all',
+                'min'           => 0,
+                'max'           => 20,
+                'insert'        => 'append',
+                'preview_size'  => 'medium',
+                'mime_types'    => 'jpg, jpeg, png, webp',
+            ],
+        ],
+        'location' => [
+            [
+                [
+                    'param'    => 'post_type',
+                    'operator' => '==',
+                    'value'    => 'local_store',
+                ],
+            ],
+        ],
+        'menu_order'            => 5,
+        'position'              => 'normal',
+        'style'                 => 'default',
+        'label_placement'       => 'top',
+        'instruction_placement' => 'label',
+        'active'                => true,
+    ]);
+}
+
+// ════════════════════════════════════════════════════════════
 //  3. INJECT DROPDOWN "LOẠI CỬA HÀNG" VÀO SEARCH FORM
 //     Hook: localstore_after_form (sau dropdown Quận/Huyện)
 // ════════════════════════════════════════════════════════════

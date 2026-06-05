@@ -48,21 +48,28 @@ if ($valid_coords) {
 
 // ── Gallery images ───────────────────────────────────────
 $gallery_ids = [];
-$attached = get_posts([
-    'post_parent'    => $post_id,
-    'post_type'      => 'attachment',
-    'post_mime_type' => 'image',
-    'posts_per_page' => 20,
-    'orderby'        => 'menu_order',
-    'order'          => 'ASC',
-    'fields'         => 'ids',
-]);
-if ($attached) {
-    $gallery_ids = $attached;
+// 1) ACF Gallery field (ưu tiên)
+if (function_exists('get_field')) {
+    $acf_gallery = get_field('store_gallery', $post_id);
+    if (!empty($acf_gallery)) {
+        $gallery_ids = (array) $acf_gallery;
+    }
 }
-$thumb_id = get_post_thumbnail_id($post_id);
-if ($thumb_id) {
-    $gallery_ids = array_unique(array_merge([$thumb_id], $gallery_ids));
+
+// 2) Fallback: featured image + attached images
+if (empty($gallery_ids)) {
+    $thumb_id = get_post_thumbnail_id($post_id);
+    $attached = get_posts([
+        'post_parent'    => $post_id,
+        'post_type'      => 'attachment',
+        'post_mime_type' => 'image',
+        'posts_per_page' => 20,
+        'orderby'        => 'menu_order',
+        'order'          => 'ASC',
+        'fields'         => 'ids',
+    ]);
+    if ($thumb_id) $gallery_ids[] = $thumb_id;
+    if ($attached) $gallery_ids = array_unique(array_merge($gallery_ids, $attached));
 }
 
 // ── Store listing page URL ───────────────────────────────
