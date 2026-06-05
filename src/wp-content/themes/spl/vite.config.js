@@ -28,6 +28,7 @@ const sassFiles = [
   "sections/section-tabs",
   "sections/section-products-new",
   "sections/section-form",
+  "sections/section-store-detail",
 
   // (components)
   "components/home",
@@ -53,6 +54,7 @@ const jsFiles = [
   "components/social-share",
   "components/swiper",
   "components/woocommerce",
+  "components/store-detail",
 
   // (entries)
   "admin",
