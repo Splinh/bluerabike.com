@@ -219,6 +219,11 @@ final class Theme
             return true;
         }
 
+        // Store detail page - has gallery slider + lightbox
+        if (is_singular('local_store')) {
+            return true;
+        }
+
         // Allow filtering for custom pages
         return apply_filters('theme_needs_swiper', false);
     }
