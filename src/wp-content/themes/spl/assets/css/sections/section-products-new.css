@@ -1,1 +1,16 @@
-.section-products-new{overflow:hidden}.section-products-new .swiper-container{background-size:cover;background-position:center;background-position-y:bottom}.section-products-new .swiper-slide .item img{width:100%}
+/** $string - svg */
+/** add unique id image url */
+/** https://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996 */
+/** get breakpoint */
+/** font size */
+.section-products-new {
+  overflow: hidden;
+}
+.section-products-new .swiper-container {
+  background-size: cover;
+  background-position: center;
+  background-position-y: bottom;
+}
+.section-products-new .swiper-slide .item img {
+  width: 100%;
+}

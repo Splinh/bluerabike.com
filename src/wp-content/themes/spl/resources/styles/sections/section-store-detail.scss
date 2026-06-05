@@ -172,10 +172,16 @@
   box-shadow: var(--sd-shadow-sm);
   min-width: 0;
   width: 100%;
+  contain: layout style; // prevent layout blowout
+
+  .swiper-wrapper {
+    max-width: 100%;
+  }
 
   .swiper-slide {
     aspect-ratio: 16 / 10;
     background: #eaeef3;
+    max-width: 100% !important;
   }
 
   .swiper-button-prev,

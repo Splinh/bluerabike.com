@@ -1,8 +1,7 @@
 /**
  * Store Detail — Gallery Slider + Lightbox
- * Initializes Swiper instances for:
- *   1. Main gallery slider with thumbnail navigation
- *   2. Fullscreen lightbox popup with slider
+ * Uses the theme's bundled Swiper (ES module)
+ * Pattern matches swiper.js component initialization
  */
 import Swiper from "swiper";
 import {
@@ -14,7 +13,7 @@ import {
 
 // ── Gallery Thumbs ──
 const initGalleryThumbs = () => {
-  const thumbsEl = document.getElementById("sd-gallery-thumbs");
+  const thumbsEl = document.querySelector(".sd__gallery-thumbs");
   if (!thumbsEl) return null;
 
   return new Swiper(thumbsEl, {
@@ -23,6 +22,8 @@ const initGalleryThumbs = () => {
     slidesPerView: 5,
     freeMode: true,
     watchSlidesProgress: true,
+    observer: true,
+    observeParents: true,
     breakpoints: {
       0: { slidesPerView: 4, spaceBetween: 6 },
       640: { slidesPerView: 5, spaceBetween: 8 },
@@ -33,13 +34,17 @@ const initGalleryThumbs = () => {
 
 // ── Gallery Main ──
 const initGalleryMain = (thumbsSwiper) => {
-  const mainEl = document.getElementById("sd-gallery-main");
+  const mainEl = document.querySelector(".sd__gallery-main");
   if (!mainEl) return null;
 
   const opts = {
     modules: [Navigation, Thumbs],
+    slidesPerView: 1,
     spaceBetween: 0,
     loop: false,
+    observer: true,
+    observeParents: true,
+    grabCursor: true,
     navigation: {
       nextEl: mainEl.querySelector(".swiper-button-next"),
       prevEl: mainEl.querySelector(".swiper-button-prev"),
@@ -70,8 +75,11 @@ const initLightbox = () => {
     if (!lbSwiper) {
       lbSwiper = new Swiper(lbSwiperEl, {
         modules: [Navigation, Pagination],
+        slidesPerView: 1,
         spaceBetween: 0,
         initialSlide: index || 0,
+        observer: true,
+        observeParents: true,
         navigation: {
           nextEl: lbSwiperEl.querySelector(".swiper-button-next"),
           prevEl: lbSwiperEl.querySelector(".swiper-button-prev"),
