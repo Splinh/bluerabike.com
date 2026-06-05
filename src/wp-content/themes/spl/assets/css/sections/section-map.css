@@ -1,1 +1,18 @@
-.section-map{padding-bottom:0}.section-map .heading-title{text-align:center}.section-map iframe{width:100%;height:450px;border:none;border-radius:6px;box-shadow:#0003 0 0 6px}
+/** $string - svg */
+/** add unique id image url */
+/** https://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996 */
+/** get breakpoint */
+/** font size */
+.section-map {
+  padding-bottom: 0;
+}
+.section-map .heading-title {
+  text-align: center;
+}
+.section-map iframe {
+  width: 100%;
+  height: 450px;
+  border: none;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 6px;
+}

@@ -137,7 +137,7 @@
 // ── 2-Column Grid ──
 .sd__grid {
   display: grid;
-  grid-template-columns: 1fr 360px;
+  grid-template-columns: minmax(0, 1fr) 360px;
   gap: 28px;
   align-items: start;
 
@@ -152,6 +152,7 @@
   display: flex;
   flex-direction: column;
   gap: 28px;
+  min-width: 0; // prevent grid blowout
 }
 
 // ══ Gallery: Swiper Slider + Thumbs ══
@@ -159,6 +160,8 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  min-width: 0;
+  width: 100%;
 }
 
 // Main slider
@@ -167,6 +170,8 @@
   overflow: hidden;
   background: var(--sd-border);
   box-shadow: var(--sd-shadow-sm);
+  min-width: 0;
+  width: 100%;
 
   .swiper-slide {
     aspect-ratio: 16 / 10;
