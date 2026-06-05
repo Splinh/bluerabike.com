@@ -1,8 +1,9 @@
 <?php
 /**
  * Template for displaying single local_store (DevVN Local Store Pro)
- * Premium store detail page with contact info, gallery, map
+ * Premium store detail page — Swiper gallery + lightbox, contact card, map
  *
+ * Design tokens: Montserrat, #11283c (text), #1e78c2 (raised surface), WCAG 2.2 AA
  * @author SPL
  */
 
@@ -27,10 +28,10 @@ $lat      = get_post_meta($post_id, 'localstore_maps_lat', true);
 $lng      = get_post_meta($post_id, 'localstore_maps_lng', true);
 
 // ── Taxonomy ─────────────────────────────────────────────
-$types     = get_the_terms($post_id, 'store_type');
-$states    = get_the_terms($post_id, 'local_store_state');
-$type_slug = ($types && !is_wp_error($types)) ? $types[0]->slug : '';
-$type_name = ($types && !is_wp_error($types)) ? $types[0]->name : '';
+$types      = get_the_terms($post_id, 'store_type');
+$states     = get_the_terms($post_id, 'local_store_state');
+$type_slug  = ($types && !is_wp_error($types)) ? $types[0]->slug : '';
+$type_name  = ($types && !is_wp_error($types)) ? $types[0]->name : '';
 $state_name = ($states && !is_wp_error($states)) ? $states[0]->name : '';
 
 // ── Map URL ──────────────────────────────────────────────
@@ -45,7 +46,7 @@ if ($valid_coords) {
     $embed_url = 'https://www.google.com/maps?q=' . urlencode($address) . '&z=16&output=embed';
 }
 
-// ── Gallery images (post content images or attached images) ──
+// ── Gallery images ───────────────────────────────────────
 $gallery_ids = [];
 $attached = get_posts([
     'post_parent'    => $post_id,
@@ -59,85 +60,94 @@ $attached = get_posts([
 if ($attached) {
     $gallery_ids = $attached;
 }
-// Always include featured image at the start if exists
 $thumb_id = get_post_thumbnail_id($post_id);
 if ($thumb_id) {
     $gallery_ids = array_unique(array_merge([$thumb_id], $gallery_ids));
 }
 
-// ── Store system page URL ────────────────────────────────
-$store_page_url = '';
-$store_pages = get_pages([
-    'meta_key'   => '_wp_page_template',
-    'meta_value' => 'default',
-    'number'     => 1,
-]);
-// Try to find the store listing page
+// ── Store listing page URL ───────────────────────────────
 $store_page = get_page_by_path('he-thong-cua-hang');
-if (!$store_page) {
-    $store_page = get_page_by_path('he-thong-dai-ly');
-}
+if (!$store_page) $store_page = get_page_by_path('he-thong-dai-ly');
 $store_page_url = $store_page ? get_permalink($store_page->ID) : home_url('/he-thong-cua-hang/');
 
 // Enqueue section CSS
 \HD_Helper::enqueueSectionStyle('section-store-detail', ['index-css']);
-
-// Breadcrumbs
-\HD_Helper::blockTemplate('parts/blocks/breadcrumbs', [
-    'title' => get_the_title(),
-]);
 ?>
 
-<section class="section section-store-detail">
+<section class="sd" id="store-detail" aria-label="Chi tiết cửa hàng">
     <div class="container">
 
+        <!-- ═══ Breadcrumb ═══ -->
+        <nav class="sd__breadcrumb" aria-label="Breadcrumb">
+            <ol>
+                <li><a href="<?php echo esc_url(home_url('/')); ?>">Trang chủ</a></li>
+                <li><a href="<?php echo esc_url($store_page_url); ?>">Hệ thống cửa hàng</a></li>
+                <li aria-current="page"><?php the_title(); ?></li>
+            </ol>
+        </nav>
+
         <!-- ═══ Hero ═══ -->
-        <div class="store-detail__hero">
-            <div class="store-detail__hero-content">
-                <div class="store-detail__title-row">
-                    <h1 class="store-detail__name"><?php the_title(); ?></h1>
-                    <?php if ($type_name): ?>
-                        <span class="sdt-badge sdt-badge--<?php echo esc_attr($type_slug); ?>">
-                            <?php echo esc_html($type_name); ?>
-                        </span>
-                    <?php endif; ?>
-                </div>
+        <header class="sd__hero">
+            <div class="sd__hero-meta">
+                <?php if ($type_name): ?>
+                    <span class="sd__badge sd__badge--<?php echo esc_attr($type_slug); ?>">
+                        <?php echo esc_html($type_name); ?>
+                    </span>
+                <?php endif; ?>
                 <?php if ($state_name): ?>
-                    <p class="store-detail__location">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <?php echo esc_html($state_name); ?>
-                    </p>
+                    <span class="sd__location"><i class="fas fa-map-marker-alt" aria-hidden="true"></i> <?php echo esc_html($state_name); ?></span>
                 <?php endif; ?>
             </div>
-        </div>
+            <h1 class="sd__title"><?php the_title(); ?></h1>
+        </header>
 
-        <!-- ═══ Main Content: 2 columns ═══ -->
-        <div class="store-detail__grid">
+        <!-- ═══ Grid: 2 columns ═══ -->
+        <div class="sd__grid">
 
-            <!-- Left: Gallery + Content -->
-            <div class="store-detail__main">
+            <!-- Left: Gallery + Content + Map -->
+            <main class="sd__main">
 
                 <?php if (!empty($gallery_ids)): ?>
-                <!-- Gallery -->
-                <div class="store-detail__gallery">
-                    <div class="store-detail__gallery-main">
-                        <?php
-                        $main_img_id = $gallery_ids[0];
-                        echo wp_get_attachment_image($main_img_id, 'large', false, [
-                            'class' => 'store-detail__gallery-img',
-                            'id'    => 'store-gallery-main-img',
-                        ]);
-                        ?>
+                <!-- Gallery: Swiper Main + Thumbs -->
+                <div class="sd__gallery" id="sd-gallery">
+                    <!-- Main slider -->
+                    <div class="swiper sd__gallery-main" id="sd-gallery-main">
+                        <div class="swiper-wrapper">
+                            <?php foreach ($gallery_ids as $i => $img_id):
+                                $full_url = wp_get_attachment_image_url($img_id, 'full');
+                            ?>
+                            <div class="swiper-slide">
+                                <button class="sd__gallery-zoom" type="button"
+                                        data-index="<?php echo $i; ?>"
+                                        aria-label="Phóng to ảnh <?php echo ($i + 1); ?>"
+                                        tabindex="0">
+                                    <?php echo wp_get_attachment_image($img_id, 'large', false, [
+                                        'class' => 'sd__gallery-img',
+                                        'loading' => $i === 0 ? 'eager' : 'lazy',
+                                    ]); ?>
+                                    <span class="sd__gallery-zoom-icon" aria-hidden="true"><i class="fas fa-search-plus"></i></span>
+                                </button>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <?php if (count($gallery_ids) > 1): ?>
+                        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Ảnh trước"></div>
+                        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Ảnh tiếp"></div>
+                        <?php endif; ?>
                     </div>
+
                     <?php if (count($gallery_ids) > 1): ?>
-                    <div class="store-detail__gallery-thumbs">
-                        <?php foreach ($gallery_ids as $i => $img_id): ?>
-                        <button class="store-detail__gallery-thumb<?php echo $i === 0 ? ' active' : ''; ?>"
-                                data-full="<?php echo esc_url(wp_get_attachment_image_url($img_id, 'large')); ?>"
-                                data-srcset="<?php echo esc_attr(wp_get_attachment_image_srcset($img_id, 'large')); ?>">
-                            <?php echo wp_get_attachment_image($img_id, 'thumbnail', false, ['loading' => 'lazy']); ?>
-                        </button>
-                        <?php endforeach; ?>
+                    <!-- Thumbnail slider -->
+                    <div class="swiper sd__gallery-thumbs" id="sd-gallery-thumbs">
+                        <div class="swiper-wrapper">
+                            <?php foreach ($gallery_ids as $img_id): ?>
+                            <div class="swiper-slide">
+                                <?php echo wp_get_attachment_image($img_id, 'thumbnail', false, [
+                                    'loading' => 'lazy',
+                                ]); ?>
+                            </div>
+                            <?php endforeach; ?>
+                        </div>
                     </div>
                     <?php endif; ?>
                 </div>
@@ -145,152 +155,90 @@ $store_page_url = $store_page ? get_permalink($store_page->ID) : home_url('/he-t
 
                 <?php if (get_the_content()): ?>
                 <!-- Description -->
-                <div class="store-detail__content">
-                    <h2 class="store-detail__section-title">
-                        <i class="fas fa-store"></i>
-                        Giới thiệu cửa hàng
-                    </h2>
-                    <div class="entry-content">
-                        <?php the_content(); ?>
-                    </div>
-                </div>
+                <article class="sd__content-box">
+                    <h2 class="sd__section-title"><i class="fas fa-store" aria-hidden="true"></i> Giới thiệu cửa hàng</h2>
+                    <div class="sd__entry-content entry-content"><?php the_content(); ?></div>
+                </article>
                 <?php endif; ?>
 
                 <?php if ($embed_url): ?>
                 <!-- Map -->
-                <div class="store-detail__map-section">
-                    <h2 class="store-detail__section-title">
-                        <i class="fas fa-map-marked-alt"></i>
-                        Bản đồ
-                    </h2>
-                    <div class="store-detail__map-container">
-                        <iframe
-                            src="<?php echo esc_url($embed_url); ?>"
-                            width="100%"
-                            height="400"
-                            style="border:0;"
-                            allowfullscreen=""
-                            loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"
-                            title="Bản đồ <?php the_title(); ?>">
-                        </iframe>
+                <div class="sd__map-box">
+                    <h2 class="sd__section-title"><i class="fas fa-map-marked-alt" aria-hidden="true"></i> Bản đồ</h2>
+                    <div class="sd__map-frame">
+                        <iframe src="<?php echo esc_url($embed_url); ?>" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Bản đồ <?php the_title(); ?>"></iframe>
                     </div>
                 </div>
                 <?php endif; ?>
-            </div>
+            </main>
 
-            <!-- Right: Contact Info Card -->
-            <aside class="store-detail__sidebar">
-                <div class="store-detail__contact-card">
-                    <h3 class="store-detail__card-title">
-                        <i class="fas fa-address-card"></i>
-                        Thông tin liên hệ
-                    </h3>
+            <!-- Right: Contact Sidebar -->
+            <aside class="sd__sidebar" aria-label="Thông tin liên hệ">
+                <div class="sd__contact-card">
+                    <h3 class="sd__card-heading"><i class="fas fa-address-card" aria-hidden="true"></i> Thông tin liên hệ</h3>
 
-                    <ul class="store-detail__info-list">
+                    <dl class="sd__info-list">
                         <?php if ($address): ?>
-                        <li class="store-detail__info-item">
-                            <span class="store-detail__info-icon store-detail__info-icon--address">
-                                <i class="fas fa-map-pin"></i>
-                            </span>
-                            <div class="store-detail__info-content">
-                                <span class="store-detail__info-label">Địa chỉ</span>
-                                <span class="store-detail__info-value"><?php echo esc_html($address); ?></span>
-                            </div>
-                        </li>
+                        <div class="sd__info-row">
+                            <dt><span class="sd__icon sd__icon--address" aria-hidden="true"><i class="fas fa-map-pin"></i></span> Địa chỉ</dt>
+                            <dd><?php echo esc_html($address); ?></dd>
+                        </div>
                         <?php endif; ?>
 
                         <?php if ($phone): ?>
-                        <li class="store-detail__info-item">
-                            <span class="store-detail__info-icon store-detail__info-icon--phone">
-                                <i class="fas fa-phone-alt"></i>
-                            </span>
-                            <div class="store-detail__info-content">
-                                <span class="store-detail__info-label">Điện thoại</span>
-                                <a href="tel:<?php echo esc_attr(preg_replace('/\D/', '', $phone)); ?>" class="store-detail__info-value store-detail__info-link">
-                                    <?php echo esc_html($phone); ?>
-                                </a>
-                            </div>
-                        </li>
+                        <div class="sd__info-row">
+                            <dt><span class="sd__icon sd__icon--phone" aria-hidden="true"><i class="fas fa-phone-alt"></i></span> Điện thoại</dt>
+                            <dd><a href="tel:<?php echo esc_attr(preg_replace('/\D/', '', $phone)); ?>"><?php echo esc_html($phone); ?></a></dd>
+                        </div>
                         <?php endif; ?>
 
                         <?php if ($hotline && $hotline !== $phone): ?>
-                        <li class="store-detail__info-item">
-                            <span class="store-detail__info-icon store-detail__info-icon--hotline">
-                                <i class="fas fa-headset"></i>
-                            </span>
-                            <div class="store-detail__info-content">
-                                <span class="store-detail__info-label">Hotline</span>
-                                <a href="tel:<?php echo esc_attr(preg_replace('/\D/', '', $hotline)); ?>" class="store-detail__info-value store-detail__info-link">
-                                    <?php echo esc_html($hotline); ?>
-                                </a>
-                            </div>
-                        </li>
+                        <div class="sd__info-row">
+                            <dt><span class="sd__icon sd__icon--hotline" aria-hidden="true"><i class="fas fa-headset"></i></span> Hotline</dt>
+                            <dd><a href="tel:<?php echo esc_attr(preg_replace('/\D/', '', $hotline)); ?>"><?php echo esc_html($hotline); ?></a></dd>
+                        </div>
                         <?php endif; ?>
 
                         <?php if ($email): ?>
-                        <li class="store-detail__info-item">
-                            <span class="store-detail__info-icon store-detail__info-icon--email">
-                                <i class="fas fa-envelope"></i>
-                            </span>
-                            <div class="store-detail__info-content">
-                                <span class="store-detail__info-label">Email</span>
-                                <a href="mailto:<?php echo esc_attr($email); ?>" class="store-detail__info-value store-detail__info-link">
-                                    <?php echo esc_html($email); ?>
-                                </a>
-                            </div>
-                        </li>
+                        <div class="sd__info-row">
+                            <dt><span class="sd__icon sd__icon--email" aria-hidden="true"><i class="fas fa-envelope"></i></span> Email</dt>
+                            <dd><a href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a></dd>
+                        </div>
                         <?php endif; ?>
 
                         <?php if ($open): ?>
-                        <li class="store-detail__info-item">
-                            <span class="store-detail__info-icon store-detail__info-icon--time">
-                                <i class="fas fa-clock"></i>
-                            </span>
-                            <div class="store-detail__info-content">
-                                <span class="store-detail__info-label">Giờ mở cửa</span>
-                                <span class="store-detail__info-value"><?php echo esc_html($open); ?></span>
-                            </div>
-                        </li>
+                        <div class="sd__info-row">
+                            <dt><span class="sd__icon sd__icon--time" aria-hidden="true"><i class="fas fa-clock"></i></span> Giờ mở cửa</dt>
+                            <dd><?php echo esc_html($open); ?></dd>
+                        </div>
                         <?php endif; ?>
 
                         <?php if ($website): ?>
-                        <li class="store-detail__info-item">
-                            <span class="store-detail__info-icon store-detail__info-icon--web">
-                                <i class="fas fa-globe"></i>
-                            </span>
-                            <div class="store-detail__info-content">
-                                <span class="store-detail__info-label">Website</span>
-                                <a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener" class="store-detail__info-value store-detail__info-link">
-                                    <?php echo esc_html(preg_replace('#^https?://#', '', $website)); ?>
-                                </a>
-                            </div>
-                        </li>
+                        <div class="sd__info-row">
+                            <dt><span class="sd__icon sd__icon--web" aria-hidden="true"><i class="fas fa-globe"></i></span> Website</dt>
+                            <dd><a href="<?php echo esc_url($website); ?>" target="_blank" rel="noopener"><?php echo esc_html(preg_replace('#^https?://#', '', $website)); ?></a></dd>
+                        </div>
                         <?php endif; ?>
-                    </ul>
+                    </dl>
 
                     <!-- CTA Buttons -->
-                    <div class="store-detail__cta-group">
+                    <div class="sd__cta-row">
                         <?php if ($phone): ?>
-                        <a href="tel:<?php echo esc_attr(preg_replace('/\D/', '', $phone)); ?>" class="store-detail__cta store-detail__cta--call">
-                            <i class="fas fa-phone-alt"></i>
-                            Gọi ngay
+                        <a href="tel:<?php echo esc_attr(preg_replace('/\D/', '', $phone)); ?>" class="sd__cta sd__cta--call" aria-label="Gọi <?php echo esc_attr($phone); ?>">
+                            <i class="fas fa-phone-alt" aria-hidden="true"></i> Gọi ngay
                         </a>
                         <?php endif; ?>
-
                         <?php if ($dir_url): ?>
-                        <a href="<?php echo esc_url($dir_url); ?>" target="_blank" rel="noopener" class="store-detail__cta store-detail__cta--dir">
-                            <i class="fas fa-directions"></i>
-                            Chỉ đường
+                        <a href="<?php echo esc_url($dir_url); ?>" target="_blank" rel="noopener" class="sd__cta sd__cta--dir" aria-label="Chỉ đường trên Google Maps">
+                            <i class="fas fa-directions" aria-hidden="true"></i> Chỉ đường
                         </a>
                         <?php endif; ?>
                     </div>
                 </div>
 
-                <!-- Back to listing -->
-                <a href="<?php echo esc_url($store_page_url); ?>" class="store-detail__back-link">
-                    <i class="fas fa-arrow-left"></i>
-                    Xem tất cả cửa hàng
+                <!-- Back link -->
+                <a href="<?php echo esc_url($store_page_url); ?>" class="sd__back" aria-label="Quay về danh sách cửa hàng">
+                    <i class="fas fa-arrow-left" aria-hidden="true"></i> Xem tất cả cửa hàng
                 </a>
             </aside>
 
@@ -305,8 +253,6 @@ $store_page_url = $store_page ? get_permalink($store_page->ID) : home_url('/he-t
             'post__not_in'   => [$post_id],
             'orderby'        => 'rand',
         ];
-
-        // Prefer same province
         if ($states && !is_wp_error($states)) {
             $related_args['tax_query'] = [[
                 'taxonomy' => 'local_store_state',
@@ -314,74 +260,162 @@ $store_page_url = $store_page ? get_permalink($store_page->ID) : home_url('/he-t
                 'terms'    => [$states[0]->term_id],
             ]];
         }
-
         $related = new WP_Query($related_args);
-
-        // Fallback: if not enough from same province, get any
         if ($related->found_posts < 3) {
             wp_reset_postdata();
             unset($related_args['tax_query']);
             $related = new WP_Query($related_args);
         }
-
         if ($related->have_posts()):
         ?>
-        <div class="store-detail__related">
-            <h2 class="store-detail__section-title">
-                <i class="fas fa-store-alt"></i>
-                Cửa hàng khác
-            </h2>
-            <div class="store-detail__related-grid">
+        <section class="sd__related" aria-label="Cửa hàng khác">
+            <h2 class="sd__section-title"><i class="fas fa-store-alt" aria-hidden="true"></i> Cửa hàng khác</h2>
+            <div class="sd__related-grid">
                 <?php while ($related->have_posts()): $related->the_post();
-                    $r_id       = get_the_ID();
-                    $r_address  = get_post_meta($r_id, 'localstore_address', true);
-                    $r_phone    = get_post_meta($r_id, 'localstore_phone', true);
-                    $r_types    = get_the_terms($r_id, 'store_type');
+                    $r_id        = get_the_ID();
+                    $r_address   = get_post_meta($r_id, 'localstore_address', true);
+                    $r_phone     = get_post_meta($r_id, 'localstore_phone', true);
+                    $r_types     = get_the_terms($r_id, 'store_type');
                     $r_type_slug = ($r_types && !is_wp_error($r_types)) ? $r_types[0]->slug : '';
                     $r_type_name = ($r_types && !is_wp_error($r_types)) ? $r_types[0]->name : '';
-                    $r_img      = get_the_post_thumbnail_url($r_id, 'medium');
+                    $r_img       = get_the_post_thumbnail_url($r_id, 'medium');
                 ?>
-                <a href="<?php the_permalink(); ?>" class="store-detail__related-card" data-type="<?php echo esc_attr($r_type_slug); ?>">
-                    <?php if ($r_img): ?>
-                    <div class="store-detail__related-img">
-                        <img src="<?php echo esc_url($r_img); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy" />
-                    </div>
-                    <?php endif; ?>
-                    <div class="store-detail__related-body">
-                        <h3 class="store-detail__related-name"><?php the_title(); ?></h3>
-                        <?php if ($r_type_name): ?>
-                        <span class="sdt-badge sdt-badge--<?php echo esc_attr($r_type_slug); ?>"><?php echo esc_html($r_type_name); ?></span>
-                        <?php endif; ?>
-                        <?php if ($r_address): ?>
-                        <p class="store-detail__related-address"><i class="fas fa-map-pin"></i> <?php echo esc_html($r_address); ?></p>
-                        <?php endif; ?>
+                <a href="<?php the_permalink(); ?>" class="sd__rcard" data-type="<?php echo esc_attr($r_type_slug); ?>">
+                    <div class="sd__rcard-img"><?php if ($r_img): ?><img src="<?php echo esc_url($r_img); ?>" alt="<?php the_title_attribute(); ?>" loading="lazy" /><?php endif; ?></div>
+                    <div class="sd__rcard-body">
+                        <h3 class="sd__rcard-name"><?php the_title(); ?></h3>
+                        <?php if ($r_type_name): ?><span class="sd__badge sd__badge--<?php echo esc_attr($r_type_slug); ?>"><?php echo esc_html($r_type_name); ?></span><?php endif; ?>
+                        <?php if ($r_address): ?><p class="sd__rcard-addr"><i class="fas fa-map-pin" aria-hidden="true"></i> <?php echo esc_html($r_address); ?></p><?php endif; ?>
                     </div>
                 </a>
                 <?php endwhile; wp_reset_postdata(); ?>
             </div>
-        </div>
+        </section>
         <?php endif; ?>
 
     </div>
 </section>
 
-<!-- Gallery thumbnail JS -->
+<!-- ═══ Lightbox Popup ═══ -->
+<div class="sd__lightbox" id="sd-lightbox" role="dialog" aria-modal="true" aria-label="Xem ảnh cửa hàng" hidden>
+    <button class="sd__lightbox-close" type="button" aria-label="Đóng" tabindex="0"><i class="fas fa-times"></i></button>
+    <div class="swiper sd__lightbox-swiper" id="sd-lightbox-swiper">
+        <div class="swiper-wrapper">
+            <?php foreach ($gallery_ids as $img_id): ?>
+            <div class="swiper-slide">
+                <?php echo wp_get_attachment_image($img_id, 'full', false, ['class' => 'sd__lightbox-img', 'loading' => 'lazy']); ?>
+            </div>
+            <?php endforeach; ?>
+        </div>
+        <div class="swiper-button-prev" tabindex="0" role="button" aria-label="Ảnh trước"></div>
+        <div class="swiper-button-next" tabindex="0" role="button" aria-label="Ảnh tiếp"></div>
+        <div class="swiper-pagination"></div>
+    </div>
+    <div class="sd__lightbox-counter" aria-live="polite"><span id="sd-lb-current">1</span> / <?php echo count($gallery_ids); ?></div>
+</div>
+
+<!-- ═══ Gallery + Lightbox JS ═══ -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    var thumbs = document.querySelectorAll('.store-detail__gallery-thumb');
-    var mainImg = document.getElementById('store-gallery-main-img');
-    if (!mainImg || !thumbs.length) return;
+    if (typeof Swiper === 'undefined') return;
 
-    thumbs.forEach(function(btn) {
-        btn.addEventListener('click', function() {
-            thumbs.forEach(function(t) { t.classList.remove('active'); });
-            btn.classList.add('active');
-            mainImg.src = btn.dataset.full;
-            if (btn.dataset.srcset) mainImg.srcset = btn.dataset.srcset;
+    // ── Gallery Thumbs ──
+    var thumbsSwiper = null;
+    var thumbsEl = document.getElementById('sd-gallery-thumbs');
+    if (thumbsEl) {
+        thumbsSwiper = new Swiper(thumbsEl, {
+            spaceBetween: 8,
+            slidesPerView: 5,
+            freeMode: true,
+            watchSlidesProgress: true,
+            breakpoints: {
+                0:   { slidesPerView: 4 },
+                640: { slidesPerView: 5 },
+                1024:{ slidesPerView: 5 }
+            }
         });
+    }
+
+    // ── Gallery Main ──
+    var mainEl = document.getElementById('sd-gallery-main');
+    var mainSwiper = null;
+    if (mainEl) {
+        var mainOpts = {
+            spaceBetween: 0,
+            loop: false,
+            navigation: {
+                nextEl: mainEl.querySelector('.swiper-button-next'),
+                prevEl: mainEl.querySelector('.swiper-button-prev'),
+            },
+            keyboard: { enabled: true },
+        };
+        if (thumbsSwiper) mainOpts.thumbs = { swiper: thumbsSwiper };
+        mainSwiper = new Swiper(mainEl, mainOpts);
+    }
+
+    // ── Lightbox ──
+    var lightbox   = document.getElementById('sd-lightbox');
+    var lbSwiperEl = document.getElementById('sd-lightbox-swiper');
+    var lbCounter  = document.getElementById('sd-lb-current');
+    var lbSwiper   = null;
+
+    function openLightbox(index) {
+        if (!lightbox || !lbSwiperEl) return;
+        lightbox.hidden = false;
+        document.body.style.overflow = 'hidden';
+
+        if (!lbSwiper) {
+            lbSwiper = new Swiper(lbSwiperEl, {
+                spaceBetween: 0,
+                initialSlide: index || 0,
+                navigation: {
+                    nextEl: lbSwiperEl.querySelector('.swiper-button-next'),
+                    prevEl: lbSwiperEl.querySelector('.swiper-button-prev'),
+                },
+                pagination: { el: lbSwiperEl.querySelector('.swiper-pagination'), clickable: true },
+                keyboard: { enabled: true },
+                on: {
+                    slideChange: function() {
+                        if (lbCounter) lbCounter.textContent = this.activeIndex + 1;
+                    }
+                }
+            });
+        } else {
+            lbSwiper.slideTo(index || 0, 0);
+        }
+        if (lbCounter) lbCounter.textContent = (index || 0) + 1;
+
+        // Focus trap
+        setTimeout(function() { lightbox.querySelector('.sd__lightbox-close').focus(); }, 100);
+    }
+
+    function closeLightbox() {
+        if (!lightbox) return;
+        lightbox.hidden = true;
+        document.body.style.overflow = '';
+    }
+
+    // Click zoom buttons
+    document.querySelectorAll('.sd__gallery-zoom').forEach(function(btn) {
+        btn.addEventListener('click', function() { openLightbox(parseInt(this.dataset.index) || 0); });
+    });
+
+    // Close button
+    var closeBtn = lightbox ? lightbox.querySelector('.sd__lightbox-close') : null;
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
+
+    // Click backdrop
+    if (lightbox) {
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) closeLightbox();
+        });
+    }
+
+    // Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && lightbox && !lightbox.hidden) closeLightbox();
     });
 });
 </script>
 
-<?php
-get_footer();
+<?php get_footer(); ?>
