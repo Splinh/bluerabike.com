@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# IDE
+.vscode/
+.idea/
+
+# Build artifacts
+*.zip
+*.tar.gz
+
+# Logs
+error_log
+*.log
+debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup/temp files
+*.bak
+*.tmp
+*.swp
+*~
+
+# WordPress uploads (too large for git)
+src/wp-content/uploads/
+
+# WordPress core (managed separately)
+src/wp-admin/
+src/wp-includes/
+src/wp-*.php
+!src/wp-content/
+src/xmlrpc.php
+src/license.txt
+src/readme.html
+src/index.php
+
+# Composer lock (managed per environment)
+# composer.lock
+
+# Large/backup files
+babyshop.zip
+bk-bluera211225.zip
+bluera.zip
+2026-master/
+HDAT/
+Lỗi/
+3rd/
+fonts/
+
+# PLL debug
+PLL/
+audit-pll-queries.php
+
+# Cache
+src/wp-content/cache/
+src/wp-content/upgrade/
+src/wp-content/wflogs/
+
+# Plugin data (sensitive)
+src/wp-content/plugins/devvn-local-stores-pro/license.php

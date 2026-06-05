@@ -1,0 +1,71 @@
+@use '../functions' as func;
+@use 'colors' as *;
+
+// Layout breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$sm: 640px !default;
+$md: 768px !default;
+$lg: 1024px !default;
+$xl: 1280px !default;
+$xxl: 1440px !default;
+$wp: 782px !default;
+
+$mq-breakpoints: (
+    sm: $sm,
+    md: $md,
+    lg: $lg,
+    xl: $xl,
+    xxl: $xxl,
+) !default;
+
+$container-breakpoints: (
+        sm: $sm,
+        md: $md,
+        lg: $lg,
+        xl: $xl,
+        xxl: $xxl,
+) !default;
+
+// Typography
+//
+// font-size, line-height, gutter, spacers and more.
+
+$font-sizes: (
+        h1: ( 24px, 48px ),
+        h2: ( 20px, 40px ),
+        h3: ( 19px, 31px ),
+        h4: ( 18px, 24px ),
+        h5: ( 17px, 20px ),
+        h6: ( 16px, 18px ),
+        body: ( 16px, 16px ),
+) !default;
+
+$base-line-height-header: 1.3;
+$base-line-height-global: 1.618;
+
+$gutter-xs: 15px !default; // Left/right padding between screen and content
+$gutter: 15px !default;
+
+$gap-xs: 10px !default; // CSS gap between elements
+$gap: 20px !default;
+
+$body-color: #11283c !default;
+$body-bg: #fff !default;
+
+$xxl-container: false;
+
+//
+// Other
+
+$header-font: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Ubuntu', Arial, cursive, sans-serif !default;
+$body-font: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Ubuntu', Arial, cursive, sans-serif !default;
+$awesome-font: 'Font Awesome 6 Pro', 'Font Awesome 6 Brands', sans-serif;
+$awesome-sharp-font: 'Font Awesome 6 Sharp', 'Font Awesome 6 Brands', sans-serif;
+$monospace-font: Consolas, 'Liberation Mono', Courier, monospace;
+
+// Custom font
+$nunito-font: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Ubuntu', Arial, cursive, sans-serif !default;
+$open-sans-font: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, 'Ubuntu', Arial, cursive, sans-serif !default;

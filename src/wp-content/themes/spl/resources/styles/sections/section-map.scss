@@ -1,0 +1,22 @@
+// Section: Map
+// Used by: home_map.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+.section-map {
+  padding-bottom: 0;
+
+  .heading-title {
+    text-align: center;
+  }
+
+  iframe {
+    width: 100%;
+    height: 450px;
+    border: none;
+    border-radius: 6px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0 0 6px;
+  }
+}

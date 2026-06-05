@@ -1,0 +1,1 @@
+<?php return array('dependencies' => array('lodash', 'react', 'wc-block-templates', 'wc-product-editor', 'wp-blocks', 'wp-components', 'wp-i18n', 'wp-media-utils'), 'version' => '7df77373e098c38cff20');

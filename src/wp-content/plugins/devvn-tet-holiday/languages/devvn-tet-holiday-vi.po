@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: DevVN - Trang trí Tết Việt Nam\n"
+"POT-Creation-Date: 2025-12-12 03:53+0700\n"
+"PO-Revision-Date: 2025-12-12 03:55+0700\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: vi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: devvn-tet-holiday.php\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.min.js\n"
+
+#: devvn-tet-holiday.php:522
+msgid "Settings"
+msgstr ""
+
+#: devvn-tet-holiday.php:633 devvn-tet-holiday.php:634
+#: devvn-tet-holiday.php:765
+msgid "Trang trí Tết"
+msgstr "Trang trí Tết"
+
+#: devvn-tet-holiday.php:643
+msgid "You do not have sufficient permissions to access this page."
+msgstr "You do not have sufficient permissions to access this page."
+
+#: devvn-tet-holiday.php:774
+msgid "Chọn kiểu câu đối"
+msgstr "Chọn kiểu câu đối"
+
+#: devvn-tet-holiday.php:779
+msgid "Tắt câu đối"
+msgstr "Tắt câu đối"
+
+#: devvn-tet-holiday.php:807
+msgid "Tuỳ chỉnh"
+msgstr "Tuỳ chỉnh"
+
+#: devvn-tet-holiday.php:813
+msgid "Hình ảnh 2 bên"
+msgstr "Hình ảnh 2 bên"
+
+#: devvn-tet-holiday.php:824
+msgid "Chọn ảnh bên trái"
+msgstr "Chọn ảnh bên trái"
+
+#: devvn-tet-holiday.php:834
+msgid "Chọn ảnh bên phải"
+msgstr "Chọn ảnh bên phải"
+
+#: devvn-tet-holiday.php:843
+msgid "Chọn kiểu chân trang"
+msgstr "Chọn kiểu chân trang"
+
+#: devvn-tet-holiday.php:848
+msgid "Ẩn"
+msgstr "Ẩn"
+
+#: devvn-tet-holiday.php:862
+msgid "Bật pháo hoa"
+msgstr "Bật pháo hoa"
+
+#: devvn-tet-holiday.php:865 devvn-tet-holiday.php:914
+#: devvn-tet-holiday.php:929
+msgid "Tắt"
+msgstr "Tắt"
+
+#: devvn-tet-holiday.php:878
+msgid "Tốc độ bắn pháo hoa"
+msgstr "Tốc độ bắn pháo hoa"
+
+#: devvn-tet-holiday.php:881
+msgid "Số càng nhỏ thì bắn càng nhanh. Mặc định là 30"
+msgstr "Số càng nhỏ thì bắn càng nhanh. Mặc định là 30"
+
+#: devvn-tet-holiday.php:885
+msgid "Số pháo hoa bắn cùng lúc"
+msgstr "Số pháo hoa bắn cùng lúc"
+
+#: devvn-tet-holiday.php:888
+msgid "Mặc định là 5"
+msgstr "Mặc định là 5"
+
+#: devvn-tet-holiday.php:892
+msgid "Màu pháo hoa"
+msgstr "Màu pháo hoa"
+
+#: devvn-tet-holiday.php:898
+msgid "Tốc độ bắn trên PC"
+msgstr "Tốc độ bắn trên PC"
+
+#: devvn-tet-holiday.php:901
+msgid "Mặc định là 15. Số càng nhỏ càng nhanh"
+msgstr "Mặc định là 15. Số càng nhỏ càng nhanh"
+
+#: devvn-tet-holiday.php:905
+msgid "Tốc độ bắn trên Mobile"
+msgstr "Tốc độ bắn trên Mobile"
+
+#: devvn-tet-holiday.php:908
+msgid "Mặc định là 50. Số càng nhỏ càng nhanh"
+msgstr "Mặc định là 50. Số càng nhỏ càng nhanh"
+
+#: devvn-tet-holiday.php:912
+msgid "Âm thanh khi bắn pháo hoa"
+msgstr "Âm thanh khi bắn pháo hoa"
+
+#: devvn-tet-holiday.php:915
+msgid "Bật"
+msgstr "Bật"
+
+#: devvn-tet-holiday.php:916
+msgid ""
+"Có thể không chạy ở 1 số trình duyệt. Và có thể lần đầu không chạy nhưng khi "
+"chuyển trang sẽ chạy"
+msgstr ""
+"Có thể không chạy ở 1 số trình duyệt. Và có thể lần đầu không chạy nhưng khi "
+"chuyển trang sẽ chạy"
+
+#: devvn-tet-holiday.php:920
+msgid "Thời gian bắn pháo hoa"
+msgstr "Thời gian bắn pháo hoa"
+
+#: devvn-tet-holiday.php:923
+msgid "Mặc định là 30s"
+msgstr "Mặc định là 30s"
+
+#: devvn-tet-holiday.php:927
+msgid "Bật hoa rơi"
+msgstr "Bật hoa rơi"
+
+#: devvn-tet-holiday.php:930
+msgid "Hoa Đào"
+msgstr "Hoa Đào"
+
+#: devvn-tet-holiday.php:931
+msgid "Hoa Mai"
+msgstr "Hoa Mai"
+
+#: devvn-tet-holiday.php:932
+msgid "Cả hoa đào"
+msgstr "Cả hoa đào"
+
+#: devvn-tet-holiday.php:932
+msgid "và hoa mai"
+msgstr "và hoa mai"
+
+#: devvn-tet-holiday.php:936
+msgid "Hình ảnh hoa đào"
+msgstr "Hình ảnh hoa đào"
+
+#: devvn-tet-holiday.php:945
+msgid "Chọn ảnh hoa đào"
+msgstr "Chọn ảnh hoa đào"
+
+#: devvn-tet-holiday.php:946 devvn-tet-holiday.php:962
+msgid "Không bắt buộc. Mặc định là"
+msgstr "Không bắt buộc. Mặc định là"
+
+#: devvn-tet-holiday.php:952
+msgid "Hình ảnh hoa mai"
+msgstr "Hình ảnh hoa mai"
+
+#: devvn-tet-holiday.php:961
+msgid "Chọn ảnh hoa mai"
+msgstr "Chọn ảnh hoa mai"
+
+#: devvn-tet-holiday.php:968
+msgid "Số hoa trên PC"
+msgstr "Số hoa trên PC"
+
+#: devvn-tet-holiday.php:971
+msgid "Mặc định là 20"
+msgstr "Mặc định là 20"
+
+#: devvn-tet-holiday.php:975
+msgid "Số hoa trên Mobile"
+msgstr "Số hoa trên Mobile"
+
+#: devvn-tet-holiday.php:978
+msgid "Mặc định là 10"
+msgstr "Mặc định là 10"
+
+#: devvn-tet-holiday.php:982
+msgid "Container Width"
+msgstr "Container Width"
+
+#: devvn-tet-holiday.php:985
+msgid ""
+"Chiều rộng website của bạn. Khi màn hình vượt qua số này + chiều rộng của "
+"mỗi kiểu thì sẽ ẩn các ảnh trang trí Tết đi"
+msgstr ""
+"Chiều rộng website của bạn. Khi màn hình vượt qua số này + chiều rộng của "
+"mỗi kiểu thì sẽ ẩn các ảnh trang trí Tết đi"
+
+#: devvn-tet-holiday.php:989
+msgid "Z-index"
+msgstr "Z-index"
+
+#. Plugin Name of the plugin/theme
+msgid "DevVN - Trang trí Tết Việt Nam"
+msgstr "DevVN - Trang trí Tết Việt Nam"
+
+#. Plugin URI of the plugin/theme
+msgid "https://levantoan.com/san-pham/"
+msgstr "https://levantoan.com/san-pham/"
+
+#. Description of the plugin/theme
+msgid ""
+"Trang trí Tết Việt Nam bằng câu đối, hoa đào, hoa mai, pháo hoa và các hỉnh "
+"ảnh tượng trưng cho ngày Tết truyền thống của Việt Nam"
+msgstr ""
+"Trang trí Tết Việt Nam bằng câu đối, hoa đào, hoa mai, pháo hoa và các hỉnh "
+"ảnh tượng trưng cho ngày Tết truyền thống của Việt Nam"
+
+#. Author of the plugin/theme
+msgid "Lê Văn Toản"
+msgstr "Lê Văn Toản"
+
+#. Author URI of the plugin/theme
+msgid "https://levantoan.com"
+msgstr "https://levantoan.com"

@@ -1,0 +1,1189 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Quick View for WooCommerce v2.2.14\n"
+"POT-Creation-Date: 2025-04-15 11:38+0600\n"
+"PO-Revision-Date: 2022-05-12 17:36+0600\n"
+"Last-Translator: \n"
+"Language-Team: ShapedPlugin\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_x;_ex;esc_html__;esc_html_e;esc_attr_x;"
+"esc_html_x;esc_attr_e;esc_attr__;date_i18n;number_format_i18n\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/help-page/help.php:206
+msgid "Activate"
+msgstr ""
+
+#: admin/help-page/help.php:213
+msgid "Install Now"
+msgstr ""
+
+#: admin/help-page/help.php:219
+msgid "More Details"
+msgstr ""
+
+#: admin/help-page/help.php:251
+msgid "Version:"
+msgstr ""
+
+#: admin/help-page/help.php:260
+msgid "+ Active Installations"
+msgstr ""
+
+#: admin/help-page/help.php:268
+msgid "Last Updated:"
+msgstr ""
+
+#: admin/help-page/help.php:269
+msgid "ago"
+msgstr ""
+
+#: admin/views/notices/offer-banner.php:134
+msgid "Limited Time Offer, Upgrade Now!"
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:339
+msgid "Error while saving the changes."
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:415
+msgid "Settings successfully imported."
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:427
+#: admin/views/sp-framework/classes/admin-options.class.php:442
+msgid "Default settings restored."
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:508
+msgid "Settings saved."
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:697
+msgid "show all settings"
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:699
+msgid "Search..."
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:702
+msgid "Save Changes"
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:702
+#: admin/views/sp-framework/classes/admin-options.class.php:821
+msgid "Saving..."
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:703
+msgid "Reset Tab"
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:703
+#: admin/views/sp-framework/classes/admin-options.class.php:822
+msgid "Are you sure to reset this section options?"
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:798
+#: admin/views/sp-framework/fields/button_set/button_set.php:91
+#: admin/views/sp-framework/fields/checkbox/checkbox.php:104
+#: admin/views/sp-framework/fields/select/select.php:141
+msgid "No data available."
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:821
+msgid "Save"
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:822
+msgid "Restore"
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:823
+msgid "Reset All"
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:823
+msgid "Reset"
+msgstr ""
+
+#: admin/views/sp-framework/classes/admin-options.class.php:823
+msgid "Are you sure you want to reset all settings to default values?"
+msgstr ""
+
+#: admin/views/sp-framework/classes/setup.class.php:441
+msgid "Are you sure?"
+msgstr ""
+
+#: admin/views/sp-framework/classes/setup.class.php:442
+#, php-format
+msgid "Please enter %s or more characters"
+msgstr ""
+
+#: admin/views/sp-framework/classes/setup.class.php:443
+msgid "Searching..."
+msgstr ""
+
+#: admin/views/sp-framework/classes/setup.class.php:444
+msgid "No results found."
+msgstr ""
+
+#: admin/views/sp-framework/classes/setup.class.php:488
+msgid "Oops! Not allowed."
+msgstr ""
+
+#: admin/views/sp-framework/classes/setup.class.php:562
+#: admin/views/sp-framework/classes/setup.class.php:565
+msgid "Field not found!"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:30
+msgid "Woo QuickView"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:43
+msgid "Woo QuickView Settings"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:58
+msgid "General"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:65
+msgid " Enable Quick View"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:66
+msgid "Enable/Disable quick view button."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:68
+#: admin/views/sp-framework/config/framework.config.php:282
+#: admin/views/sp-framework/config/framework.config.php:557
+#: admin/views/sp-framework/config/framework.config.php:647
+#: admin/views/sp-framework/config/framework.config.php:686
+#: admin/views/sp-framework/config/framework.config.php:697
+#: admin/views/sp-framework/config/framework.config.php:777
+msgid "Enabled"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:69
+#: admin/views/sp-framework/config/framework.config.php:283
+#: admin/views/sp-framework/config/framework.config.php:558
+#: admin/views/sp-framework/config/framework.config.php:687
+#: admin/views/sp-framework/config/framework.config.php:698
+#: admin/views/sp-framework/config/framework.config.php:778
+msgid "Disabled"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:75
+msgid "Position"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:76
+msgid "Select quick view button position."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:79
+msgid "Before Add to Cart button"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:80
+msgid "After Add to Cart button"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:81
+msgid "Below Product"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:82
+msgid "Above Add to Cart button(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:83
+msgid "Below Add to Cart button(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:84
+msgid "Below Product Image(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:85
+msgid "Above Product Image(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:86
+msgid "Below Product Title(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:87
+msgid "Below Product Price(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:88
+msgid "Over Product Container on hover(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:89
+msgid "Over Product Image on hover(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:90
+msgid "Via Shortcode(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:96
+msgid "Hide Quick View Button Label"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:97
+msgid "Check to hide quick view button label."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:103
+msgid "Quick View Button Label"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:104
+msgid "Type quick view button custom label."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:112
+msgid "Button Icon"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:113
+msgid "Select quick view button icon option."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:117
+msgid "Icon"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:120
+msgid "Custom Icon"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:124
+#: admin/views/sp-framework/fields/border/border.php:76
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:92
+#: admin/views/sp-framework/fields/typography/typography.php:261
+#: admin/views/sp-framework/fields/typography/typography.php:279
+msgid "None"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:142
+msgid "Upload"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:143
+msgid "Upload Custom Image"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:144
+msgid "Upload your custom image as icon. Image format PNG is recommended."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:150
+msgid "Icon Position"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:151
+msgid "Select icon position."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:156
+msgid "Icon on the left"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:159
+msgid "Icon on the right"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:166
+#: admin/views/sp-framework/config/framework.config.php:758
+msgid "Icon Size"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:167
+msgid "Set a size for the quick view button icon."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:177
+msgid "Button Style"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:178
+msgid "Select quick view button style."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:181
+msgid "Custom Button"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:184
+msgid "Button CSS Class"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:192
+msgid "Add Button CSS Class Name(s)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:193
+msgid "Type quick view button class label."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:200
+msgid "Button Color"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:201
+msgid "Set quick view button color."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:203
+#: admin/views/sp-framework/config/framework.config.php:230
+#: admin/views/sp-framework/config/framework.config.php:574
+#: admin/views/sp-framework/config/framework.config.php:750
+#: admin/views/sp-framework/config/framework.config.php:810
+msgid "Color"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:204
+#: admin/views/sp-framework/config/framework.config.php:231
+#: admin/views/sp-framework/config/framework.config.php:575
+#: admin/views/sp-framework/config/framework.config.php:751
+#: admin/views/sp-framework/fields/typography/typography.php:365
+msgid "Hover Color"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:205
+#: admin/views/sp-framework/config/framework.config.php:576
+msgid "Background"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:206
+#: admin/views/sp-framework/config/framework.config.php:577
+msgid "Hover Background"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:218
+msgid "Add Button Border"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:219
+msgid "Check to add border for the button."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:225
+msgid "Button Border"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:226
+msgid "Set quick view button border."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:228
+msgid "Width"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:229
+msgid "Style"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:246
+msgid "Add Button Padding"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:247
+msgid "Check to add padding for the button."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:253
+#: admin/views/sp-framework/config/framework.config.php:594
+msgid "Button Padding"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:254
+msgid "Set quick view button padding."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:267
+msgid "Button Transition"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:268
+msgid "Set modal button transition all .5s ease."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:280
+msgid "Quick View on Click Product Name or Image"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:281
+msgid "Enable/Disable to view the modal on click name or image."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:300
+msgid "Modal"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:308
+msgid "Quick View Type"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:309
+msgid "Select quick view layout type."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:314
+msgid "Modal Window"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:318
+msgid "Slide-Ins Right"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:323
+msgid "Slide-Ins-Center"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:328
+msgid "Slide-Ins Left"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:333
+msgid "Cascading"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:345
+msgid "Modal Size"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:346
+msgid "Set maximum width and height of the modal."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:354
+msgid "width"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:355
+msgid "height"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:367
+msgid "Modal Background"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:368
+msgid "Set color for the modal background."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:374
+msgid "Content Padding"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:375
+msgid "Set padding for modal content."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:388
+msgid "Modal Overlay Background"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:389
+msgid "Set modal overlay background color."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:396
+msgid "Modal Effect"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:397
+msgid "Select modal effect."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:400
+msgid "Move from Top"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:401
+msgid "Fade"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:402
+msgid "Zoom in"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:403
+msgid "Zoom Out"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:404
+msgid "Newspaper"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:405
+msgid "Move Horizontal"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:406
+msgid "3d Unfold"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:407
+msgid "Slide Bottom"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:408
+msgid "Slide Left(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:409
+msgid "Slide Right(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:415
+msgid "Quick View Categories"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:416
+msgid "Show the Quick View button only for products in selected categories."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:418
+msgid "All"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:419
+msgid "Specific(Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:427
+msgid "Modal Z-Index"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:436
+msgid "Product Content To Show"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:441
+msgid "Product Content or Information"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:442
+msgid "Show/Hide the fields you want to show on the modal."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:457
+msgid "Title"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:458
+#: admin/views/sp-framework/config/framework.config.php:466
+#: admin/views/sp-framework/config/framework.config.php:474
+#: admin/views/sp-framework/config/framework.config.php:482
+#: admin/views/sp-framework/config/framework.config.php:490
+#: admin/views/sp-framework/config/framework.config.php:498
+#: admin/views/sp-framework/config/framework.config.php:507
+#: admin/views/sp-framework/config/framework.config.php:587
+#: admin/views/sp-framework/config/framework.config.php:707
+#: admin/views/sp-framework/config/framework.config.php:723
+#: admin/views/sp-framework/config/framework.config.php:840
+#: admin/views/sp-framework/config/framework.config.php:850
+msgid "Show"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:459
+#: admin/views/sp-framework/config/framework.config.php:467
+#: admin/views/sp-framework/config/framework.config.php:475
+#: admin/views/sp-framework/config/framework.config.php:483
+#: admin/views/sp-framework/config/framework.config.php:491
+#: admin/views/sp-framework/config/framework.config.php:499
+#: admin/views/sp-framework/config/framework.config.php:508
+#: admin/views/sp-framework/config/framework.config.php:588
+#: admin/views/sp-framework/config/framework.config.php:708
+#: admin/views/sp-framework/config/framework.config.php:841
+#: admin/views/sp-framework/config/framework.config.php:851
+msgid "Hide"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:465
+msgid "Rating"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:473
+msgid "Price"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:481
+msgid "Excerpt"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:489
+msgid "Add To Cart"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:497
+msgid "Meta"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:506
+msgid "Social Share"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:514
+#, php-format
+msgid ""
+"To unlock the social share and drag & drop sorting ability, %1$sUpgrade To "
+"Pro!%2$s"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:523
+msgid "Product Custom Image Size"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:524
+msgid "Set a custom product image size for the modal."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:549
+msgid "Add to Cart and View Details Button"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:554
+msgid " Enable Ajax Add to Cart"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:555
+msgid "Enable/Disable ajax add to cart on the modal."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:565
+msgid "Add to Cart Button Color"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:566
+msgid "Set add to cart button color."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:584
+msgid " Add View Details Button"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:585
+msgid "Show/Hide view details button."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:595
+msgid "Set add to cart and view details button padding."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:608
+msgid "Redirect After Add to Cart"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:609
+msgid "Select a page to redirect after add to cart."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:612
+msgid "Same"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:615
+msgid "Single"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:618
+msgid "Checkout"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:628
+msgid "Rating Color"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:629
+msgid "Set product star rating color."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:635
+msgid "Empty Color"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:636
+msgid "Full Color"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:644
+msgid "Enable Quick View on Wishlist"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:645
+msgid "Enable/Disable quick view on wishlist."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:648
+msgid "Disabled "
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:654
+msgid "Modal Thumbnails Gallery Slider"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:659
+msgid "Thumbnails Type"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:660
+msgid "Select thumbnails type."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:664
+msgid "Slider Mode"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:668
+msgid "Classic Mode"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:672
+msgid "Do not Show"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:684
+msgid "Enable Zoom for Gallery Image "
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:685
+msgid "Enable/Disable zoom for gallery image mouseover."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:694
+msgid "Enable Lightbox "
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:695
+msgid "Enable/Disable lightbox on click image."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:704
+msgid " Image Title "
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:705
+msgid "Show/Hide image title."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:715
+msgid "Modal Close Button"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:720
+msgid "Close Button Icon"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:721
+msgid "Show/hide modalclose button."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:724
+msgid "Hide "
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:730
+msgid "Close Button Position"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:731
+msgid "Select a position for close button."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:733
+msgid "Inside Corner of Modal"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:734
+msgid "Outside Corner of Modal (Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:735
+msgid "Top Right Corner of Web Browser (Pro)"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:743
+msgid "Icon Color"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:744
+msgid "Set modal close button icon color."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:759
+msgid "Set modal close button icon size."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:769
+msgid "Preloader"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:774
+msgid " Preloader"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:775
+msgid "Enable/Disable preloader on the modal."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:784
+msgid "Preloader Type"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:785
+msgid "Set a preloader type."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:789
+msgid "Preloader Icon"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:793
+#: admin/views/sp-framework/config/framework.config.php:802
+msgid "Loading Label"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:803
+msgid "Type loading label."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:804
+msgid "Loading..."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:811
+msgid "Set loading label color."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:826
+msgid "Advanced"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:832
+msgid "Clean-up Data on Deletion"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:833
+msgid ""
+"Check this box if you would like Quick View for WooCommerce plugin to "
+"completely remove all of its data when the plugin is deleted."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:838
+msgid "Quick View Button on Mobile Devices"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:839
+msgid "Show/Hide quick view button on iphone and android devices."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:848
+msgid " Quick View Button on iPad"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:849
+msgid "Show/Hide quick view button on ipad."
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:858
+msgid "Custom CSS"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:867
+msgid "Custom JS"
+msgstr ""
+
+#: admin/views/sp-framework/config/framework.config.php:884
+msgid "Get Help"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:40
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:54
+#: admin/views/sp-framework/fields/spacing/spacing.php:54
+msgid "top"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:41
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:55
+#: admin/views/sp-framework/fields/spacing/spacing.php:55
+msgid "right"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:42
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:56
+#: admin/views/sp-framework/fields/spacing/spacing.php:56
+msgid "bottom"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:43
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:57
+#: admin/views/sp-framework/fields/spacing/spacing.php:57
+msgid "left"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:44
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:58
+#: admin/views/sp-framework/fields/spacing/spacing.php:58
+msgid "all"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:68
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:84
+#: admin/views/sp-framework/fields/typography/typography.php:280
+msgid "Solid"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:69
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:85
+#: admin/views/sp-framework/fields/typography/typography.php:283
+msgid "Dashed"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:70
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:86
+#: admin/views/sp-framework/fields/typography/typography.php:282
+msgid "Dotted"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:71
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:87
+#: admin/views/sp-framework/fields/typography/typography.php:281
+msgid "Double"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:72
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:88
+msgid "Inset"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:73
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:89
+msgid "Outset"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:74
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:90
+msgid "Groove"
+msgstr ""
+
+#: admin/views/sp-framework/fields/border/border.php:75
+#: admin/views/sp-framework/fields/dimensions_advanced/dimensions_advanced.php:91
+msgid "ridge"
+msgstr ""
+
+#: admin/views/sp-framework/fields/icon/icon.php:48
+#: admin/views/sp-framework/functions/actions.php:141
+msgid "Add Icon"
+msgstr ""
+
+#: admin/views/sp-framework/fields/switcher/switcher.php:46
+msgid "On"
+msgstr ""
+
+#: admin/views/sp-framework/fields/switcher/switcher.php:47
+msgid "Off"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:142
+msgid "Font Family"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:143
+msgid "Select a font"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:151
+msgid "Backup Font Family"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:171
+#: admin/views/sp-framework/fields/typography/typography.php:185
+#: admin/views/sp-framework/fields/typography/typography.php:198
+#: admin/views/sp-framework/fields/typography/typography.php:213
+#: admin/views/sp-framework/fields/typography/typography.php:232
+#: admin/views/sp-framework/fields/typography/typography.php:249
+#: admin/views/sp-framework/fields/typography/typography.php:267
+#: admin/views/sp-framework/fields/typography/typography.php:289
+msgid "Default"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:183
+msgid "Font Style"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:197
+#: admin/views/sp-framework/fields/typography/typography.php:198
+msgid "Load Extra Styles"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:211
+msgid "Subset"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:221
+msgid "Text Align"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:224
+msgid "Inherit"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:225
+msgid "Left"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:226
+msgid "Center"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:227
+msgid "Right"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:228
+msgid "Justify"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:229
+msgid "Initial"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:241
+msgid "Font Variant"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:244
+msgid "Normal"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:245
+msgid "Small Caps"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:246
+msgid "All Small Caps"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:258
+msgid "Text Transform"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:262
+msgid "Capitalize"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:263
+msgid "Uppercase"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:264
+msgid "Lowercase"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:276
+msgid "Text Decoration"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:284
+msgid "Wavy"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:285
+msgid "Overline"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:286
+msgid "Line-through"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:302
+msgid "Font Size"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:314
+msgid "Line Height"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:326
+msgid "Letter Spacing"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:338
+msgid "Word Spacing"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:356
+msgid "Font Color"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:377
+msgid "Margin Top"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:389
+msgid "Margin Bottom"
+msgstr ""
+
+#: admin/views/sp-framework/fields/typography/typography.php:401
+msgid "Custom Style"
+msgstr ""
+
+#: admin/views/sp-framework/functions/actions.php:83
+msgid "No data provided by developer"
+msgstr ""
+
+#: admin/views/sp-framework/functions/actions.php:99
+msgid "Error while saving."
+msgstr ""
+
+#: admin/views/sp-framework/functions/actions.php:145
+msgid "Search a Icon..."
+msgstr ""
+
+#: admin/views/sp-framework/functions/validate.php:28
+msgid "Please enter a valid email address."
+msgstr ""
+
+#: admin/views/sp-framework/functions/validate.php:46
+msgid "Please enter a valid number."
+msgstr ""
+
+#: admin/views/sp-framework/functions/validate.php:61
+msgid "This field is required."
+msgstr ""
+
+#: admin/views/sp-framework/functions/validate.php:76
+msgid "Please enter a valid URL."
+msgstr ""
+
+#: class/popup.php:205
+msgid "Placeholder"
+msgstr ""
+
+#: includes/functions.php:42
+#, php-format
+msgid ""
+"Enjoying %1$sQuick View for WooCommerce?%2$s Please rate us %3$sWordPress."
+"org%4$s. Your positive feedback will help us grow more. Thank you! 😊"
+msgstr ""
+
+#: woo-quick-view.php:218
+msgid "Settings"
+msgstr ""

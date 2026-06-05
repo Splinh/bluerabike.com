@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:v="https://vecta.io/nano" width="24" height="24" fill="none"><path fill-rule="evenodd" d="M21.7 9.6c-.1-.4-.6-.5-.9-.3l-1.1.8c-.3.2-.5.6-.4 1 .3.8.4 1.6.4 2.4 0 4.7-4.3 8.5-9.2 7.5a7.71 7.71 0 0 1-6-6c-1-4.8 2.7-9.1 7.4-9.2v2.3c0 .6.7.9 1.2.6L18.2 5a.75.75 0 0 0 0-1.2L13 .2c-.5-.3-1.2 0-1.2.6V3C5.5 3.1.5 8.9 1.7 15.5c.8 4.2 4.1 7.5 8.3 8.3 6.7 1.2 12.5-3.9 12.5-10.3 0-1.4-.3-2.7-.8-3.9z" fill="#fff"/><template xmlns="" id="transover-popup-template">
+  <style>
+    .pos_translation {
+      padding-bottom: 3px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    .rtl {
+      direction: rtl;
+    }
+
+    main {
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: initial;
+
+      background: #fcf7d9;
+      text-align: left;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #ccc;
+      box-shadow: rgba(0,0,0,0.2) 0px 2px 5px;
+      border-radius: 5px;
+      padding: 6px 8px 3px 8px;
+      position: fixed;
+      z-index: 2147483647;
+      top: -1500px;
+      left: 0;
+      box-sizing: content-box;
+      -webkit-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+
+      /* To fix the following issue:
+      1. Have translate on hover enabled (opposed to translate on click).
+      2. Wisit a website that has a dropdown menu that opens on hover.
+      3. Open the menu.
+      4. Hover over a word within that menu.
+      5. Incidentally move the cursor over the TransOver popup.
+      The hover menu gets closed.
+      */
+      pointer-events: none;
+    }
+
+    .pos_translation {
+      font-size: 1em;
+      line-height: 1.2em;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .from_lang {
+      color: grey;
+      font-size: 0.8em;
+      line-height: 1.2em;
+      margin-top: 2px;
+      margin-bottom: 3px;
+    }
+  </style>
+
+  <main translate="no"/>
+</template></svg>

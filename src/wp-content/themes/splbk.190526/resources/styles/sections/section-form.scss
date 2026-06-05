@@ -1,0 +1,97 @@
+// Section: Form Home
+// Used by: home_form.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+.section-form-home {
+  .wpcf7-response-output {
+    color: #fff;
+  }
+  .contact-form {
+    position: relative;
+    width: 100%;
+    .bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #000;
+      opacity: 0.5;
+      z-index: 2;
+    }
+
+    .bg-cta {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 125px 40px;
+      position: relative;
+      z-index: 99;
+      @include mixin.mq-max() {
+        padding: 60px 20px;
+      }
+    }
+
+    .heading-title {
+      color: vars.$Primary-01 !important;
+      filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
+        drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff);
+      font-weight: 900;
+      text-align: center;
+
+      @include mixin.clamp-font-size(26px, 46px, 1.3);
+    }
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      input {
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 15px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        @include mixin.mq-max() {
+          height: 42px;
+          width: 100%;
+        }
+        &:focus {
+          border: 1px solid vars.$Primary-01;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 0 6px;
+          outline: none;
+        }
+      }
+      .sm_home {
+        background: vars.$Primary-01;
+        color: #fff;
+        font-size: 18px;
+        display: table;
+        margin: 0 auto;
+        transition: 0.3s;
+        &:hover {
+          background: vars.$Primary-04;
+        }
+      }
+      .wpcf7-spinner {
+        position: absolute;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+// Section: Doitac (Partners)
+// Used by: home_doitac.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+section.section.section-doitac {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 240, 240, 0.4) 0%,
+    rgba(245, 240, 255, 0.4) 50%,
+    rgba(240, 248, 255, 0.3) 100%
+  );
+
+  .heading-title {
+    text-align: center;
+  }
+
+  .swiper-container {
+    margin-top: 20px;
+
+    .swiper-wrapper {
+      gap: 20px !important;
+    }
+  }
+
+  // Each partner item (a or span)
+  .item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    aspect-ratio: 5 / 2;
+    padding: 18px 22px;
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    border-radius: 16px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+    transition: all 0.35s ease;
+
+    &:hover {
+      border-color: rgba(0, 0, 0, 0.06);
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-3px);
+    }
+  }
+
+  // Logo image container (picture element with class "doitac-img block")
+  .doitac-img {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+
+    picture,
+    &.block {
+      display: flex !important;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      display: block;
+      width: auto !important;
+      height: auto !important;
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      object-position: center;
+
+      transition: filter 0.35s ease;
+    }
+  }
+
+  .item:hover .doitac-img img {
+    filter: grayscale(0%) opacity(1);
+  }
+}

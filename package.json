@@ -1,0 +1,47 @@
+{
+    "name": "hd2025",
+    "private": true,
+    "version": "1.6.0",
+    "type": "module",
+    "scripts": {
+        "watch:plugin": "cross-env NODE_ENV=development vite build --watch --config src/wp-content/plugins/hd-addons/vite.config.js",
+        "build:plugin": "cross-env NODE_ENV=production vite build --config src/wp-content/plugins/hd-addons/vite.config.js",
+        "watch:theme": "cross-env NODE_ENV=development vite build --watch --config src/wp-content/themes/spl/vite.config.js",
+        "build:theme": "cross-env NODE_ENV=production vite build --config src/wp-content/themes/spl/vite.config.js",
+        "watch": "concurrently \"pnpm watch:plugin\" \"pnpm watch:theme\"",
+        "build": "concurrently \"pnpm build:plugin\" \"pnpm build:theme\""
+    },
+    "browserslist": [
+        "extends @wordpress/browserslist-config"
+    ],
+    "devDependencies": {
+        "@vheemstra/vite-plugin-imagemin": "^2.2.0",
+        "@wordpress/browserslist-config": "^6.26.0",
+        "autoprefixer": "^10.4.21",
+        "concurrently": "^9.2.0",
+        "cross-env": "^7.0.3",
+        "imagemin-gifsicle": "^7.0.0",
+        "imagemin-mozjpeg": "^10.0.0",
+        "imagemin-pngquant": "^10.0.0",
+        "imagemin-svgo": "^11.0.1",
+        "postcss": "^8.5.6",
+        "sass": "^1.89.2",
+        "terser": "^5.43.1",
+        "vite": "^6.3.5",
+        "vite-plugin-static-copy": "^2.3.1"
+    },
+    "dependencies": {
+        "current-device": "^0.10.2",
+        "ensemble": "github:loltgt/ensemble",
+        "ensemble-social-share": "github:loltgt/ensemble-social-share",
+        "foundation-sites": "^6.9.0",
+        "gsap": "^3.13.0",
+        "jquery": "^3.7.1",
+        "nanoid": "^5.1.5",
+        "select2": "4.1.0-rc.0",
+        "simplebar": "^6.3.1",
+        "sweetalert2": "^11.22.2",
+        "swiper": "^11.2.10",
+        "vanilla-lazyload": "^19.1.3"
+    }
+}

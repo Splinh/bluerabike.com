@@ -1,0 +1,2 @@
+<?php
+return ['project-id-version'=>'myCRED','report-msgid-bugs-to'=>'http://mycred.me','pot-creation-date'=>'2017-10-23 16:15+0000','pot-revision-date'=>'Thu Apr 30 2020 16:22:02 GMT+0200 (CEST)','po-revision-date'=>'2025-08-04 10:22+0000','last-translator'=>'','language-team'=>'Tiếng Việt','mime-version'=>'1.0','content-type'=>'text/plain; charset=UTF-8','content-transfer-encoding'=>'8bit','plural-forms'=>'nplurals=1; plural=0;','language'=>'vi','x-generator'=>'Loco https://localise.biz/','x-loco-version'=>'2.8.0; wp-6.8.2; php-8.3.23','messages'=>[]];

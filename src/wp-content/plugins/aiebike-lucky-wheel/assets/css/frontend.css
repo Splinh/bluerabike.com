@@ -1,0 +1,523 @@
+/**
+ * AIEbike Lucky Wheel - Frontend Styles
+ * Brand Colors: Deep Blue #0a4b8a, Orange/Gold #f7a600
+ */
+
+/* Hide floating wheel popup icon */
+.wlwl_wheel_icon,
+.woocommerce-lucky-wheel-popup-icon,
+.wlwl_lucky_wheel_wrap.wlwl_lucky_wheel_active {
+  display: none !important;
+}
+
+/* ===== Full Page Background (on theme's page-content) ===== */
+.lucky-wheel-page .page-content {
+  /* background: linear-gradient(135deg, #0a4b8a 0%, #0d5ca0 50%, #0a4b8a 100%); */
+  background: linear-gradient(135deg, #01172d 0%, #02457f 50%, #0a4b8a 100%);
+  min-height: 100vh;
+}
+
+/* ===== Page Container ===== */
+.aiebike-lucky-wheel-page {
+  background: transparent;
+  background-size: cover;
+  background-position: center;
+  min-height: 100vh;
+  padding: 40px 0;
+  position: relative;
+}
+
+/* Sparkle/Stars overlay effect */
+.aiebike-lucky-wheel-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    radial-gradient(
+      2px 2px at 20px 30px,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 40px 70px,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 50px 160px,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 90px 40px,
+      rgba(255, 255, 255, 0.5),
+      transparent
+    ),
+    radial-gradient(
+      2px 2px at 130px 80px,
+      rgba(255, 255, 255, 0.3),
+      transparent
+    ),
+    radial-gradient(
+      3px 3px at 160px 120px,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+  background-repeat: repeat;
+  background-size: 200px 200px;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+.aiebike-lw-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .aiebike-lw-container {
+    padding: 0;
+  }
+}
+
+/* ===== Header ===== */
+.aiebike-lw-header {
+  text-align: center;
+  margin-bottom: 40px;
+  width: 1000px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Header Banner Image */
+.aiebike-lw-header-image {
+  max-width: 600px;
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.aiebike-lw-header h1 {
+  font-size: 42px;
+  color: #ffffff;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  margin-bottom: 10px;
+}
+
+.aiebike-lw-subtitle {
+  font-size: 24px;
+  color: #f7a600;
+  font-weight: 600;
+  margin: 0;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.aiebike-lw-prize-amount {
+  font-size: 40px;
+  font-weight: 800;
+  background: linear-gradient(135deg, #f7a600, #ffd700);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 15px 0;
+  line-height: 1.3;
+}
+.wc-lucky-wheel-shortcode--frontend-result {
+  color: #333333;
+}
+.wc-lucky-wheel-shortcode--frontend-result strong {
+  color: #f7a600;
+}
+
+/* ===== Main Wheel Section ===== */
+.aiebike-lw-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 60px;
+}
+
+/* Override plugin inline styles - must be very specific */
+.aiebike-lw-main .wc-lucky-wheel-shortcode-container,
+.aiebike-lucky-wheel-page .wc-lucky-wheel-shortcode-container,
+#wlwl-lucky-wheel-container .wc-lucky-wheel-shortcode-container,
+.wc-lucky-wheel-shortcode-container[style] {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Form container background - transparent on our page */
+.aiebike-lucky-wheel-page .wc-lucky-wheel-shortcode-content-container {
+  background: rgba(255, 255, 255, 0.95) !important;
+  border-radius: 15px;
+  padding: 25px !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Ensure wheel pointer appears above custom wheel image */
+.wc-lucky-wheel-shortcode-wheel-pointer-container {
+  z-index: 10 !important;
+}
+
+/* Hide default canvas immediately to prevent flash of ugly wheel */
+.aiebike-lucky-wheel-page .wc-lucky-wheel-shortcode-wheel-canvas-1 {
+  opacity: 0 !important;
+}
+
+/* Show loading state while custom wheel image loads */
+.aiebike-lucky-wheel-page .wc-lucky-wheel-shortcode-wheel-canvas {
+  position: relative;
+}
+
+.aiebike-lucky-wheel-page .wc-lucky-wheel-shortcode-wheel-canvas::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  margin: -30px 0 0 -30px;
+  border: 4px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #f7a600;
+  border-radius: 50%;
+  animation: wheel-loading-spin 0.8s linear infinite;
+  z-index: 0;
+}
+
+/* Hide loading spinner once custom image is loaded */
+.aiebike-lucky-wheel-page
+  .wc-lucky-wheel-shortcode-wheel-canvas:has(
+    .aiebike-custom-wheel-image
+  )::before {
+  display: none;
+}
+
+@keyframes wheel-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ===== Tabs ===== */
+.aiebike-lw-tabs {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+  margin-bottom: 40px;
+  backdrop-filter: blur(10px);
+}
+
+.aiebike-lw-tabs-nav {
+  display: flex;
+  background: linear-gradient(135deg, #0a4b8a, #0d5ca0);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.aiebike-lw-tabs-nav li {
+  flex: 1;
+  text-align: center;
+}
+
+.aiebike-lw-tabs-nav li a {
+  display: block;
+  padding: 18px 20px;
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 700;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 4px solid transparent;
+}
+
+.aiebike-lw-tabs-nav li a:hover,
+.aiebike-lw-tabs-nav li.active a {
+  background: rgba(247, 166, 0, 0.15);
+  color: #ffffff;
+  border-bottom-color: #f7a600;
+}
+
+.aiebike-lw-tabs-content {
+  padding: 30px;
+}
+
+.aiebike-lw-tab-panel {
+  display: none;
+}
+
+.aiebike-lw-tab-panel.active {
+  display: block;
+}
+
+/* ===== Winners List ===== */
+.aiebike-winners-list {
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.aiebike-winner-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  transition: transform 0.2s ease;
+}
+
+.aiebike-winner-item:hover {
+  transform: translateX(5px);
+  background: #fff5eb;
+}
+
+.aiebike-winner-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f7a600, #ffd700);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+.aiebike-winner-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.aiebike-winner-name {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 3px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.aiebike-winner-phone {
+  color: #666;
+  font-size: 14px;
+}
+
+.aiebike-winner-prize {
+  background: linear-gradient(135deg, #0a4b8a, #0d5ca0);
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-weight: 700;
+  font-size: 14px;
+  white-space: nowrap;
+}
+
+.aiebike-winner-date {
+  color: #999;
+  font-size: 12px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.aiebike-no-winners {
+  text-align: center;
+  padding: 60px 20px;
+  color: #999;
+}
+
+/* ===== Prize Showcase ===== */
+.aiebike-prize-showcase {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+
+@media (max-width: 900px) {
+  .aiebike-prize-showcase {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .aiebike-prize-showcase {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.aiebike-prize-item {
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #fff, #f8f9fa);
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.aiebike-prize-item:hover {
+  transform: translateY(-5px);
+}
+
+.aiebike-prize-item img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+/* Rotate prize images 3, 4, 6 to face same direction */
+.aiebike-prize-item:nth-child(3) img,
+.aiebike-prize-item:nth-child(4) img,
+.aiebike-prize-item:nth-child(6) img {
+  transform: rotateY(165deg);
+}
+
+.aiebike-prize-value {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0a4b8a;
+  margin-bottom: 5px;
+}
+
+.aiebike-prize-label {
+  color: #666;
+  font-size: 14px;
+}
+
+/* ===== Rules ===== */
+.aiebike-rules-content h3 {
+  color: #0a4b8a;
+  font-size: 22px;
+  margin: 25px 0 15px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #cce0f0;
+}
+
+.aiebike-rules-content h3:first-child {
+  margin-top: 0;
+}
+
+.aiebike-rules-content ul {
+  margin: 0;
+  padding-left: 25px;
+}
+
+.aiebike-rules-content li {
+  padding: 8px 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.aiebike-rules-content li strong {
+  color: #f7a600;
+}
+
+.aiebike-rules-note {
+  background: linear-gradient(135deg, #e8f4fd, #cce0f0);
+  padding: 20px;
+  border-radius: 10px;
+  border-left: 4px solid #0a4b8a;
+  margin-top: 25px;
+}
+
+.aiebike-rules-note p {
+  margin: 0 0 10px;
+  color: #333;
+}
+
+.aiebike-rules-note p:last-child {
+  margin-bottom: 0;
+}
+
+/* ===== Frame Number Field ===== */
+.aiebike-frame-field-wrap {
+  margin-bottom: 10px !important;
+}
+
+.aiebike-frame-field-wrap input {
+  border: 2px solid #f7a600 !important;
+  background: #fffbf0 !important;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.aiebike-frame-field-wrap input:focus {
+  border-color: #0a4b8a !important;
+  box-shadow: 0 0 5px rgba(10, 75, 138, 0.3) !important;
+}
+
+.aiebike-frame-field-wrap.validated input {
+  border-color: #28a745 !important;
+  background: #e8f5e9 !important;
+}
+
+.aiebike-frame-field-wrap.error input {
+  border-color: #dc3545 !important;
+  background: #ffebee !important;
+}
+
+.aiebike-frame-error {
+  color: #dc3545;
+  font-size: 12px;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.aiebike-frame-note {
+  color: #666;
+  font-size: 11px;
+  display: block;
+  margin-top: 3px;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .aiebike-lw-header h1 {
+    font-size: 28px;
+  }
+
+  .aiebike-lw-prize-amount {
+    font-size: 40px;
+  }
+
+  .aiebike-lw-tabs-nav li a {
+    padding: 12px 10px;
+    font-size: 13px;
+  }
+
+  .aiebike-lw-tabs-content {
+    padding: 20px;
+  }
+
+  .aiebike-winner-item {
+    flex-wrap: wrap;
+  }
+
+  .aiebike-winner-prize {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .aiebike-winner-date {
+    width: 100%;
+    text-align: center;
+    margin-top: 5px;
+  }
+}

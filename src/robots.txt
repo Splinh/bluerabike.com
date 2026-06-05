@@ -1,0 +1,54 @@
+# robots.txt for WordPress - BabyShop
+# https://www.robotstxt.org/
+
+User-agent: *
+Allow: /
+
+# Disallow WordPress system directories
+Disallow: /wp-admin/
+Allow: /wp-admin/admin-ajax.php
+
+# Disallow WordPress includes
+Disallow: /wp-includes/
+
+# Disallow login and registration pages
+Disallow: /wp-login.php
+Disallow: /wp-register.php
+
+# Disallow search results
+Disallow: /?s=
+Disallow: /search/
+
+# Disallow query strings
+Disallow: /*?*
+Allow: /*?p=
+
+# Disallow trackback and feeds
+Disallow: /trackback/
+Disallow: /feed/
+Disallow: /comments/feed/
+
+# Disallow author archives (optional - uncomment if needed)
+# Disallow: /author/
+
+# Disallow tag pages (optional - uncomment if needed)  
+# Disallow: /tag/
+
+# Disallow pagination beyond page 1 for archives (optional)
+# Disallow: /page/
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Sitemap location (update with your actual domain)
+Sitemap: https://bluerabike.com/sitemap_index.xml

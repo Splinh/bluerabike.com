@@ -1,0 +1,277 @@
+/**
+ * SPL Shop Filter Styles
+ */
+@use "../variables" as vars;
+
+/* Filter Container */
+.spl-shop-filter {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+.spl-filters {
+  padding-right: 10px;
+}
+/* Filter Section */
+.filter-section {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.filter-section:last-of-type {
+  border-bottom: none;
+  margin-bottom: 1rem;
+}
+
+.filter-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Price Slider */
+.price-slider-wrapper {
+  padding: 0 5px;
+}
+
+.price-display {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.price-value {
+  color: vars.$Primary-01;
+}
+
+.price-separator {
+  color: #999;
+  margin: 0 0.5rem;
+}
+
+/* Dual Range Slider */
+.price-slider {
+  position: relative;
+  height: 6px;
+  margin: 1.5rem 0;
+}
+
+.slider-track {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #e0e0e0;
+  border-radius: 3px;
+}
+
+.slider-range {
+  position: absolute;
+  height: 100%;
+  background: vars.$Primary-01;
+  border-radius: 3px;
+}
+
+.slider-input {
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  top: 0;
+  pointer-events: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  margin: 0;
+}
+
+.slider-input::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid vars.$Primary-01;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.slider-input::-webkit-slider-thumb:hover {
+  transform: scale(1.1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+}
+
+.slider-input::-webkit-slider-thumb:active {
+  transform: scale(1.15);
+  background: vars.$Primary-01;
+}
+
+.slider-input::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  border: 2px solid vars.$Primary-01;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.slider-input::-moz-range-thumb:hover {
+  transform: scale(1.1);
+}
+
+/* Category & Attribute Filter */
+.filter-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.filter-list li {
+  margin-bottom: 0.5rem;
+}
+
+.filter-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: #444;
+  transition: color 0.2s;
+}
+
+.filter-checkbox:hover {
+  color: vars.$Primary-01;
+}
+
+.filter-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: vars.$Primary-01;
+  cursor: pointer;
+}
+
+.filter-checkbox .label-text {
+  flex: 1;
+}
+
+.filter-checkbox .count {
+  color: #999;
+  font-size: 0.8rem;
+}
+
+/* Hidden items & Show more */
+.filter-list .hidden-item {
+  display: none;
+}
+
+.filter-section.expanded .hidden-item {
+  display: block;
+}
+
+.filter-list.has-more {
+  max-height: none;
+  overflow: visible;
+}
+
+.show-more-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.5rem;
+  padding: 0;
+  background: transparent;
+  border: none;
+  color: vars.$Primary-01;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s;
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  .more-count {
+    color: #999;
+  }
+}
+
+/* Clear Button */
+.filter-clear {
+  width: 100%;
+  padding: 0.6rem 1rem;
+  background: transparent;
+  color: #666;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-clear:hover {
+  background: vars.$Primary-01;
+  border-color: vars.$Primary-01;
+  color: #fff;
+}
+
+/* Loading State */
+body.spl-filter-loading .products {
+  opacity: 0.5;
+  pointer-events: none;
+  position: relative;
+}
+
+body.spl-filter-loading .products::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40px;
+  height: 40px;
+  margin: -20px 0 0 -20px;
+  border: 3px solid #eee;
+  border-top-color: vars.$Primary-01;
+  border-radius: 50%;
+  animation: spl-spin 0.8s linear infinite;
+}
+
+@keyframes spl-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.products.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .spl-shop-filter {
+    padding: 0.75rem;
+  }
+
+  .filter-list {
+    max-height: 150px;
+  }
+
+  .slider-input::-webkit-slider-thumb {
+    width: 24px;
+    height: 24px;
+  }
+}

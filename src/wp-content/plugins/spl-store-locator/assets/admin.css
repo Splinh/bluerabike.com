@@ -1,0 +1,7 @@
+.spl-store-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.spl-left .widefat{max-width:100%}
+.spl-row{display:flex;align-items:center;gap:10px}
+.spl-row-2{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:8px}
+#spl_marker_preview img{height:28px;border-radius:4px;border:1px solid #e5e7eb}
+.spl-map{height:320px;border-radius:8px;overflow:hidden;border:1px solid #e5e7eb}
+.spl-hint{opacity:.75;margin-top:6px}

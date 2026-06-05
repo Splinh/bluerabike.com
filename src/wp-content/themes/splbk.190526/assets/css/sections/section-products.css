@@ -1,0 +1,39 @@
+/** $string - svg */
+/** add unique id image url */
+/** https://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996 */
+/** get breakpoint */
+/** font size */
+.section.section-products .products {
+  margin-top: 0.9375rem;
+}
+@media only screen and (min-width: 64rem) {
+  .section.section-products .products {
+    margin-top: 1.25rem;
+  }
+}
+.section.section-products .products .item {
+  height: 100%;
+  padding-bottom: 12px;
+}
+.section.section-products .products .item :where(.woocommerce-loop-product__title, .loop-stars-rating, .price) {
+  margin-inline: 12px;
+}
+@media only screen and (max-width: 39.99875rem) {
+  .section.section-products .products .item .woocommerce-loop-product__title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: initial;
+    overflow-wrap: break-word;
+  }
+  @supports (-webkit-line-clamp: 2) {
+    .section.section-products .products .item .woocommerce-loop-product__title {
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      display: -webkit-box;
+    }
+  }
+}
+.section.section-products .btn-link {
+  left: 50%;
+  transform: translateX(-50%);
+}

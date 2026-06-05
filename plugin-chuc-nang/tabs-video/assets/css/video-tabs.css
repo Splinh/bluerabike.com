@@ -1,0 +1,793 @@
+/**
+ * Product Video Tabs - Styles
+ * 
+ * @package Product_Video_Tabs
+ * @version 1.0.0
+ */
+
+/* ========================================
+   Video Content Container
+   ======================================== */
+
+.pvt-video-content {
+  padding: 20px 0;
+}
+
+/* ========================================
+   Video Section
+   ======================================== */
+
+.pvt-video-section {
+  margin-bottom: 30px;
+}
+
+.pvt-video-section:last-child {
+  margin-bottom: 0;
+}
+
+.pvt-video-section__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 0 20px 0;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #eee;
+}
+
+.pvt-video-section__title svg {
+  flex-shrink: 0;
+}
+
+.pvt-video-section--tiktok .pvt-video-section__title svg {
+  fill: #000;
+}
+
+/* ========================================
+   Video Grid
+   ======================================== */
+
+.pvt-video-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.pvt-video-grid--youtube {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.pvt-video-grid--tiktok {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+/* ========================================
+   Video Item
+   ======================================== */
+
+.pvt-video-item {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pvt-video-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+/* YouTube Thumbnail */
+.pvt-video-thumb-link {
+  display: block;
+  text-decoration: none;
+}
+
+.pvt-video-thumb {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.pvt-video-thumb--horizontal {
+  padding-bottom: 56.25%; /* 16:9 ratio */
+}
+
+.pvt-video-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.pvt-video-item:hover .pvt-video-thumb img {
+  transform: scale(1.05);
+}
+
+/* Play Button */
+.pvt-video-play-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pvt-video-item:hover .pvt-video-play-btn {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+/* TikTok Video Wrapper */
+.pvt-tiktok-player-wrapper {
+  position: relative;
+}
+
+.pvt-tiktok-click-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  cursor: pointer;
+  background: transparent;
+}
+
+.pvt-video-wrapper--vertical {
+  position: relative;
+  padding-bottom: 177.78%; /* 9:16 ratio for TikTok */
+  background: #000;
+}
+
+.pvt-video-wrapper--vertical iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ========================================
+   Video Popup Modal
+   ======================================== */
+
+.pvt-video-popup-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.3s ease,
+    visibility 0.3s ease;
+}
+
+.pvt-video-popup-modal.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.pvt-video-popup-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(4px);
+}
+
+.pvt-video-popup-content {
+  position: relative;
+  z-index: 2;
+  max-width: 90vw;
+  max-height: 90vh;
+}
+
+.pvt-video-popup-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 50%;
+  color: #fff;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pvt-video-popup-close:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(90deg);
+}
+
+.pvt-video-popup-iframe-wrapper {
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.pvt-video-popup-iframe-wrapper iframe {
+  display: block;
+  border: 0;
+}
+
+/* YouTube Popup - Horizontal */
+.pvt-video-popup-iframe-wrapper.is-youtube {
+  width: 80vw;
+  max-width: 1000px;
+}
+
+.pvt-video-popup-iframe-wrapper.is-youtube iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* TikTok Popup - Vertical */
+.pvt-video-popup-iframe-wrapper.is-tiktok {
+  width: 400px;
+  max-width: 90vw;
+  height: 80vh;
+  max-height: 700px;
+}
+
+.pvt-video-popup-iframe-wrapper.is-tiktok iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* ========================================
+   Responsive
+   ======================================== */
+
+@media (max-width: 768px) {
+  .pvt-video-grid--youtube {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pvt-video-grid--tiktok {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .pvt-video-section__title {
+    font-size: 16px;
+  }
+
+  .pvt-video-popup-close {
+    top: -36px;
+    width: 32px;
+    height: 32px;
+    font-size: 24px;
+  }
+
+  .pvt-video-popup-iframe-wrapper.is-tiktok {
+    width: 90vw;
+    max-width: 350px;
+    height: 70vh;
+  }
+}
+
+@media (max-width: 480px) {
+  .pvt-video-grid--youtube {
+    grid-template-columns: 1fr;
+  }
+
+  .pvt-video-grid--tiktok {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pvt-video-popup-iframe-wrapper.is-youtube {
+    width: 95vw;
+  }
+}
+
+/* ========================================
+   Video Gallery Section (Below Product Gallery)
+   ======================================== */
+
+.pvt-gallery-section {
+  margin: 20px 0 30px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-radius: 8px;
+  clear: both;
+}
+
+.pvt-gallery-section__title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 12px 0;
+  color: #333;
+}
+
+.pvt-gallery-section__title svg {
+  fill: #666;
+}
+
+.pvt-gallery-section__count {
+  font-weight: 400;
+  color: #888;
+}
+
+.pvt-gallery-thumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pvt-gallery-thumb {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.pvt-gallery-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.pvt-gallery-thumb a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pvt-gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pvt-gallery-thumb__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 28px;
+  height: 28px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+}
+
+.pvt-gallery-thumb:hover .pvt-gallery-thumb__play {
+  background: rgba(255, 0, 0, 0.8);
+}
+
+.pvt-gallery-thumb__badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 18px;
+  height: 18px;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* TikTok Thumbnail Style */
+.pvt-gallery-thumb--tiktok {
+  background: linear-gradient(135deg, #00f2ea, #ff0050);
+}
+
+.pvt-gallery-thumb__tiktok-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 32px;
+  height: 32px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pvt-gallery-thumb__tiktok-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.pvt-gallery-thumb--tiktok .pvt-gallery-thumb__play {
+  bottom: 4px;
+  left: 4px;
+  top: auto;
+  transform: none;
+  width: 22px;
+  height: 22px;
+}
+
+/* Responsive Gallery Section */
+@media (max-width: 480px) {
+  .pvt-gallery-section {
+    margin: 15px 0 20px;
+    padding: 12px;
+  }
+
+  .pvt-gallery-thumb {
+    width: 60px;
+    height: 60px;
+  }
+
+  .pvt-gallery-thumb__play {
+    width: 24px;
+    height: 24px;
+  }
+
+  .pvt-gallery-thumb__tiktok-icon {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* ========================================
+   Inline Gallery Thumbnails (injected into gallery)
+   ======================================== */
+
+.pvt-gallery-thumb-inline {
+  position: relative;
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+  border: 2px solid transparent;
+  transition:
+    border-color 0.2s ease,
+    transform 0.2s ease;
+  margin: 2px;
+}
+
+.pvt-gallery-thumb-inline:hover {
+  border-color: #0073aa;
+  transform: scale(1.02);
+}
+
+.pvt-gallery-thumb-inline a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.pvt-gallery-thumb-inline img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.pvt-gallery-thumb-inline__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s ease;
+  z-index: 2;
+}
+
+.pvt-gallery-thumb-inline:hover .pvt-gallery-thumb-inline__play {
+  background: rgba(255, 0, 0, 0.9);
+}
+
+.pvt-gallery-thumb-inline__badge {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 16px;
+  height: 16px;
+  background: #fff;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+/* TikTok Inline Thumbnail */
+.pvt-gallery-thumb-inline--tiktok {
+  background: linear-gradient(135deg, #00f2ea 0%, #ff0050 100%);
+}
+
+.pvt-gallery-thumb-inline--tiktok .pvt-tiktok-player-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.pvt-gallery-thumb-inline--tiktok .pvt-tiktok-click-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  cursor: pointer;
+}
+
+.pvt-gallery-thumb-inline__tiktok-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30px;
+  height: 30px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+.pvt-gallery-thumb-inline--tiktok .pvt-gallery-thumb-inline__play {
+  top: auto;
+  left: auto;
+  bottom: 6px;
+  left: 6px;
+  transform: none;
+  width: 20px;
+  height: 20px;
+}
+
+/* Flatsome specific adjustments */
+.product-thumbnails .pvt-gallery-thumb-inline {
+  width: 80px;
+  height: 80px;
+}
+
+/* Responsive Inline Thumbnails */
+@media (max-width: 768px) {
+  .pvt-gallery-thumb-inline {
+    width: 70px;
+    height: 70px;
+  }
+
+  .pvt-gallery-thumb-inline__tiktok-icon {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+/* ========================================
+   WPGS Plugin - Bluera Style Video Integration
+   ======================================== */
+
+/* Main slider video slide (large, with iframe) */
+.pvt-video-main-slide {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.pvt-video-main-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.pvt-video-main-wrapper--tiktok {
+  background: #000;
+}
+
+.pvt-video-main-wrapper--youtube {
+  background: #000;
+}
+
+.pvt-video-main-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+  border: 0;
+}
+
+/* TikTok: vertical aspect ratio */
+.pvt-video-main-wrapper--tiktok iframe {
+  max-width: 350px;
+  height: 100%;
+  min-height: 500px;
+  aspect-ratio: 9/16;
+  margin: 0 auto;
+}
+
+/* YouTube: horizontal aspect ratio */
+.pvt-video-main-wrapper--youtube iframe {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16/9;
+}
+
+/* Thumbnail slider video slide */
+.pvt-video-thumb-slide {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+}
+
+.pvt-video-thumb-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  min-height: 60px;
+  aspect-ratio: 1;
+}
+
+/* TikTok thumbnail - gradient background */
+.pvt-video-thumb-slide--tiktok .pvt-video-thumb-inner {
+  background: linear-gradient(135deg, #25f4ee 0%, #fe2c55 100%);
+}
+
+/* TikTok icon */
+.pvt-video-thumb-icon {
+  width: 28px;
+  height: 28px;
+  fill: #000;
+  z-index: 1;
+}
+
+/* YouTube thumbnail */
+.pvt-video-thumb-slide--youtube .pvt-video-thumb-inner {
+  background: #000;
+}
+
+.pvt-video-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Play button overlay */
+.pvt-video-thumb-play {
+  position: absolute;
+  bottom: 4px;
+  left: 4px;
+  width: 18px;
+  height: 18px;
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 8px;
+  color: #fff;
+  z-index: 2;
+}
+
+/* Hover effect for thumbnail */
+.pvt-video-thumb-slide:hover {
+  opacity: 0.85;
+}
+
+.wpgs-nav .pvt-video-thumb-slide.slick-slide {
+  opacity: 0.6;
+}
+
+.wpgs-nav .pvt-video-thumb-slide.slick-slide:hover,
+.wpgs-nav .pvt-video-thumb-slide.slick-slide.slick-current {
+  opacity: 1;
+}
+
+/* ========================================
+   Video Placeholder (Lazy Load)
+   ======================================== */
+
+.pvt-video-placeholder {
+  cursor: pointer;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.pvt-video-placeholder--tiktok {
+  background: linear-gradient(135deg, #25f4ee 0%, #fe2c55 100%);
+}
+
+.pvt-video-placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px;
+  text-align: center;
+}
+
+.pvt-video-placeholder-play {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 30px;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.pvt-video-placeholder:hover .pvt-video-placeholder-play {
+  background: rgba(0, 0, 0, 0.95);
+  transform: scale(1.05);
+}
+
+/* Responsive for main video */
+@media (max-width: 768px) {
+  .pvt-video-main-wrapper {
+    min-height: 300px;
+  }
+
+  .pvt-video-main-wrapper--tiktok iframe {
+    max-width: 280px;
+    min-height: 400px;
+  }
+
+  .pvt-video-thumb-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .pvt-video-placeholder-play {
+    padding: 10px 18px;
+    font-size: 12px;
+  }
+}

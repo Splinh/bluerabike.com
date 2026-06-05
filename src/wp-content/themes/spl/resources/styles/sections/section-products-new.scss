@@ -1,0 +1,22 @@
+// Section: Products New
+// Used by: home_products_new.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+.section-products-new {
+  overflow: hidden;
+  .swiper-container {
+    background-size: cover;
+    background-position: center;
+    background-position-y: bottom;
+  }
+  .swiper-slide {
+    .item {
+      img {
+        width: 100%;
+      }
+    }
+  }
+}

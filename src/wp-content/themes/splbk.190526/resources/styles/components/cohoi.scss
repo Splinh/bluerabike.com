@@ -1,0 +1,396 @@
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+.section-form-home {
+  .wpcf7-response-output {
+    color: #fff;
+  }
+  .contact-form {
+    position: relative;
+    width: 100%;
+    .bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #000;
+      opacity: 0.5;
+      z-index: 2;
+    }
+
+    .bg-cta {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 125px 40px;
+      position: relative;
+      z-index: 99;
+      @include mixin.mq-max() {
+        padding: 60px 20px;
+      }
+    }
+
+    .heading-title {
+      color: vars.$Primary-01 !important;
+      filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
+        drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff);
+      font-weight: 900;
+      text-align: center;
+
+      @include mixin.clamp-font-size(26px, 46px, 1.3);
+    }
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      input {
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 15px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        @include mixin.mq-max() {
+          height: 42px;
+          width: 100%;
+        }
+        &:focus {
+          border: 1px solid vars.$Primary-01;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 0 6px;
+          outline: none;
+        }
+      }
+      .sm_home {
+        background: vars.$Primary-01;
+        color: #fff;
+        font-size: 18px;
+        display: table;
+        margin: 0 auto;
+        transition: 0.3s;
+        &:hover {
+          background: vars.$Primary-04;
+        }
+      }
+      .wpcf7-spinner {
+        position: absolute;
+      }
+    }
+  }
+}
+
+.process-section {
+  /* Sử dụng màu cam từ ảnh bạn cung cấp */
+
+  padding: 80px 20px;
+  color: #000;
+  .section-title {
+    text-align: center;
+    @include mixin.clamp-font-size(28, 32);
+    font-weight: 800;
+    color: vars.$Primary-01;
+    margin-bottom: 40px;
+    position: relative;
+    text-transform: uppercase;
+    &::after {
+      content: "";
+      display: block;
+      width: 80px;
+      height: 4px;
+      background-color: vars.$Primary-01;
+      margin: 12px auto 0;
+      border-radius: 2px;
+    }
+  }
+  .process-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap; /* Tự động xuống hàng khi không đủ chỗ */
+  }
+
+  /* Thẻ "Kính Mờ" (Glassmorphism) */
+  .process-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px); /* Hỗ trợ Safari */
+
+    padding: 32px;
+    border-radius: 12px; /* bo góc 12px */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+
+    flex-basis: 300px; /* Chiều rộng cơ sở cho mỗi thẻ */
+
+    /* Hiệu ứng khi hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .process-card:hover {
+    transform: translateY(-8px); /* Nhấc thẻ lên 8px */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+
+  .process-card svg {
+    font-size: 3rem; /* 48px */
+    margin-bottom: 15px;
+    fill: vars.$Primary-01;
+    width: 48px;
+  }
+
+  .process-card h3 {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .process-card p {
+    font-size: 1rem; /* 16px */
+    opacity: 0.9;
+  }
+
+  /* --- Responsive cho Di Động --- */
+  @media (max-width: 768px) {
+    .section-title {
+      font-size: 2rem; /* Giảm cỡ chữ tiêu đề */
+    }
+    .process-grid {
+      flex-direction: column; /* Xếp chồng các thẻ */
+      align-items: center; /* Căn giữa các thẻ */
+      gap: 20px;
+    }
+    .process-card {
+      width: 100%; /* Chiếm toàn bộ chiều rộng (trừ padding của section) */
+      max-width: 350px; /* Giới hạn chiều rộng tối đa */
+      flex-basis: auto; /* Bỏ chiều rộng cơ sở */
+    }
+  }
+}
+
+/* Gạch chân trắng cho tiêu đề */
+
+.cohoifaq-section {
+  padding: 40px 0;
+  .heading-title {
+    color: vars.$Primary-01;
+    text-align: center;
+
+  }
+  .faq-list {
+      width: 65%;
+      margin: 0 auto;
+      @include mixin.mq-max() {
+        width: 100%;
+      }
+      .faq-question {
+        font-weight: 800;
+      }
+  }
+}
+
+
+$blue-100: #DBEAFE;
+$blue-200: #BFDBFE;
+$blue-300: #93C5FD;
+$blue-800: #1E40AF;
+$blue-900: #1E3A8A;
+$blue-950: #172554;
+
+.hero {
+  position: relative;
+  width: 100%;
+  padding: 6rem 0 8rem; // pt-24 pb-32
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(to bottom, rgba(30, 58, 138, 0.8), rgba(23, 37, 84, 0.9));
+  }
+
+  &__content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+  }
+
+  &__subtitle {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: $blue-300;
+    text-transform: uppercase;
+  }
+
+  &__title {
+    margin-top: 1rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    filter: drop-shadow(0 4px 3px rgb(0 0 0 / 0.07)) drop-shadow(0 2px 2px rgb(0 0 0 / 0.06));
+
+    @media (min-width: 768px) {
+      font-size: 3.75rem; // md:text-6xl
+    }
+  }
+
+  &__description {
+    margin: 1.5rem auto 0;
+    font-size: 1.125rem;
+    max-width: 48rem;
+
+    &--sub {
+      margin-top: 1rem;
+      font-size: 1rem;
+      color: $blue-100;
+    }
+  }
+
+  // Gallery grid
+  .gallery-grid {
+    margin: 3rem auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.25rem;
+    max-width: 64rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    opacity: 0.9;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &__image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+}
+
+// ==============================
+// FEATURES SECTION (trong HERO)
+// ==============================
+
+.features-container {
+  padding-top: 4rem;
+  padding-bottom: 0;
+  max-width: 64rem;
+  margin: 0 auto;
+
+  @media (min-width: 768px) {
+    padding: 0 1.5rem;
+  }
+
+  .features-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+
+    @media (min-width: 640px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  .feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+
+    &:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-0.5rem);
+    }
+
+    &__icon {
+      width: 3rem;
+      height: 3rem;
+      color: $blue-300;
+    }
+
+    &__title {
+      margin-top: 1rem;
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    &__description {
+      font-size: 0.875rem;
+      color: $blue-300;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+  }
+}
+
+// ==============================
+// LOGO SECTION
+// ==============================
+
+.logo-section {
+  position: relative;
+  z-index: 20;
+  display: flex;
+  justify-content: center;
+  margin-top: -4rem;
+
+  &__background {
+    background-color: white;
+    padding: 1rem;
+    border-radius: 9999px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border: 4px solid white;
+  }
+
+  &__inner {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 9999px;
+    background-image: linear-gradient(to bottom right, $blue-100, $blue-200);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__svg {
+    width: 4rem;
+    height: 4rem;
+    color: $blue-800;
+  }
+}

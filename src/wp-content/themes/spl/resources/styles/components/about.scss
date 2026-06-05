@@ -1,0 +1,266 @@
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+.section-banner-home {
+  .item {
+    img {
+      width: 100%;
+      height: calc(100vh - 150px);
+      object-fit: cover;
+      @include mixin.mq-max() {
+        height: auto;
+      }
+    }
+  }
+}
+
+section#about-page-ab {
+  padding: 60px 0;
+  @include mixin.mq-max() {
+    padding: 30px 0;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    .col {
+      @include mixin.flex-self(2, 1, 30);
+      @include mixin.mq-max() {
+        @include mixin.flex-self(1, 1, 30);
+      }
+      .heading-title {
+        color: vars.$Primary-01;
+      }
+    }
+  }
+}
+
+
+.section-khachhang {
+  background: linear-gradient(180deg, #2f5fff 0%, #0052cc 100%);
+  color: #fff;
+  padding: 60px 0;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .khachhang-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #fff;
+  }
+
+  .swiper-container {
+    overflow: hidden;
+  }
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .khachhang-box {
+    background: #fff;
+    color: #000;
+    border-radius: 20px;
+    padding: 30px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+
+    .rating {
+      margin-bottom: 15px;
+
+      i {
+        color: #ffb400;
+        margin-right: 2px;
+      }
+    }
+
+    .content {
+      font-style: italic;
+      font-size: 16px;
+      line-height: 1.5;
+    }
+
+    .info {
+      display: flex;
+      align-items: center;
+      margin-top: auto;
+
+      .avatar {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-right: 15px;
+
+        .img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .text {
+        .name {
+          font-weight: 700;
+          font-size: 15px;
+          margin-bottom: 0;
+        }
+
+        .position {
+          font-size: 13px;
+          color: #666;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 991px) {
+    .khachhang-box {
+      padding: 25px;
+    }
+
+    .khachhang-title {
+      font-size: 26px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .khachhang-box {
+      padding: 20px;
+    }
+  }
+}
+
+
+.section-form-home {
+  padding: 30px 0;
+  .wpcf7-response-output {
+    color: #fff;
+  }
+  .contact-form {
+    position: relative;
+    width: 100%;
+    .bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: #000;
+      opacity: 0.5;
+      z-index: 2;
+    }
+
+    .bg-cta {
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 100%;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .inner {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 125px 40px;
+      position: relative;
+      z-index: 99;
+      @include mixin.mq-max() {
+        padding: 60px 20px;
+      }
+    }
+
+    .heading-title {
+      color: vars.$Primary-01 !important;
+      filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff)
+        drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff);
+      font-weight: 900;
+      text-align: center;
+
+      @include mixin.clamp-font-size(26px, 46px, 1.3);
+    }
+    .form-wrapper {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      input {
+        border: 1px solid #ccc;
+        border-radius: 30px;
+        height: 50px;
+        padding: 0 20px;
+        font-size: 15px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        font-weight: 600;
+        @include mixin.mq-max() {
+          height: 42px;
+          width: 100%;
+        }
+        &:focus {
+          border: 1px solid vars.$Primary-01;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 0 6px;
+          outline: none;
+        }
+      }
+      .sm_home {
+        background: vars.$Primary-01;
+        color: #fff;
+        font-size: 18px;
+        display: table;
+        margin: 0 auto;
+        transition: 0.3s;
+        &:hover {
+          background: vars.$Primary-04;
+        }
+      }
+      .wpcf7-spinner {
+        position: absolute;
+      }
+    }
+  }
+}
+
+.section-section-tnsm {
+  .tnsm-list {
+    .tnsm-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 50px;
+      align-items: center;
+      padding: 30px 0;
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+      }
+      .info {
+        width: calc(40% - 25px);
+        @include mixin.mq-max() {
+          width: 100%;
+        }
+      }
+      .img {
+        width: calc(60% - 25px);
+        @include mixin.mq-max() {
+          width: 100%;
+          img {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

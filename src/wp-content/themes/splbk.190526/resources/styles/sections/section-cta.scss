@@ -1,0 +1,67 @@
+// Section: CTA
+// Used by: home_cta.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+.section.section-cta {
+  position: relative;
+
+  &::after {
+    content: "";
+    background-color: vars.$body-color;
+    opacity: 0.5;
+    transition: 0.3s;
+    @include mixin.absolute-full;
+  }
+
+  & > picture {
+    @include mixin.absolute-full;
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  & > .container {
+    min-height: 350px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+
+    .inner {
+      display: flex;
+      flex-flow: column nowrap;
+      gap: 10px;
+      padding: 50px;
+      width: 100%;
+      align-items: flex-start;
+
+      @include mixin.mq-max(sm) {
+        padding: 15px;
+      }
+
+      .title {
+        color: #fff;
+        font-weight: 700;
+        @include mixin.clamp-font-size(20px, 30px, 1.3);
+      }
+
+      .desc {
+        color: #fff;
+        font-weight: 400;
+        font-size: 15px;
+      }
+
+      .btn-link {
+        margin-top: 12px;
+      }
+    }
+  }
+}

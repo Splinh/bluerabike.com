@@ -1,0 +1,133 @@
+// Section: Broadcast Banner
+// Used by: home_broadcast_banner.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+.section.section-broadcast-banner {
+  &:first-child {
+    margin-top: 12px;
+  }
+
+  & > .container.full {
+    .swiper-container {
+      .swiper {
+        padding-inline: 12px;
+      }
+    }
+  }
+
+  .swiper-container {
+    .swiper {
+      transition: 0.3s;
+
+      &:not(.swiper-gap) {
+        .swiper-slide {
+          height: auto;
+          @include mixin.flex-self(1.2, 1, 10);
+
+          @include mixin.mq-min(md) {
+            @include mixin.flex-self(2.3, 1, 10);
+          }
+
+          @include mixin.mq-min(lg) {
+            @include mixin.flex-self(3, 1, 10);
+          }
+        }
+      }
+
+      &.swiper-gap {
+        .swiper-slide {
+          height: auto;
+          @include mixin.flex-self(1.3, 1, vars.$gap-xs);
+
+          @include mixin.mq-min(md) {
+            @include mixin.flex-self(2, 1, vars.$gap);
+          }
+
+          @include mixin.mq-min(lg) {
+            @include mixin.flex-self(3, 1, vars.$gap);
+          }
+        }
+      }
+
+      .item {
+        height: 100%;
+        position: relative;
+        border-radius: 6px;
+        overflow: hidden;
+
+        &::after {
+          pointer-events: none;
+          content: "";
+          @include mixin.absolute-full;
+        }
+
+        a {
+          color: currentColor;
+          display: block;
+          height: 100%;
+        }
+
+        .broadcast-img {
+          display: block;
+          aspect-ratio: 3 / 2;
+          overflow: hidden;
+          position: relative;
+
+          img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+          }
+        }
+
+        .cover-content {
+          @include mixin.media-css(padding, 15, 20, false);
+
+          .broadcast-title {
+            color: currentColor;
+            white-space: pre-wrap;
+            margin-bottom: 4px;
+            margin-top: 4px;
+            font-family: vars.$header-font;
+            @include mixin.clamp-font-size(16px, 18px, 1.3);
+          }
+
+          .broadcast-desc {
+            white-space: pre-wrap;
+            line-height: 1.4;
+            color: currentColor;
+            font-size: 15px;
+          }
+
+          .broadcast-link {
+            font-size: 14px;
+            margin-top: 12px;
+            font-weight: 700;
+            display: inline-block;
+            font-family: vars.$header-font;
+          }
+        }
+      }
+
+      &:hover {
+        .item {
+          &::after {
+            transition: 0.3s;
+            background-color: rgba(0, 0, 0, 0.2);
+          }
+
+          &:hover {
+            &::after {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

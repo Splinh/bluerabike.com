@@ -1,0 +1,131 @@
+// Section: Latest News
+// Used by: home_latest_news.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+.section.section-latest-news {
+  .news-list {
+    @include mixin.media-css(margin-top, 15, false, 20);
+  }
+
+  .items-list {
+    @include mixin.media-css(margin-top, 15, false, 20);
+
+    .swiper-slide {
+      @include mixin.flex-self(4, 1, vars.$gap);
+
+      @include mixin.mq-max(lg) {
+        @include mixin.flex-self(3, 1, vars.$gap);
+      }
+
+      @include mixin.mq-max(md) {
+        @include mixin.flex-self(1.3, 1, vars.$gap-xs);
+      }
+    }
+  }
+
+  .inspiration-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 20px;
+
+    @include mixin.mq-max(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .inspiration-card {
+      position: relative;
+      border-radius: 6px;
+      overflow: hidden;
+
+      @include mixin.mq-max(sm) {
+        grid-column: 1 / -1;
+      }
+
+      .content {
+        pointer-events: none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+        color: #fff;
+        padding: 20px;
+
+        @include mixin.mq-max(lg) {
+          padding: 15px;
+        }
+
+        .title {
+          font-weight: 500;
+          margin-bottom: 0;
+          color: #fff;
+          font-family: vars.$header-font;
+          @include mixin.clamp-font-size(15px, 17px, 1.3);
+          @include mixin.line-clamp(2);
+        }
+
+        .excerpt {
+          white-space: pre-wrap;
+          line-height: 1.4;
+          color: currentColor;
+          font-size: 15px;
+          opacity: 0.9;
+          display: none;
+        }
+      }
+
+      &.large {
+        grid-row: span 2;
+
+        .content {
+          .title {
+            font-weight: 700;
+            @include mixin.clamp-font-size(15px, 20px, 1.3);
+          }
+        }
+
+        @include mixin.mq-max(lg) {
+          grid-column: 1 / -1;
+        }
+
+        @include mixin.mq-min(lg) {
+          .cover {
+            height: 100%;
+
+            .res {
+              height: 100%;
+              display: block;
+              aspect-ratio: auto;
+            }
+          }
+        }
+
+        .content {
+          padding: 30px 25px;
+
+          @include mixin.mq-max(lg) {
+            padding: 15px;
+          }
+
+          .title {
+            margin-bottom: 7px;
+          }
+
+          .excerpt {
+            display: block;
+            @include mixin.line-clamp(2);
+          }
+        }
+      }
+    }
+  }
+
+  .btn-link {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

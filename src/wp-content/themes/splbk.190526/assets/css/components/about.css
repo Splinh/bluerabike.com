@@ -1,0 +1,252 @@
+/** $string - svg */
+/** add unique id image url */
+/** https://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996 */
+/** get breakpoint */
+/** font size */
+.section-banner-home .item img {
+  width: 100%;
+  height: calc(100vh - 150px);
+  object-fit: cover;
+}
+@media only screen and (max-width: 47.99875rem) {
+  .section-banner-home .item img {
+    height: auto;
+  }
+}
+
+section#about-page-ab {
+  padding: 60px 0;
+}
+@media only screen and (max-width: 47.99875rem) {
+  section#about-page-ab {
+    padding: 30px 0;
+  }
+}
+section#about-page-ab .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+section#about-page-ab .row .col {
+  width: calc(50% - 0.9375rem);
+}
+@media only screen and (max-width: 47.99875rem) {
+  section#about-page-ab .row .col {
+    width: 100%;
+  }
+}
+section#about-page-ab .row .col .heading-title {
+  color: #1e78c2;
+}
+
+.section-khachhang {
+  background: linear-gradient(180deg, #2f5fff 0%, #0052cc 100%);
+  color: #fff;
+  padding: 60px 0;
+}
+.section-khachhang .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.section-khachhang .khachhang-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #fff;
+}
+.section-khachhang .swiper-container {
+  overflow: hidden;
+}
+.section-khachhang .swiper-slide {
+  height: auto;
+}
+.section-khachhang .khachhang-box {
+  background: #fff;
+  color: #000;
+  border-radius: 20px;
+  padding: 30px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.section-khachhang .khachhang-box:hover {
+  transform: translateY(-5px);
+}
+.section-khachhang .khachhang-box .rating {
+  margin-bottom: 15px;
+}
+.section-khachhang .khachhang-box .rating i {
+  color: #ffb400;
+  margin-right: 2px;
+}
+.section-khachhang .khachhang-box .content {
+  font-style: italic;
+  font-size: 16px;
+  line-height: 1.5;
+}
+.section-khachhang .khachhang-box .info {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+}
+.section-khachhang .khachhang-box .info .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 15px;
+}
+.section-khachhang .khachhang-box .info .avatar .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.section-khachhang .khachhang-box .info .text .name {
+  font-weight: 700;
+  font-size: 15px;
+  margin-bottom: 0;
+}
+.section-khachhang .khachhang-box .info .text .position {
+  font-size: 13px;
+  color: #666;
+}
+@media (max-width: 991px) {
+  .section-khachhang .khachhang-box {
+    padding: 25px;
+  }
+  .section-khachhang .khachhang-title {
+    font-size: 26px;
+  }
+}
+@media (max-width: 600px) {
+  .section-khachhang .khachhang-box {
+    padding: 20px;
+  }
+}
+
+.section-form-home {
+  padding: 30px 0;
+}
+.section-form-home .wpcf7-response-output {
+  color: #fff;
+}
+.section-form-home .contact-form {
+  position: relative;
+  width: 100%;
+}
+.section-form-home .contact-form .bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  z-index: 2;
+}
+.section-form-home .contact-form .bg-cta {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+.section-form-home .contact-form .bg-cta img {
+  width: 100%;
+  height: 100%;
+}
+.section-form-home .contact-form .inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 125px 40px;
+  position: relative;
+  z-index: 99;
+}
+@media only screen and (max-width: 47.99875rem) {
+  .section-form-home .contact-form .inner {
+    padding: 60px 20px;
+  }
+}
+.section-form-home .contact-form .heading-title {
+  color: #1e78c2 !important;
+  filter: drop-shadow(2px 0 0 #fff) drop-shadow(-2px 0 0 #fff) drop-shadow(0 2px 0 #fff) drop-shadow(0 -2px 0 #fff);
+  font-weight: 900;
+  text-align: center;
+}
+.section-form-home .contact-form .heading-title {
+  font-size: clamp(1.625rem, 0.625rem + 2.5vw, 2.875rem);
+  line-height: clamp(2.1125rem, 0.8125rem + 3.25vw, 3.7375rem);
+}
+.section-form-home .contact-form .form-wrapper {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.section-form-home .contact-form .form-wrapper input {
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  height: 50px;
+  padding: 0 20px;
+  font-size: 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-weight: 600;
+}
+@media only screen and (max-width: 47.99875rem) {
+  .section-form-home .contact-form .form-wrapper input {
+    height: 42px;
+    width: 100%;
+  }
+}
+.section-form-home .contact-form .form-wrapper input:focus {
+  border: 1px solid #1e78c2;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 0 6px;
+  outline: none;
+}
+.section-form-home .contact-form .form-wrapper .sm_home {
+  background: #1e78c2;
+  color: #fff;
+  font-size: 18px;
+  display: table;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+.section-form-home .contact-form .form-wrapper .sm_home:hover {
+  background: #FE7C3A;
+}
+.section-form-home .contact-form .form-wrapper .wpcf7-spinner {
+  position: absolute;
+}
+
+.section-section-tnsm .tnsm-list .tnsm-item {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+  align-items: center;
+  padding: 30px 0;
+}
+.section-section-tnsm .tnsm-list .tnsm-item:nth-child(2n) {
+  flex-direction: row-reverse;
+}
+.section-section-tnsm .tnsm-list .tnsm-item .info {
+  width: calc(40% - 25px);
+}
+@media only screen and (max-width: 47.99875rem) {
+  .section-section-tnsm .tnsm-list .tnsm-item .info {
+    width: 100%;
+  }
+}
+.section-section-tnsm .tnsm-list .tnsm-item .img {
+  width: calc(60% - 25px);
+}
+@media only screen and (max-width: 47.99875rem) {
+  .section-section-tnsm .tnsm-list .tnsm-item .img {
+    width: 100%;
+  }
+  .section-section-tnsm .tnsm-list .tnsm-item .img img {
+    width: 100%;
+  }
+}

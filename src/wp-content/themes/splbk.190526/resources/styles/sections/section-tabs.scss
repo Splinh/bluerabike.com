@@ -1,0 +1,369 @@
+// Section: Tabs (Shared styles for tabs-products, tabs-posts, tabs-videos)
+// Used by: home_tabs_products.php, home_tabs_posts.php, home_tabs_videos.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+// Shared tab styles for product tabs
+.section-home-product-tab {
+  .row-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1e78c229;
+    @include mixin.mq-max() {
+      flex-direction: column;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10%;
+      bottom: -2px;
+      background: vars.$Primary-01;
+      height: 2px;
+    }
+
+    .heading-title {
+      margin-bottom: 0;
+    }
+    .xemtatca_product {
+      background: #fff;
+      color: #3a3a3a;
+      border: 1px solid vars.$Primary-01;
+      padding: 4px 15px;
+      border-radius: 50px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.5s;
+      font-weight: 500;
+      svg {
+        width: 20px;
+        height: 20px;
+        background: vars.$Primary-01;
+        border: 1px solid vars.$Primary-01;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 4px;
+        fill: #fff;
+      }
+    }
+  }
+
+  .tabs-nav {
+    @include mixin.mq-max() {
+      width: 100%;
+    }
+
+    ul {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+      padding-left: 0;
+      @include mixin.mq-max() {
+        scrollbar-width: none;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      li {
+        a {
+          background: #f6f4ef;
+          border: 1px solid #f6f4ef;
+          color: vars.$Primary-03;
+          padding: 4px 15px;
+          border-radius: 50px;
+          font-size: 14px;
+          transition: all 0.5s;
+          font-weight: 500;
+          &:hover,
+          &.current {
+            background: vars.$Primary-01;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .tabs-content {
+    .tabs-panel {
+      &.current {
+        display: block;
+      }
+
+      .w-swiper {
+        padding: 10px;
+        width: 100%;
+        margin: 0 -10px;
+        .swiper-wrapper {
+          .swiper-slide {
+            width: 25%;
+            border-radius: 12px;
+            @include mixin.mq-max() {
+              width: 50%;
+            }
+          }
+        }
+      }
+
+      .item.product {
+        border-radius: 12px;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 15px;
+        background-color: #fff;
+        transition: transform 0.2s;
+        box-shadow: rgba(0, 0, 0, 0.2) 0 0 6px;
+        padding-bottom: 12px;
+        padding: 12px;
+
+        @include mixin.mq-max() {
+          padding: 5px;
+        }
+        span.product-brand-label {
+          display: none;
+        }
+        .thumb {
+          overflow: hidden;
+          img {
+            border-radius: 12px;
+          }
+        }
+        .product-details {
+          margin-top: 10px;
+        }
+        h2.woocommerce-loop-product__title {
+          font-size: 18px;
+          font-weight: 900;
+          color: vars.$Secondary-02;
+          margin-bottom: 0;
+          overflow: hidden;
+          text-transform: uppercase;
+          line-height: 1.3;
+          @include mixin.mq-max() {
+            font-size: 15px;
+          }
+          &:hover {
+            color: vars.$Primary-01;
+          }
+        }
+        .price {
+          display: flex;
+          gap: 10px;
+          flex-direction: row-reverse;
+          text-align: center;
+          justify-content: center;
+          align-items: center;
+          @include mixin.mq-max() {
+            flex-direction: column-reverse;
+            gap: 0;
+          }
+          del {
+            opacity: 1;
+            text-decoration: line-through;
+            .woocommerce-Price-amount {
+              font-weight: 800;
+              color: vars.$Secondary-02;
+              font-size: 15px;
+              @include mixin.mq-max() {
+                font-size: 13px;
+              }
+            }
+          }
+          ins {
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 18px;
+            bdi {
+              color: vars.$red;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Shared tab styles for post and video tabs
+.section-home-post,
+.section-home-video {
+  .row-title {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000;
+    font-weight: 600;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #1e78c229;
+    @include mixin.mq-max() {
+      flex-direction: column;
+    }
+    &::before {
+      content: "";
+      position: absolute;
+      width: 10%;
+      bottom: -2px;
+      background: vars.$Primary-01;
+      height: 2px;
+    }
+    .heading-title {
+      margin-bottom: 0;
+    }
+    .xemtatca_post {
+      background: #fff;
+      color: #3a3a3a;
+      border: 1px solid vars.$Primary-01;
+      padding: 4px 15px;
+      border-radius: 50px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      transition: all 0.5s;
+      font-weight: 500;
+      svg {
+        width: 20px;
+        height: 20px;
+        padding: 4px;
+        background: vars.$Primary-01;
+        border: 1px solid vars.$Primary-01;
+        border-radius: 50%;
+        color: #fff;
+        font-size: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        fill: #fff;
+      }
+    }
+  }
+  .tabs-nav {
+    @include mixin.mq-max() {
+      width: 100%;
+    }
+    ul {
+      display: flex;
+      gap: 10px;
+      list-style: none;
+      padding-left: 0;
+      @include mixin.mq-max() {
+        scrollbar-width: none;
+        flex-direction: row;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      li {
+        a {
+          background: #f6f4ef;
+          border: 1px solid #f6f4ef;
+          color: vars.$Primary-03;
+          padding: 4px 15px;
+          border-radius: 50px;
+          font-size: 14px;
+          transition: all 0.5s;
+          font-weight: 500;
+          &:hover,
+          &.current {
+            background: vars.$Primary-01;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  .tabs-content {
+    .tabs-panel {
+      &.current {
+        display: block;
+      }
+      .w-swiper {
+        padding: 10px;
+      }
+      .item {
+        box-shadow: rgba(0, 0, 0, 0.26) 1px 3px 3px 2px;
+        border-radius: 25px;
+        overflow: hidden;
+        .meta {
+          position: absolute;
+          background: vars.$Primary-01;
+          color: #fff;
+          z-index: 1;
+          top: 15px;
+          left: 0;
+          font-size: 13px;
+          line-height: 1.3;
+          width: 45px;
+          height: 50px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-weight: 700;
+        }
+        .terms {
+          position: absolute;
+          right: 0;
+          padding: 2px 14px;
+          transform: translateY(-50%);
+          background: vars.$Primary-03;
+          font-size: 12px;
+          a {
+            color: vars.$white;
+          }
+        }
+        .title {
+          font-size: 16px;
+          font-weight: 700;
+          line-height: 1.5;
+          padding: 25px 20px 20px;
+          a {
+            @include mixin.line-clamp(2);
+          }
+          &:hover {
+            color: vars.$Primary-01;
+          }
+        }
+      }
+    }
+  }
+}
+
+.section-home-video {
+  .play-icon {
+    transition: 0.4s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    height: 0;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 8px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .cover {
+    position: relative;
+    &:hover {
+      transition: 0.4s;
+      height: 100%;
+      opacity: 1;
+      visibility: visible;
+      z-index: 999;
+    }
+  }
+}

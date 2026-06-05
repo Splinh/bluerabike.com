@@ -1,0 +1,784 @@
+@use "sass:map";
+@use "sass:color";
+@use "sass:string";
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+:root {
+  --gutter: #{vars.$gutter};
+  --gutter-xs: #{vars.$gutter-xs};
+  --gap: #{vars.$gap};
+  --gap-xs: #{vars.$gap-xs};
+
+  --Primary-01: #{vars.$Primary-01};
+  --Primary-02: #{vars.$Primary-02};
+  --Primary-03: #{vars.$Primary-03};
+
+  --Secondary-01: #{vars.$Secondary-01};
+  --Secondary-02: #{vars.$Secondary-02};
+  --Secondary-03: #{vars.$Secondary-03};
+  --Secondary-04: #{vars.$Secondary-04};
+}
+
+//
+// resets.
+
+@include mixin.mq-min(lg) {
+  ::-webkit-scrollbar-track {
+    background-color: #e9ecef;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: #adb5bd;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  color: vars.$body-color;
+  background: vars.$body-bg;
+  // background: vars.$body-bg url("../images/seasonal/bg-tet.jpg") no-repeat center top / 100% auto fixed;
+  font-family: vars.$body-font;
+  font-optical-sizing: auto;
+  @include mixin.clamp-fs(body, vars.$base-line-height-global);
+}
+
+:is(input, select, textarea, button, main) {
+  &:focus {
+    outline: none;
+  }
+}
+
+:is(a, button, [role="button"], input, select, textarea) {
+  transition: 0.3s;
+}
+
+:is(a, area, button, [role="button"], input, label, select, summary, textarea) {
+  @include mixin.not-highlight;
+}
+
+:is([type="submit"], [type="reset"], [type="button"]) {
+  cursor: pointer;
+}
+
+*:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+* > p {
+  overflow-wrap: break-word;
+  margin-top: 0;
+  line-height: inherit;
+
+  &:not(:last-child) {
+    margin-bottom: 15px;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+:is(code, kbd, pre, samp) {
+  font-family: vars.$monospace-font;
+  font-size: 1rem;
+}
+
+sup {
+  line-height: 1;
+  top: -6px;
+  color: #ff0000;
+  font-size: 14px;
+  padding-left: 2px;
+  position: relative;
+  letter-spacing: -0.2px;
+}
+
+:is(.cite-block, cite) {
+  &::before {
+    content: "";
+    font-style: normal;
+  }
+}
+
+:is(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+  font-family: vars.$header-font;
+  font-optical-sizing: auto;
+  margin-bottom: 10px;
+  margin-top: 0;
+  font-weight: 700;
+  overflow-wrap: break-word;
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+    color: currentColor;
+  }
+
+  p {
+    color: currentColor;
+    line-height: inherit;
+    margin-bottom: 0;
+  }
+}
+
+@each $level in h1, h2, h3, h4, h5, h6 {
+  :is(#{$level}, .#{$level}) {
+    @include mixin.clamp-fs($level, vars.$base-line-height-header);
+  }
+}
+
+:is(span, label) > a:hover {
+  text-decoration: none !important;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: none;
+  }
+
+  :where(h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6) {
+    color: currentColor;
+  }
+}
+
+picture {
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+img {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  -ms-interpolation-mode: bicubic;
+  pointer-events: none;
+  user-select: none;
+
+  &:not([src]) {
+    visibility: hidden;
+  }
+
+  &:where(.aligncenter, .align-center) {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+figure {
+  max-width: 100% !important;
+
+  &:where(.wp-caption, .caption) {
+    display: block;
+
+    img {
+      display: inline-block;
+    }
+
+    &:where(.wp-caption-text, .caption-text) {
+      padding-top: 10px;
+      color: #495057;
+    }
+
+    &:where(.aligncenter, .align-center) {
+      margin-bottom: 15px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+  }
+}
+
+table {
+  border-spacing: 0;
+
+  :is(thead, tbody, tfoot) {
+    background: none;
+  }
+
+  tr {
+    :where(th:not(:last-child), td:not(:last-child)) {
+      border-right: 1px solid rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+:is(.screen-reader-text, .submenu-toggle-text, .hidden-text, .sr-only) {
+  @include mixin.hidden-text();
+}
+
+[data-fa]::before {
+  content: attr(data-fa);
+  font-family: vars.$awesome-font;
+}
+
+[data-fa-after]::after {
+  content: attr(data-fa-after);
+  font-family: vars.$awesome-font;
+}
+
+select {
+  appearance: none;
+  background-repeat: no-repeat;
+  background-image: func.inline-svg(
+    '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M239 401c9.4 9.4 24.6 9.4 33.9 0L465 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-175 175L81 175c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9L239 401z"/></svg>'
+  );
+  background-position: calc(100% - 12px) calc(50% - 2px);
+  background-size: 15px;
+  cursor: pointer;
+}
+
+//
+// show
+
+.sm\:show {
+  @include mixin.mq-max(sm) {
+    display: none;
+  }
+}
+
+.\!sm\:show {
+  @include mixin.mq-max(sm) {
+    display: none !important;
+  }
+}
+
+.md\:show {
+  @include mixin.mq-max(md) {
+    display: none;
+  }
+}
+
+.\!md\:show {
+  @include mixin.mq-max(md) {
+    display: none !important;
+  }
+}
+
+.lg\:show {
+  @include mixin.mq-max(lg) {
+    display: none;
+  }
+}
+
+.\!lg\:show {
+  @include mixin.mq-max(lg) {
+    display: none !important;
+  }
+}
+
+.xl\:show {
+  @include mixin.mq-max(xl) {
+    display: none;
+  }
+}
+
+.\!xl\:show {
+  @include mixin.mq-max(xl) {
+    display: none !important;
+  }
+}
+
+//
+// hide
+
+.hidden {
+  display: none;
+}
+
+.\!hidden {
+  display: none !important;
+}
+
+.sm\:hidden {
+  @include mixin.mq-min(sm) {
+    display: none;
+  }
+}
+
+.\!sm\:hidden {
+  @include mixin.mq-min(sm) {
+    display: none !important;
+  }
+}
+
+.md\:hidden {
+  @include mixin.mq-min(md) {
+    display: none;
+  }
+}
+
+.\!md\:hidden {
+  @include mixin.mq-min(md) {
+    display: none !important;
+  }
+}
+
+.lg\:hidden {
+  @include mixin.mq-min(lg) {
+    display: none;
+  }
+}
+
+.\!lg\:hidden {
+  @include mixin.mq-min(lg) {
+    display: none !important;
+  }
+}
+
+.xl\:hidden {
+  @include mixin.mq-min(xl) {
+    display: none;
+  }
+}
+
+.\!xl\:hidden {
+  @include mixin.mq-min(xl) {
+    display: none !important;
+  }
+}
+
+//
+// flex.
+
+.flex {
+  display: flex;
+}
+
+.\!flex {
+  display: flex !important;
+}
+
+.flex-x {
+  flex-flow: row wrap;
+
+  & > .auto {
+    width: auto;
+  }
+
+  @include mixin.mq-min(sm) {
+    & > .sm-auto {
+      width: auto;
+    }
+  }
+
+  @include mixin.mq-min(md) {
+    & > .md-auto {
+      width: auto;
+    }
+  }
+
+  @include mixin.mq-min(lg) {
+    & > .lg-auto {
+      width: auto;
+    }
+  }
+
+  @include mixin.mq-min(xl) {
+    & > .xl-auto {
+      width: auto;
+    }
+  }
+}
+
+//
+// grid.
+
+.grid {
+  display: grid;
+}
+
+.\!grid {
+  display: grid !important;
+}
+
+//
+// other.
+
+.block {
+  display: block;
+}
+
+.\!block {
+  display: block !important;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.\!inline-block {
+  display: inline-block !important;
+}
+
+.h-100 {
+  height: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.dvh-100 {
+  @include mixin.responsive-height(100);
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+//
+// layout container.
+
+.cell {
+  @include mixin.cell();
+
+  &.auto {
+    @include mixin.flex-auto();
+  }
+
+  &.stretch {
+    width: 100%;
+  }
+
+  @include mixin.mq-min(sm) {
+    &.sm-auto {
+      @include mixin.flex-auto();
+    }
+
+    &.sm-stretch {
+      width: 100%;
+    }
+  }
+
+  @include mixin.mq-min(md) {
+    &.md-auto {
+      @include mixin.flex-auto();
+    }
+
+    &.md-stretch {
+      width: 100%;
+    }
+  }
+
+  @include mixin.mq-min(lg) {
+    &.lg-auto {
+      @include mixin.flex-auto();
+    }
+
+    &.lg-stretch {
+      width: 100%;
+    }
+  }
+
+  @include mixin.mq-min(xl) {
+    &.xl-auto {
+      @include mixin.flex-auto();
+    }
+
+    &.xl-stretch {
+      width: 100%;
+    }
+  }
+}
+
+.gap {
+  @include mixin.media-gap(vars.$gap-xs, vars.$gap, false);
+}
+
+.container {
+  @include mixin.container(vars.$gutter-xs, vars.$gutter, vars.$xxl-container);
+
+  &:not(.full) {
+    &.xxl {
+      @include mixin.mq-min(xxl) {
+        max-width: map.get(vars.$container-breakpoints, xxl);
+      }
+    }
+  }
+
+  &.full {
+    max-width: 100%;
+    padding-inline: 0;
+  }
+}
+
+//
+// layout.
+
+@for $i from 1 through 12 {
+  :is(.flex, .\!flex) {
+    &:not(.gap) {
+      &.sm-up-#{$i} > .cell {
+        @include mixin.flex-self($i, 1, 0, false);
+      }
+
+      & > .cell.sm-#{$i} {
+        @include mixin.flex-basis($i, 0, false);
+      }
+
+      & > .cell.\!sm-#{$i} {
+        @include mixin.flex-basis($i, 0, true);
+      }
+    }
+
+    &.gap {
+      &.sm-up-#{$i} > .cell {
+        @include mixin.flex-self($i, 1, vars.$gap-xs, false);
+      }
+
+      & > .cell.sm-#{$i} {
+        @include mixin.flex-basis($i, vars.$gap-xs, false);
+      }
+
+      & > .cell.\!sm-#{$i} {
+        @include mixin.flex-basis($i, vars.$gap-xs, true);
+      }
+    }
+  }
+}
+
+@include mixin.mq-min(md) {
+  @for $i from 1 through 12 {
+    :is(.flex, .\!flex) {
+      &:not(.gap) {
+        &.md-up-#{$i} > .cell {
+          @include mixin.flex-self($i, 1, 0, false);
+        }
+
+        & > .cell.md-#{$i} {
+          @include mixin.flex-basis($i, 0, false);
+        }
+
+        & > .cell.\!md-#{$i} {
+          @include mixin.flex-basis($i, 0, true);
+        }
+      }
+
+      &.gap {
+        &.md-up-#{$i} > .cell {
+          @include mixin.flex-self($i, 1, vars.$gap, false);
+        }
+
+        & > .cell.md-#{$i} {
+          @include mixin.flex-basis($i, vars.$gap, false);
+        }
+
+        & > .cell.\!md-#{$i} {
+          @include mixin.flex-basis($i, vars.$gap, true);
+        }
+      }
+    }
+  }
+}
+
+@include mixin.mq-min(lg) {
+  @for $i from 1 through 12 {
+    :is(.flex, .\!flex) {
+      &:not(.gap) {
+        &.lg-up-#{$i} > .cell {
+          @include mixin.flex-self($i, 1, 0, false);
+        }
+
+        & > .cell.lg-#{$i} {
+          @include mixin.flex-basis($i, 0, false);
+        }
+
+        & > .cell.\!lg-#{$i} {
+          @include mixin.flex-basis($i, 0, true);
+        }
+      }
+
+      &.gap {
+        &.lg-up-#{$i} > .cell {
+          @include mixin.flex-self($i, 1, vars.$gap, false);
+        }
+
+        & > .cell.lg-#{$i} {
+          @include mixin.flex-basis($i, vars.$gap, false);
+        }
+
+        & > .cell.\!lg-#{$i} {
+          @include mixin.flex-basis($i, vars.$gap, true);
+        }
+      }
+    }
+  }
+}
+
+//
+// responsive viewport.
+
+.overlay {
+  position: relative;
+
+  :where(.bg-overlay, .link-overlay) {
+    background: transparent;
+    user-select: none;
+    @include mixin.absolute-full();
+  }
+}
+
+.cover {
+  display: block;
+  overflow: hidden;
+  position: relative;
+
+  :where(.bg-cover, .link-cover) {
+    background: transparent;
+    user-select: none;
+    @include mixin.absolute-full();
+  }
+
+  &.after-overlay {
+    &::after {
+      background: transparent;
+      content: "";
+      user-select: none;
+      z-index: 1;
+      @include mixin.absolute-full();
+    }
+
+    & > img {
+      width: 100%;
+      display: block;
+      user-select: none;
+    }
+  }
+}
+
+.res {
+  @include mixin.responsive-wrapper();
+
+  &.auto {
+    & > img {
+      height: auto !important;
+      width: auto !important;
+      object-fit: contain;
+      object-position: center;
+      max-width: 100%;
+      max-height: 100%;
+    }
+  }
+
+  &.scale {
+    @include mixin.responsive-scale();
+  }
+
+  :where(iframe, embed, object, video) {
+    border: 0;
+    @include mixin.absolute-full();
+  }
+
+  &.after-overlay {
+    &::after {
+      background: transparent;
+      content: "";
+      user-select: none;
+      z-index: 1;
+      @include mixin.absolute-full();
+    }
+
+    & > img {
+      user-select: none;
+    }
+  }
+}
+
+//
+// aspect ratio.
+
+:is(.ar-1, .ar-1-1, .ar\[1-1\]) {
+  @include mixin.responsive-ratio(1, 1);
+}
+
+:is(.ar-2-1, .ar\[2-1\]) {
+  @include mixin.responsive-ratio(2, 1);
+}
+
+:is(.ar-3-2, .ar\[3-2\]) {
+  @include mixin.responsive-ratio(3, 2);
+}
+
+:is(.ar-4-3, .ar\[4-3\]) {
+  @include mixin.responsive-ratio(4, 3);
+}
+
+:is(.ar-16-9, .ar\[16-9\]) {
+  @include mixin.responsive-ratio(16, 9);
+}
+
+:is(.ar-21-9, .ar\[21-9\]) {
+  @include mixin.responsive-ratio(21, 9);
+}
+
+//
+// gallery.
+
+[id^="gallery-"] {
+  $gap: 10;
+  gap: $gap;
+  display: flex;
+  flex-flow: row wrap;
+
+  & > .gallery-item {
+    @include mixin.cell();
+
+    //a {
+    //    @include responsive-wrapper();
+    //    @include responsive-ratio(4, 3);
+    //}
+  }
+
+  @for $i from 1 through 9 {
+    &.gallery-columns-#{$i} {
+      & > .gallery-item {
+        @include mixin.flex-self($i, 1, $gap);
+      }
+    }
+  }
+}
+
+//
+// other

@@ -1,0 +1,14 @@
+{
+  "name": "FlyingPress",
+  "slug": "flying-press",
+  "author": "<a href='https://flyingpress.com'>FlyingPress</a>",
+  "author_profile": "https://flyingpress.com",
+  "version": "5.1.2",
+  "requires": "4.7",
+  "tested": "6.8.2",
+  "requires_php": "7.4",
+  "sections": {
+    "description": "Lightning-Fast WordPress on Autopilot",
+    "changelog": "<h4>5.1.2 - 25 August, 2025</h4><ul><li>Improvement: Action Scheduler as the new background processing library for broader compatibility</li><li>Improvement: Cache static assets separately in Cloduflare integration</li><li>Improvement: Used CSS generation is faster than before</li><li>Improvement: Upgrade some dependencies for enhanced performance</li><li>Improvement: Default delay between each preload is 0.5s </li><li>Improvement: Default timeout for loading scripts is now 10s</li><li>Removed: Disable WP Cron is permanently removed from the bloat settings</li><li>Fix: Critical images were incorrectly detected in certain cases</li></ul><p>Full changelog: <a href='https://flyingpress.com/changelog/'>flyingpress.com/changelog</a></p>"
+  }
+}

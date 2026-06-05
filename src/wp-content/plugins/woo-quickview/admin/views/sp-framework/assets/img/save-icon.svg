@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:v="https://vecta.io/nano" width="24" height="24" fill="none"><g clip-path="url(#A)"><path d="M23.4 6.6l-6.1-6C17 .2 16.5 0 16 0H3.2C1.4 0 0 1.4 0 3.2v17.6C0 22.6 1.4 24 3.2 24h17.6c1.8 0 3.2-1.4 3.2-3.2V8c0-.6-.2-1-.6-1.4zM8.1 2.2h5.7v2.9H8.1V2.2zm9 19.6H6.9V15h10.2v6.8zm4.7-1c0 .5-.4 1-1 1h-1.5v-7.4a1.58 1.58 0 0 0-1.6-1.6H6.3a1.58 1.58 0 0 0-1.6 1.6v7.4H3.2c-.5 0-1-.4-1-1V3.2c0-.5.4-1 1-1h2.7v3.5a1.58 1.58 0 0 0 1.6 1.6h7a1.58 1.58 0 0 0 1.6-1.6V2.3l5.8 5.8v12.7h-.1z" fill="#fff"/></g><defs><clipPath id="A"><path fill="#fff" d="M0 0h24v24H0z"/></clipPath></defs><template xmlns="" id="transover-popup-template">
+  <style>
+    .pos_translation {
+      padding-bottom: 3px;
+    }
+
+    strong {
+      font-weight: bold;
+    }
+
+    .rtl {
+      direction: rtl;
+    }
+
+    main {
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: initial;
+
+      background: #fcf7d9;
+      text-align: left;
+      border-style: solid;
+      border-width: 1px;
+      border-color: #ccc;
+      box-shadow: rgba(0,0,0,0.2) 0px 2px 5px;
+      border-radius: 5px;
+      padding: 6px 8px 3px 8px;
+      position: fixed;
+      z-index: 2147483647;
+      top: -1500px;
+      left: 0;
+      box-sizing: content-box;
+      -webkit-font-smoothing: antialiased;
+      font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+
+      /* To fix the following issue:
+      1. Have translate on hover enabled (opposed to translate on click).
+      2. Wisit a website that has a dropdown menu that opens on hover.
+      3. Open the menu.
+      4. Hover over a word within that menu.
+      5. Incidentally move the cursor over the TransOver popup.
+      The hover menu gets closed.
+      */
+      pointer-events: none;
+    }
+
+    .pos_translation {
+      font-size: 1em;
+      line-height: 1.2em;
+    }
+
+    .red {
+      color: red;
+    }
+
+    .from_lang {
+      color: grey;
+      font-size: 0.8em;
+      line-height: 1.2em;
+      margin-top: 2px;
+      margin-bottom: 3px;
+    }
+  </style>
+
+  <main translate="no"/>
+</template></svg>

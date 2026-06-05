@@ -1,0 +1,32 @@
+// Section: Products
+// Used by: home_products.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+.section.section-products {
+  .products {
+    @include mixin.media-css(margin-top, 15, false, 20);
+
+    .item {
+      height: 100%;
+      padding-bottom: 12px;
+
+      :where(.woocommerce-loop-product__title, .loop-stars-rating, .price) {
+        margin-inline: 12px;
+      }
+
+      .woocommerce-loop-product__title {
+        @include mixin.mq-max(sm) {
+          @include mixin.line-clamp(2);
+        }
+      }
+    }
+  }
+
+  .btn-link {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}

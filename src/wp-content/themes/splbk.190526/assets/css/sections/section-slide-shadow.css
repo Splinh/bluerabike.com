@@ -1,0 +1,98 @@
+/** $string - svg */
+/** add unique id image url */
+/** https://webdesign.tutsplus.com/tutorials/an-introduction-to-error-handling-in-sass--cms-19996 */
+/** get breakpoint */
+/** font size */
+.section.section-slide-shadow .group-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+@media only screen and (max-width: 47.99875rem) {
+  .section.section-slide-shadow .group-title {
+    flex-direction: column;
+  }
+}
+.section.section-slide-shadow .group-title .heading-title {
+  margin-bottom: 0;
+}
+.section.section-slide-shadow .group-title .view_more {
+  color: #737373;
+  font-size: 18px;
+}
+.section.section-slide-shadow .swiper-container {
+  margin: -6px;
+}
+.section.section-slide-shadow .swiper-container .swiper {
+  padding: 6px;
+}
+.section.section-slide-shadow .swiper-container .swiper .swiper-wrapper {
+  display: flex;
+  gap: 30px;
+}
+@media only screen and (max-width: 47.99875rem) {
+  .section.section-slide-shadow .swiper-container .swiper .swiper-wrapper {
+    gap: 0;
+  }
+}
+.section.section-slide-shadow .swiper-container .swiper .swiper-wrapper .swiper-slide {
+  width: calc(33.3333333333% - 20px);
+}
+@media only screen and (max-width: 47.99875rem) {
+  .section.section-slide-shadow .swiper-container .swiper .swiper-wrapper .swiper-slide {
+    width: 100%;
+  }
+}
+.section.section-slide-shadow .swiper-container .swiper .product-item .custom-product-wrapper {
+  border-radius: 25px;
+  overflow: hidden;
+}
+.section.section-slide-shadow .swiper-container .swiper .product-item .custom-product-wrapper .product-actions {
+  bottom: 50px;
+}
+.section.section-slide-shadow .swiper-container .swiper .product-item .all_content_product {
+  background: #fff;
+  border-radius: 20px;
+  padding: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: all 0.3s ease;
+  width: 90%;
+  margin: 0 auto;
+  transform: translateY(-30px);
+}
+.section.section-slide-shadow .swiper-container .swiper .product-item .all_content_product .product-details h2.woocommerce-loop-product__title {
+  font-size: 22px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.section.section-slide-shadow .swiper-container .swiper .product-item .all_content_product .product-details h2.woocommerce-loop-product__title:hover {
+  color: #1e78c2;
+}
+@media only screen and (max-width: 39.99875rem) {
+  .section.section-slide-shadow .swiper-container .swiper .product-item .all_content_product .product-details h2.woocommerce-loop-product__title {
+    font-size: 18px;
+  }
+}
+.section.section-slide-shadow .swiper-container .swiper .product-item .all_content_product .product-details .price {
+  justify-content: center;
+  flex-direction: row;
+}
+.section.section-slide-shadow .swiper-container .swiper .product-item .all_content_product .product-details .price del {
+  border-right: 2px solid #000;
+  padding-right: 10px;
+  color: #000;
+  text-decoration: line-through;
+}
+.section.section-slide-shadow .swiper-container .swiper .product-item .all_content_product .product-details .price .woocommerce-Price-amount {
+  font-size: 19px;
+}
+.section.section-slide-shadow .swiper-container .swiper .product-item .all_content_product .product-specs {
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 39.99875rem) {
+  .section.section-slide-shadow .swiper-container .swiper .product-item .all_content_product .product-specs {
+    display: none;
+  }
+}

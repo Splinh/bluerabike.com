@@ -1,0 +1,789 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: myCred WooCommerce Plus\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-08-04 10:24+0000\n"
+"PO-Revision-Date: 2025-08-04 10:24+0000\n"
+"Last-Translator: \n"
+"Language-Team: Tiếng Việt\n"
+"Language: vi\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.8.0; wp-6.8.2; php-8.3.23\n"
+"X-Domain: mycred-woocommerce-plus"
+
+#: mycred-woocommerce-plus-legacy/includes/mycred-badge-rank-coupons.php:117
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/badge-metabox.php:8
+msgid "You can use these settings to reward users on achieving this badge."
+msgstr ""
+
+#: mycred-woocommerce-plus-legacy/includes/mycred-badge-rank-coupons.php:122
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/badge-metabox.php:13
+#, php-format
+msgid "Level %s"
+msgstr ""
+
+#: mycred-woocommerce-plus-legacy/includes/mycred-badge-rank-coupons.php:128
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/badge-metabox.php:19
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/rank-metabox.php:12
+msgid "Discount Type"
+msgstr ""
+
+#: mycred-woocommerce-plus-legacy/includes/mycred-badge-rank-coupons.php:132
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/badge-metabox.php:23
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/rank-metabox.php:16
+msgid "Fixed Discount"
+msgstr ""
+
+#: mycred-woocommerce-plus-legacy/includes/mycred-badge-rank-coupons.php:133
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/badge-metabox.php:24
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/rank-metabox.php:17
+msgid "Percentage Discount"
+msgstr ""
+
+#: mycred-woocommerce-plus-legacy/includes/mycred-badge-rank-coupons.php:147
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/badge-metabox.php:38
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/rank-metabox.php:31
+msgid "Coupon code"
+msgstr ""
+
+#: mycred-woocommerce-plus-legacy/includes/mycred-badge-rank-coupons.php:161
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/badge-metabox.php:52
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/frontend-coupons-table.php:12
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/rank-metabox.php:45
+msgid "Amount"
+msgstr ""
+
+#: mycred-woocommerce-plus-legacy/includes/mycred-badge-rank-coupons.php:179
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/badge-metabox.php:70
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/rank-metabox.php:59
+msgid "NOTE: Keep amount 0 in order to disable coupons for this rank."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/includes/mwp-functions.php:402
+msgid "Expired"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/includes/mwp-functions.php:410
+msgid "Available"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/includes/mwp-functions.php:415
+msgid "Used"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:18
+msgid "Coupons"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:126
+msgid "You are not allowed to use this feature."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:137
+msgid "Amount can not be zero."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:141
+msgid "Insufficient funds. Please try a lower amount."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:149
+msgid "The amount can not be greater than the maximum amount."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:153
+msgid "The amount can not be less than the minimum amount."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:306
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:329
+msgid "Reward Coupon"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:520
+#, php-format
+msgid "You have Won a coupon for %1$s off for achieving %2$s Rank."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:598
+#, php-format
+msgid "You have Won a coupon for %1$s off for achieving level %2$s %3$s Badge."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-coupons.php:744
+msgid "My Coupons"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-display-reward.php:21
+msgid "Display Reward"
+msgstr ""
+
+#. %s: Earn points and name
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-display-reward.php:61
+#, php-format
+msgid "Earn %1$s %2$s"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-display-reward.php:151
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-display-reward.php:234
+msgid "Earn "
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-hooks.php:26
+msgid "%plural% for each order (WooCommerce Plus)"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-hooks.php:27
+msgid "Award %plural% for each order."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-hooks.php:32
+msgid "%plural% for numbers of order (WooCommerce Plus)"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-hooks.php:33
+msgid "Award %plural% for numbers of order."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-hooks.php:38
+msgid "%plural% for order range (WooCommerce Plus)"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-hooks.php:39
+msgid "Award %plural% for order range."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-my-account.php:22
+msgid "My Account"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-partial-payments.php:18
+msgid "Partial Payments"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-partial-payments.php:364
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-partial-payments.php:795
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:276
+msgid "Partial Payment"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-partial-payments.php:365
+msgid "Points to Coupon"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-partial-payments.php:366
+msgid "Partial Payment Refund"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-partial-payments.php:684
+msgid "Discounts cannot be applied to sale items."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-partial-payments.php:702
+msgid "Failed to complete transaction. Error 1. Please contact support."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-partial-payments.php:787
+msgid ""
+"The maximum allowable discount for this order has been reached due to "
+"applied coupons."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-partial-payments.php:822
+msgid "Payment Successfully Applied."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-point-type.php:81
+msgid "Partial Payment ( WooCommerce )"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-point-type.php:93
+msgid "Partial Payment Settings"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-point-type.php:104
+msgid "Enable Point Type"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-point-type.php:111
+msgid "Enable Point type to show on partial payment dropdown."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-point-type.php:119
+#: mycred-woocommerce-plus-revamped/templates/hooks-module/reward-for-each-order-hook.php:16
+msgid "Exchange Rate"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-point-type.php:129
+msgid "How much is 1 point worth in your store currency?"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-point-type.php:139
+msgid "Minimum"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-point-type.php:149
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:119
+msgid "The minimum amount of points a user must pay."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-point-type.php:159
+msgid "Maximum"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-point-type.php:170
+msgid "The maximum percentage of the cart total a user can pay using points."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-points-history.php:20
+msgid "Points History"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-points-history.php:112
+#, php-format
+msgid "%s History"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-product-referral.php:27
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-product-referral.php:203
+msgid "Product Referral"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-product-referral.php:221
+msgid "Woocommerce Product Referral"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-product-referral.php:222
+msgid ""
+"Let registered customers earn points by recommending products to their own "
+"networks of friends and family."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-product-referral.php:232
+msgid "Woocommerce Product Referral (Referrer)"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-product-referral.php:233
+msgid "Woocommerce Product Referral (Referee)"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-product-referral.php:488
+msgid "Select Product"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-product-referral.php:581
+msgid "Product Referral Generator"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-restrict-products.php:20
+msgid "Restrict Products"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-module-restrict-products.php:275
+msgid "Restrict Product"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-upgrader.php:13
+msgid "Upgrade"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-upgrader.php:89
+msgid "Move Back to Older Version"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-upgrader.php:90
+msgid ""
+"You are currently using the 2.0 version. If you wish to move back to the "
+"older version, click the link below:"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/modules/class-mwp-upgrader.php:95
+msgid "Click Here to Move Back to Older Version"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/includes/woo-block-compatibility/mycred-woo-plus-block-store-api.php:80
+msgid "Earn"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:15
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:78
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/admin-settings.php:13
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:8
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/restrict-product-metabox.php:14
+msgid "Enable"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:22
+msgid "This will enable coupon functionalities."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:37
+msgid "Badges"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:44
+msgid ""
+"Enable this option to reward users on achieving Badges. Settings will appear "
+"in Badge edit window once enabled."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:57
+msgid "Ranks"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:64
+msgid ""
+"Enable this option to reward users on achieving ranks. Settings will appear "
+"in ranks edit window once enabled."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:85
+msgid ""
+"This will display coupon generator in my account page of logged in user. You "
+"can also use this shortcode [mycred_coupon_code_generator] on your desired "
+"page."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:105
+msgid "Select the point type a user can pay with"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:132
+msgid "The maximum amount of points a user must pay."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:147
+msgid "Coupon title that will show in the coupon fields."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:161
+msgid "Coupon generator short description."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/admin-settings.php:175
+msgid "Coupon button label that will show in the coupon generator button."
+msgstr ""
+
+#. %s: user balance
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/coupon-generator.php:27
+#, php-format
+msgid "Your current balance is: %s"
+msgstr ""
+
+#. %1$1s coupon max,  %2$2s: point type
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/coupon-generator.php:34
+#, php-format
+msgid "You can only create %1$1s %2$2s coupon."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/coupon-generator.php:43
+msgid "Amount: "
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/coupon-generator.php:56
+msgid "Create Coupon"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/coupon-generator.php:62
+msgid "Not enough points to create coupons."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/frontend-coupons-table.php:10
+msgid "Sno"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/frontend-coupons-table.php:11
+msgid "Coupon Code"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/frontend-coupons-table.php:13
+msgid "Description"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/frontend-coupons-table.php:14
+msgid "Expiry date"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/frontend-coupons-table.php:15
+msgid "Status"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/frontend-coupons-table.php:63
+msgid "No coupons found."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/coupons-module/rank-metabox.php:8
+msgid "You can use these settings to reward users on achieving this rank."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:2
+msgid "Reward Point settings"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:10
+msgid "Single Product Page"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:17
+msgid "Show earn points on single product page."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:29
+msgid "Checkout Product Meta"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:36
+msgid "Show earn points on per product on checkout page."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:46
+msgid "Checkout Product Total"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:53
+msgid ""
+"Enable this option to show total earn points on top of the checkout page."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:65
+msgid "Cart Product Meta"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:72
+msgid "Show earn points on per product on cart page."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:82
+msgid "Cart Product Total"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/display-rewards-module/admin-settings.php:89
+msgid "Enable this option to show total earn points on top of the cart page."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/hooks-module/reward-for-each-order-hook.php:14
+msgid "Fixed"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/hooks-module/reward-for-each-order-hook.php:15
+msgid "Percentage"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/admin-settings.php:26
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:103
+msgid "Tab Label"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/admin-settings.php:48
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/frontend-my-account-tab.php:25
+msgid "My Badges"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/admin-settings.php:55
+msgid "Enable this option to display Users' Badges."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/admin-settings.php:65
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/frontend-my-account-tab.php:34
+msgid "My Ranks"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/admin-settings.php:72
+msgid "Enable this option to display Users' Ranks."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/admin-settings.php:84
+msgid "My Balances"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/admin-settings.php:91
+msgid "Enable this option to display Users' Balances."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/admin-settings.php:101
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/frontend-my-account-tab.php:50
+msgid "My Level"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/admin-settings.php:108
+msgid "Enable this option to display Users' Level."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/my-account-module/frontend-my-account-tab.php:9
+msgid "My Balance"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:15
+msgid "This will display Partial Payment section."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:29
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:320
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:374
+msgid "In Cart"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:30
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:321
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:375
+msgid "In Checkout"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:31
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:322
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:376
+msgid "Both Cart and Checkout"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:74
+msgid ""
+"Position setting for displaying content before or after the order total, "
+"currently only for legacy WooCommerce checkout."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:88
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:110
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:165
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:193
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:319
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:373
+msgid "No"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:89
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:111
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:166
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:194
+msgid "Yes"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:102
+msgid "Can users, if they can afford it, make multiple payments?"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:124
+msgid ""
+"Can users undo a partial payment? Undoing a partial payment will refund the "
+"amount the user paid ( For legacy cart )."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:207
+msgid "Can points be used to pay for items that are \"on sale\"?"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:259
+msgid "The point amount that each step increment."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:302
+msgid "Apply discount"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:315
+msgid "Point Cost"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:337
+msgid "Show the cart cost in points based on our exchange rate."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:351
+msgid "Total"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:356
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:410
+msgid "The label to use for the total cost. Supports "
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:358
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:412
+msgid "General Template Tags"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:369
+msgid "Users Balance"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:391
+msgid "Show the current users balance."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/admin-settings.php:405
+msgid "Balance"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/frontend-partial-payment.php:61
+msgid "Select Point Type:"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/frontend-partial-payment.php:63
+msgid "Select Point Type"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/partial-payment-module/frontend-partial-payment.php:83
+msgid "Discount"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:8
+msgid "Referral Cookie"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:15
+msgid "Make cookie expire"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:22
+msgid "Enable this option if you want to make referral cookie expire."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:25
+msgid "Cookie Expiration in days"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:36
+msgid "Referral Cookie expires in x days."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:39
+msgid "Referral Cookie name"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:49
+msgid "Product ID will be appended with it."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:53
+msgid "Referral Links"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:55
+msgid "Referral ID Type"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:61
+msgid "Assign numeric referral IDs to each user"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:68
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:82
+#, php-format
+msgid "Example: %s"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:74
+msgid "Assign usernames as IDs for each user"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:86
+msgid "Referral Menu"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:93
+msgid "Show Tab in My Account"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:100
+msgid "Enable this option to add Product referral menu in My Account."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/admin-settings.php:113
+msgid "Label of Tab in My Account."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/product-referral-hook.php:7
+msgid "Points on first sale for Referrer"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/product-referral-hook.php:17
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/product-referral-hook.php:42
+msgid "Limit"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/product-referral-hook.php:23
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/product-referral-hook.php:48
+msgid "Log template"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/product-referral-hook.php:32
+msgid "Points on first sale for Referee"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/product-referral-shortcode.php:8
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/product-referral-shortcode.php:29
+msgid "Generate Link"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/product-referral-shortcode.php:37
+msgid "Product Referral Link"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/product-referral-module/product-referral-shortcode.php:43
+msgid "Product Referral URL"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/admin-settings.php:16
+msgid "Enable Specific Product"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/admin-settings.php:23
+msgid ""
+"With this option you will have new settings in single product edit window to "
+"restrict products based on either ranks or badges."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/admin-settings.php:37
+msgid "Enable Specific Category"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/admin-settings.php:44
+msgid ""
+"With this option you will have new settings in ranks and badges edit window "
+"to restrict products by selecting category."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/restrict-product-metabox.php:23
+msgid "Based On"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/restrict-product-metabox.php:25
+msgid "Select based on"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/restrict-product-metabox.php:28
+msgid "Badge"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/restrict-product-metabox.php:32
+msgid "Rank"
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/restrict-product-metabox.php:74
+msgid "This product will be visible to users with selected badges only."
+msgstr ""
+
+#: mycred-woocommerce-plus-revamped/templates/restrict-product-module/restrict-product-metabox.php:99
+msgid "This product will be visible to users with selected ranks only."
+msgstr ""
+
+#. Name of the plugin
+msgid "myCred WooCommerce Plus"
+msgstr ""
+
+#. Description of the plugin
+msgid ""
+"Allows WooCommerce Plus of a WooCommerce orders using Coupons, Restrict "
+"Products, Points History, Partial Payments."
+msgstr ""
+
+#. Author of the plugin
+msgid "myCred"
+msgstr ""
+
+#. Author URI of the plugin
+msgid "http://mycred.me"
+msgstr ""

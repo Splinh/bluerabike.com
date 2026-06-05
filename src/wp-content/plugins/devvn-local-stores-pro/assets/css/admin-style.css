@@ -1,0 +1,161 @@
+div#local_store_after_title-sortables {
+    margin-top: 10px;
+}
+.localstore-metabox-wrap,
+.localstore-metabox-wrap *{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+div#devvn_local_store_meta {
+    margin: 15px 0 0 0;
+}
+.localstore-metabox-wrap table {
+    width: 100%;
+}
+.localstore-metabox-wrap input,.localstore-metabox-wrap select,.localstore-two-col,
+.localstore-metabox-wrap textarea{
+    width: 100%;
+}
+.localstore-metabox-wrap td.localstore_label {
+    width: 140px;
+    vertical-align: top;
+}
+.localstore-two-col:after,.localstore-metabox-wrap:after {
+    display: table;
+    clear: both;
+    content: "";
+}
+.localstore-col-left {
+    float: left;
+    width: 49%;
+}
+.localstore-col-right {
+    float: right;
+    width: 49%;
+}
+.localstore-metabox-wrap label span {
+    display: block;
+}
+.localstore_maps_control label {
+    display: block;
+    font-weight: 500;
+}
+#localstore_maps {
+    height: 350px;
+    width: 100%;
+}
+.svl-upload-image {
+    width: 100%;
+    max-width: 500px;
+}
+.svl-upload-image img{
+    max-width: 100%;
+    height: auto;
+}
+.view-has-value {
+    display: none;
+    position: relative;
+}
+
+.has-image .view-has-value {
+    display: inline-block;
+}
+
+.hidden-has-value {
+    display: block;
+}
+
+.has-image .hidden-has-value {
+    display: none;
+}
+
+a.svl-delete-image {
+    position: absolute;
+    top: 0;
+    right: -25px;
+    color: #fff;
+    background: #000;
+    display: block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    text-decoration: none;
+}
+.localstore-metabox-wrap table td {
+    padding: 4px 0;
+}
+.localstore-metabox-wrap table td input.ireel-upload.button {
+    width: initial;
+}
+.localstore-icon{
+    font: 400 20px/1 dashicons;
+    speak: none;
+    display: inline-block;
+    margin-left: -1px;
+    padding-right: 3px;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+small .localstore-icon{
+    font-size: 14px;
+}
+.localstore_description{
+    display: block;
+    margin: 5px 0 0;
+}
+#wp-description-wrap.wp-editor-wrap{
+    display: none;
+}
+ul#local_store_statechecklist li .children {
+    display: none;
+}
+ul#local_store_statechecklist .showchild > .children {
+    display: block;
+}
+
+
+a.leaflet-buttons-control-button.satellite {
+    background: url(../images/ic_default-1x.png) no-repeat center center;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: contain;
+}
+a.leaflet-buttons-control-button.satellite.satellite_default {
+    background: url(../images/ic_satellite-1x.png) no-repeat center center;
+    background-size: cover;
+    -moz-background-size: cover;
+    -webkit-background-size: contain;
+}
+.leaflet-draw a .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    border: 0;
+}
+
+.devvn_menuorder_wrap [type="text"] {
+    width: 100%;
+    max-width: 565px;
+}
+.devvn_menuorder_wrap input[name="localstore_lat"], .devvn_menuorder_wrap input[name="localstore_lng"] {
+    max-width: 120px;
+}
+
+[class^="for-"]:not(.active){
+    display: none;
+}
+
+@media (max-width: 767px){
+    .localstore-col-left,.localstore-col-right {
+        width: 100%;
+    }
+    .localstore-metabox-wrap td.localstore_label {
+        width: 100px;
+    }
+}

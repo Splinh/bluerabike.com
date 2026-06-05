@@ -1,0 +1,204 @@
+<?php
+
+/**
+ * Single Product tabs
+ *
+ * This template can be overridden by copying it to yourtheme/woocommerce/single-product/tabs/tabs.php.
+ *
+ * HOWEVER, on occasion WooCommerce will need to update template files and you
+ * (the theme developer) will need to copy the new files to your theme to
+ * maintain compatibility. We try to do this as little as possible, but it does
+ * happen. When this occurs the version of the template file will be bumped and
+ * the readme will list any important changes.
+ *
+ * @see     https://woocommerce.com/document/template-structure/
+ * @package WooCommerce\Templates
+ */
+
+if (! defined('ABSPATH')) {
+    exit;
+}
+
+global $product;
+
+$ACF                = \HD_Helper::getFields($product->get_id());
+$product_badge      = $ACF['product_badge'] ?? [];
+$ingredients        = $ACF['ingredients'] ?? '';
+$highlights         = $ACF['highlights'] ?? '';
+$indications        = $ACF['indications'] ?? '';
+$target_users       = $ACF['target-users'] ?? '';
+$how_to_use         = $ACF['how-to-use'] ?? '';
+$commitment_returns = $ACF['commitment-returns'] ?? '';
+$attention          = $ACF['attention'] ?? '';
+//$product_sale_extra = $ACF['product_sale_extra'] ?? '';
+
+/**
+ * Filter tabs and allow third parties to add their own.
+ *
+ * Each tab is an array containing title, callback and priority.
+ *
+ * @see woocommerce_default_product_tabs()
+ */
+$product_tabs = apply_filters('woocommerce_product_tabs', array());
+
+if (
+    ! empty($product_tabs) ||
+    $ingredients ||
+    $highlights ||
+    $indications ||
+    $target_users ||
+    $how_to_use ||
+    $commitment_returns ||
+    $attention
+) :
+
+?>
+    <div class="woocommerce-custom-descriptions wc-descriptions">
+
+        <?php if ($ingredients) : ?>
+            <div class="wc-product-row wc-product-ingredients">
+                <p class="h2"><?= __('Thành phần', TEXT_DOMAIN) ?></p>
+                <div class="wc-product-content wc-product-ingredients-content">
+                    <div class="content"><?= $ingredients ?></div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($highlights) : ?>
+            <div class="wc-product-row wc-product-highlight">
+                <p class="h2"><?= __('Thông tin dinh dưỡng', TEXT_DOMAIN) ?></p>
+                <div class="wc-product-content wc-product-highlight-content">
+                    <div class="content"><?= $highlights ?></div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($indications) : ?>
+            <div class="wc-product-row wc-product-indications">
+                <p class="h2"><?= __('Công dụng', TEXT_DOMAIN) ?></p>
+                <div class="wc-product-content wc-product-indications-content">
+                    <div class="content"><?= $indications ?></div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($target_users) : ?>
+            <div class="wc-product-row wc-product-target-users">
+                <p class="h2"><?= __('Đối tượng sử dụng', TEXT_DOMAIN) ?></p>
+                <div class="wc-product-content wc-product-target-users-content">
+                    <div class="content"><?= $target_users ?></div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($how_to_use) : ?>
+            <div class="wc-product-row wc-product-how-to-use">
+                <p class="h2"><?= __('Hướng dẫn sử dụng', TEXT_DOMAIN) ?></p>
+                <div class="wc-product-content wc-product-how-to-use-content">
+                    <div class="content"><?= $how_to_use ?></div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($commitment_returns) : ?>
+            <div class="wc-product-row wc-product-commitment-returns">
+                <p class="h2"><?= __('Cam kết & đổi trả', TEXT_DOMAIN) ?></p>
+                <div class="wc-product-content wc-product-commitment-returns-content">
+                    <div class="content"><?= $commitment_returns ?></div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php if ($attention) : ?>
+            <div class="wc-product-row wc-product-attention">
+                <p class="h2"><?= __('Lưu ý', TEXT_DOMAIN) ?></p>
+                <div class="wc-product-content wc-product-attention-content">
+                    <div class="content"><?= $attention ?></div>
+                </div>
+            </div>
+        <?php endif; ?>
+
+        <?php foreach ($product_tabs as $key => $product_tab) : ?>
+            <div class="wc-product-row wc-product-<?= $key ?>">
+                <p class="h2"><?php echo wp_kses_post($product_tab['title']); ?></p>
+                <div class="wc-product-content wc-product-<?= $key ?>-content">
+
+                    <?php if ('description' === $key && $product_badge) : ?>
+                        <div class="header product-badge">
+                            <?php
+                            foreach ($product_badge as $badge) :
+                                $badge_bgcolor = \HD_Helper::getField('badge_bgcolor', $badge);
+                                $badge_color   = \HD_Helper::getField('badge_color', $badge);
+                                $css           = ! empty($badge_bgcolor) ? 'background-color:' . $badge_bgcolor . ';' : '';
+                                $css           .= ! empty($badge_color) ? 'color:' . $badge_color . ';' : '';
+                                $css           = ! empty($css) ? ' style="' . $css . '"' : '';
+                                echo '<span' . $css . '>' . get_the_title($badge) . '</span>';
+                            endforeach;
+                            ?>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="content">
+                        <?php if (isset($product_tab['callback'])) :
+                            call_user_func($product_tab['callback'], $key, $product_tab);
+                        endif; ?>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+
+        <?php do_action('woocommerce_product_after_tabs'); ?>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const rows = document.querySelectorAll(".woocommerce-custom-descriptions .wc-product-row");
+
+            rows.forEach((row) => {
+                const header = row.querySelector("h2, .h2");
+                const content = row.querySelector(".wc-product-content");
+
+                if (header && content) {
+                    content.style.maxHeight = "0";
+                    content.style.opacity = "0";
+                    content.style.overflow = "hidden";
+                    content.style.visibility = "hidden";
+                    content.style.transition = "max-height 0.4s ease, opacity 0.4s ease, visibility 0.4s ease";
+
+                    header.style.cursor = "pointer";
+
+                    header.addEventListener("click", () => {
+                        const isVisible = content.style.maxHeight !== "0px";
+
+                        if (isVisible) {
+                            content.style.maxHeight = "0";
+                            content.style.opacity = "0";
+                            content.style.visibility = "hidden";
+                            header.classList.remove("active");
+                        } else {
+                            content.style.maxHeight = content.scrollHeight + "px";
+                            content.style.opacity = "1";
+                            content.style.visibility = "visible";
+                            header.classList.add("active");
+                        }
+                    });
+                }
+            });
+
+            const firstRow = document.querySelector(".woocommerce-custom-descriptions .wc-product-row.wc-product-description");
+            if (firstRow) {
+                const firstHeader = firstRow.querySelector("h2, .h2");
+                if (firstHeader) {
+                    setTimeout(() => firstHeader.click(), 0);
+                }
+            }
+
+            window.addEventListener("resize", () => {
+                document.querySelectorAll(".woocommerce-custom-descriptions .wc-product-row .wc-product-content").forEach((c) => {
+                    if (getComputedStyle(c).visibility === "visible") {
+                        c.style.maxHeight = c.scrollHeight + "px";
+                    }
+                });
+            });
+        });
+    </script>
+<?php endif; ?>

@@ -1,0 +1,175 @@
+/**
+ * Cookie Consent Banner Styles
+ * 
+ * Styles for the GDPR cookie consent notification
+ */
+
+.cookie-consent {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 2147483647; // Maximum z-index to stay above Subiz chat
+  background-color: #f5a623;
+  background: linear-gradient(135deg, #f5a623 0%, #f58c00 100%);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  animation: slideUp 0.4s ease-out;
+
+  &__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 80px 0 20px; // Extra right padding to avoid Subiz widget
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+      padding: 0 15px;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: cookieWobble 2s ease-in-out infinite;
+
+    svg {
+      width: 24px;
+      height: 24px;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    min-width: 0;
+  }
+
+  &__text {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #fff;
+    font-weight: 500;
+
+    @media (max-width: 768px) {
+      font-size: 13px;
+    }
+  }
+
+  &__actions {
+    display: flex;
+    gap: 10px;
+    flex-shrink: 0;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      flex-direction: column;
+    }
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    white-space: nowrap;
+
+    @media (max-width: 480px) {
+      width: 100%;
+      padding: 12px 20px;
+    }
+
+    &--info {
+      background-color: transparent;
+      color: #fff;
+      border: 2px solid rgba(255, 255, 255, 0.7);
+
+      &:hover {
+        background-color: rgba(255, 255, 255, 0.15);
+        border-color: #fff;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+
+    &--accept {
+      background-color: #19ac4e;
+      color: #fff;
+      border: 2px solid #19ac4e;
+
+      &:hover {
+        background-color: #148f3f;
+        border-color: #148f3f;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 12px rgba(25, 172, 78, 0.4);
+      }
+    }
+  }
+}
+
+// Animations
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+}
+
+@keyframes cookieWobble {
+  0%,
+  100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(-5deg);
+  }
+  75% {
+    transform: rotate(5deg);
+  }
+}
+
+// When hiding
+.cookie-consent--hiding {
+  animation: slideDown 0.3s ease-in forwards;
+}

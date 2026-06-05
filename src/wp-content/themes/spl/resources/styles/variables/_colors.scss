@@ -1,0 +1,49 @@
+@use '../functions' as func;
+
+//
+// Color
+//
+
+$white: #ffffff !default;
+$black: #000000 !default;
+
+$Primary-01: #1e78c2;
+$Primary-02: #FFDA00;
+$Primary-03: #11283c;
+$Primary-04: #FE7C3A;
+
+$Secondary-01: #c7cfd6;
+$Secondary-02: #2c2e34;
+$Secondary-03: #D31F78;
+$Secondary-04: #FFA2A2;
+
+$blue: #0d6efd !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #d63384 !default;
+$red:  #E60000 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #198754 !default;
+$teal: #20c997 !default;
+$cyan: #0dcaf0 !default;
+
+$primary: $Primary-01 !default;
+$secondary: $Secondary-01 !default;
+$success: $green !default;
+$info: $cyan !default;
+$warning: $yellow !default;
+$alert: $red !default;
+$light: #f8f9fa !default;
+$dark: #212529 !default;
+
+$theme-colors: (
+        'primary': $primary,
+        'secondary': $secondary,
+        'success': $success,
+        'info': $info,
+        'warning': $warning,
+        'alert': $alert,
+        'light': $light,
+        'dark': $dark,
+) !default;

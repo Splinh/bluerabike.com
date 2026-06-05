@@ -1,0 +1,63 @@
+{
+  "provinces": [
+    {
+      "code": "79",
+      "name": "Hồ Chí Minh",
+      "slug": "ho-chi-minh",
+      "districts": [
+        {
+          "code": "760",
+          "name": "Quận 1",
+          "slug": "quan-1"
+        },
+        {
+          "code": "769",
+          "name": "Quận 7",
+          "slug": "quan-7"
+        },
+        {
+          "code": "774",
+          "name": "Tân Phú",
+          "slug": "tan-phu"
+        },
+        {
+          "code": "777",
+          "name": "Bình Tân",
+          "slug": "binh-tan"
+        },
+        {
+          "code": "785",
+          "name": "Bình Chánh",
+          "slug": "binh-chanh"
+        }
+      ]
+    },
+    {
+      "code": "75",
+      "name": "Đồng Nai",
+      "slug": "dong-nai",
+      "districts": [
+        {
+          "code": "731",
+          "name": "Biên Hòa",
+          "slug": "bien-hoa"
+        },
+        {
+          "code": "732",
+          "name": "Long Khánh",
+          "slug": "long-khanh"
+        },
+        {
+          "code": "734",
+          "name": "Trảng Bom",
+          "slug": "trang-bom"
+        },
+        {
+          "code": "735",
+          "name": "Vĩnh Cửu",
+          "slug": "vinh-cuu"
+        }
+      ]
+    }
+  ]
+}

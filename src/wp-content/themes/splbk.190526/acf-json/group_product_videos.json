@@ -1,0 +1,106 @@
+{
+  "key": "group_product_videos",
+  "title": "Product Videos (YouTube & TikTok)",
+  "fields": [
+    {
+      "key": "field_youtube_videos",
+      "label": "YouTube Videos",
+      "name": "youtube_videos",
+      "aria-label": "",
+      "type": "repeater",
+      "instructions": "Thêm các video YouTube (hiển thị 3 video/hàng)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "table",
+      "pagination": 0,
+      "min": 0,
+      "max": 0,
+      "collapsed": "",
+      "button_label": "Thêm Video YouTube",
+      "rows_per_page": 20,
+      "sub_fields": [
+        {
+          "key": "field_youtube_url",
+          "label": "YouTube URL",
+          "name": "youtube_url",
+          "aria-label": "",
+          "type": "url",
+          "instructions": "Dán link YouTube (VD: https://www.youtube.com/watch?v=xxxxx hoặc https://youtu.be/xxxxx)",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "placeholder": "https://www.youtube.com/watch?v=..."
+        }
+      ]
+    },
+    {
+      "key": "field_tiktok_videos",
+      "label": "TikTok Videos",
+      "name": "tiktok_videos",
+      "aria-label": "",
+      "type": "repeater",
+      "instructions": "Thêm các video TikTok (hiển thị 4 video/hàng)",
+      "required": 0,
+      "conditional_logic": 0,
+      "wrapper": {
+        "width": "",
+        "class": "",
+        "id": ""
+      },
+      "layout": "table",
+      "pagination": 0,
+      "min": 0,
+      "max": 0,
+      "collapsed": "",
+      "button_label": "Thêm Video TikTok",
+      "rows_per_page": 20,
+      "sub_fields": [
+        {
+          "key": "field_tiktok_url",
+          "label": "TikTok URL",
+          "name": "tiktok_url",
+          "aria-label": "",
+          "type": "url",
+          "instructions": "Dán link TikTok (VD: https://www.tiktok.com/@username/video/1234567890)",
+          "required": 1,
+          "conditional_logic": 0,
+          "wrapper": {
+            "width": "",
+            "class": "",
+            "id": ""
+          },
+          "default_value": "",
+          "placeholder": "https://www.tiktok.com/@username/video/..."
+        }
+      ]
+    }
+  ],
+  "location": [
+    [
+      {
+        "param": "post_type",
+        "operator": "==",
+        "value": "product"
+      }
+    ]
+  ],
+  "menu_order": 10,
+  "position": "normal",
+  "style": "default",
+  "label_placement": "top",
+  "instruction_placement": "label",
+  "hide_on_screen": "",
+  "active": true,
+  "description": "Thêm nhiều video YouTube và TikTok vào tab Video của sản phẩm",
+  "show_in_rest": 0
+}

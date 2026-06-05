@@ -1,0 +1,71 @@
+// Section: Banner Home
+// Used by: home_banner.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+.section-banner-home {
+  width: 100%;
+
+  .container.full {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .item {
+    width: 100%;
+
+    > a {
+      display: block;
+      width: 100%;
+    }
+
+    .home-img {
+      height: auto;
+      aspect-ratio: 15 / 6;
+      overflow: hidden;
+      width: 100%;
+
+      @include mixin.mq-max(lg) {
+        height: 60vh;
+      }
+
+      @include mixin.mq-max(sm) {
+        height: auto;
+        aspect-ratio: 4 / 3;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  span.swiper-pagination-bullet {
+    height: 5px;
+    width: 50px;
+    border-radius: 2px;
+    transform: scale(1);
+  }
+
+  .swiper-pagination {
+    bottom: 25px;
+  }
+
+  // Responsive show/hide for desktop vs mobile banners
+  .hide-on-mobile {
+    @include mixin.mq-max() {
+      display: none !important;
+    }
+  }
+
+  .hide-on-desktop {
+    display: none !important;
+
+    @include mixin.mq-max() {
+      display: block !important;
+    }
+  }
+}

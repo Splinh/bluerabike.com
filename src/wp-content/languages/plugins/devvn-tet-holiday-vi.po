@@ -1,0 +1,118 @@
+# Translation of Plugins - DevVN &#8211; Trang trí Tết Việt Nam - Stable (latest release) in Vietnamese
+# This file is distributed under the same license as the Plugins - DevVN &#8211; Trang trí Tết Việt Nam - Stable (latest release) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2024-01-10 05:20:42+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: GlotPress/4.0.3\n"
+"Language: vi_VN\n"
+"Project-Id-Version: Plugins - DevVN &#8211; Trang trí Tết Việt Nam - Stable (latest release)\n"
+
+#: devvn-tet-holiday.php:995
+msgid "Z-index"
+msgstr "Z-index"
+
+#: devvn-tet-holiday.php:988
+msgid "Container Width"
+msgstr "Container Width"
+
+#: devvn-tet-holiday.php:981
+msgid "Số hoa trên Mobile"
+msgstr "Số hoa trên Mobile"
+
+#: devvn-tet-holiday.php:974
+msgid "Số hoa trên PC"
+msgstr "Số hoa trên PC"
+
+#: devvn-tet-holiday.php:933
+msgid "Bật hoa rơi"
+msgstr "Bật hoa rơi"
+
+#: devvn-tet-holiday.php:926
+msgid "Thời gian bắn pháo hoa"
+msgstr "Thời gian bắn pháo hoa"
+
+#: devvn-tet-holiday.php:918
+msgid "Âm thanh khi bắn pháo hoa"
+msgstr "Âm thanh khi bắn pháo hoa"
+
+#: devvn-tet-holiday.php:911
+msgid "Tốc độ bắn trên Mobile"
+msgstr "Tốc độ bắn trên Mobile"
+
+#: devvn-tet-holiday.php:904
+msgid "Tốc độ bắn trên PC"
+msgstr "Tốc độ bắn trên PC"
+
+#: devvn-tet-holiday.php:898
+msgid "Màu pháo hoa"
+msgstr "Màu pháo hoa"
+
+#: devvn-tet-holiday.php:891
+msgid "Số pháo hoa bắn cùng lúc"
+msgstr "Số pháo hoa bắn cùng lúc"
+
+#: devvn-tet-holiday.php:884
+msgid "Tốc độ bắn pháo hoa"
+msgstr "Tốc độ bắn pháo hoa"
+
+#: devvn-tet-holiday.php:868
+msgid "Bật pháo hoa"
+msgstr "Bật pháo hoa"
+
+#: devvn-tet-holiday.php:849
+msgid "Chọn kiểu chân trang"
+msgstr "Chọn kiểu chân trang"
+
+#: devvn-tet-holiday.php:840
+msgid "Chọn ảnh bên phải"
+msgstr "Chọn ảnh bên phải"
+
+#: devvn-tet-holiday.php:830
+msgid "Chọn ảnh bên trái"
+msgstr "Chọn ảnh bên trái"
+
+#: devvn-tet-holiday.php:819
+msgid "Hình ảnh 2 bên"
+msgstr "Hình ảnh 2 bên"
+
+#: devvn-tet-holiday.php:780
+msgid "Chọn kiểu câu đối"
+msgstr "Chọn kiểu câu đối"
+
+#: devvn-tet-holiday.php:639 devvn-tet-holiday.php:640
+#: devvn-tet-holiday.php:771
+msgid "Trang trí Tết"
+msgstr "Trang trí Tết"
+
+#: devvn-tet-holiday.php:528
+msgid "Settings"
+msgstr "Settings"
+
+#. Author URI of the plugin
+#: devvn-tet-holiday.php
+msgid "https://levantoan.com"
+msgstr "https://levantoan.com"
+
+#. Author of the plugin
+#: devvn-tet-holiday.php
+msgid "Lê Văn Toản"
+msgstr "Lê Văn Toản"
+
+#. Description of the plugin
+#: devvn-tet-holiday.php
+msgid "Trang trí Tết Việt Nam bằng câu đối, hoa đào, hoa mai, pháo hoa và các hỉnh ảnh tượng trưng cho ngày Tết truyền thống của Việt Nam"
+msgstr "Trang trí Tết Việt Nam bằng câu đối, hoa đào, hoa mai, pháo hoa và các hỉnh ảnh tượng trưng cho ngày Tết truyền thống của Việt Nam"
+
+#. Plugin URI of the plugin
+#: devvn-tet-holiday.php
+msgid "https://levantoan.com/san-pham/"
+msgstr "https://levantoan.com/san-pham/"
+
+#. Plugin Name of the plugin
+#: devvn-tet-holiday.php
+msgid "DevVN - Trang trí Tết Việt Nam"
+msgstr "DevVN - Trang trí Tết Việt Nam"

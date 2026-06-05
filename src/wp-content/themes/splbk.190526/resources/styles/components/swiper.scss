@@ -1,0 +1,84 @@
+@use '../variables' as vars;
+@use '../functions' as func;
+@use '../mixins' as mixin;
+
+// Modular Swiper CSS imports (tree-shaking)
+@use 'swiper/css' as swiper-core;
+@use 'swiper/css/navigation' as swiper-nav;
+@use 'swiper/css/pagination' as swiper-pagination;
+@use 'swiper/css/scrollbar' as swiper-scrollbar;
+@use 'swiper/css/thumbs' as swiper-thumbs;
+@use 'swiper/css/grid' as swiper-grid;
+@use 'swiper/css/free-mode' as swiper-freemode;
+@use 'swiper/css/effect-fade' as swiper-fade;
+
+//
+// Custom CSS
+//
+
+:root {
+    --swiper-navigation-size: 38px;
+    --swiper-navigation-sides-offset: 10px;
+    --swiper-navigation-color: #{vars.$body-color};
+    --swiper-pagination-color: #{vars.$body-color};
+    --swiper-pagination-bottom: 15px;
+    --swiper-pagination-top: auto;
+}
+
+.swiper-container {
+    position: relative;
+    z-index: 1;
+}
+
+.swiper-marquee {
+    &.swiper-wrapper {
+        transition-timing-function: linear !important;
+        touch-action: manipulation;
+    }
+}
+
+.swiper-controls {
+    .swiper-button {
+        width: var(--swiper-navigation-size);
+
+        &::after {
+            display: none;
+        }
+
+        &::before {
+            color: #fff;
+            width: 100%;
+            height: 100%;
+            border: 1px solid rgba(61, 34, 17, 0.7);
+            background: rgba(61, 34, 17, 0.7);
+            border-radius: 50%;
+            aspect-ratio: 1 / 1;
+            opacity: 0;
+            transition: 0.3s;
+            font-weight: 400;
+            @include mixin.flex-center;
+            @include mixin.clamp-font-size(16px, 18px, 1);
+        }
+
+        &:hover {
+            &::before {
+                opacity: 1;
+                color: #fff;
+                background: vars.$body-color;
+                border-color: vars.$body-color;
+            }
+        }
+    }
+}
+
+.swiper-container {
+    &:hover {
+        .swiper-controls {
+            .swiper-button {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

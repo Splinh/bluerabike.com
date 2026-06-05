@@ -1,0 +1,98 @@
+// Section: Slide Shadow (Featured Products)
+// Used by: home_feature_products.php, home_sale_products.php
+
+@use "../variables" as vars;
+@use "../functions" as func;
+@use "../mixins" as mixin;
+
+.section.section-slide-shadow {
+  .group-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    @include mixin.mq-max() {
+      flex-direction: column;
+    }
+    .heading-title {
+      margin-bottom: 0;
+    }
+    .view_more {
+      color: #737373;
+      font-size: 18px;
+    }
+  }
+  .swiper-container {
+    margin: -6px;
+
+    .swiper {
+      padding: 6px;
+      .swiper-wrapper {
+        display: flex;
+        gap: 30px;
+        @include mixin.mq-max(md) {
+          gap: 0;
+        }
+        .swiper-slide {
+          width: calc(100% / 3 - 20px);
+          @include mixin.mq-max(md) {
+            width: 100%;
+          }
+        }
+      }
+      .product-item {
+        .custom-product-wrapper {
+          border-radius: 25px;
+          overflow: hidden;
+          .product-actions {
+            bottom: 50px;
+          }
+        }
+        .all_content_product {
+          background: #fff;
+          border-radius: 20px;
+          padding: 10px;
+          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+          transition: all 0.3s ease;
+          width: 90%;
+          margin: 0 auto;
+          transform: translateY(-30px);
+          .product-details {
+            h2.woocommerce-loop-product__title {
+              font-size: 22px;
+              text-align: center;
+              margin-bottom: 10px;
+              &:hover {
+                color: vars.$Primary-01;
+              }
+              @include mixin.mq-max(sm) {
+                font-size: 18px;
+              }
+            }
+            .price {
+              justify-content: center;
+              flex-direction: row;
+              del {
+                border-right: 2px solid #000;
+                padding-right: 10px;
+                color: #000;
+                text-decoration: line-through;
+              }
+
+              .woocommerce-Price-amount {
+                font-size: 19px;
+              }
+            }
+          }
+          .product-specs {
+            display: flex;
+            justify-content: center;
+            @include mixin.mq-max(sm) {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}

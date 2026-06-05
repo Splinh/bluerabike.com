@@ -1,0 +1,361 @@
+/* ── AiEbike Popup Form ── */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap');
+
+:root {
+    --aepf-orange:      #1e78c2;
+    --aepf-orange-dark: #0d5bab;
+    --aepf-bg:          #f0f6fc;
+    --aepf-text:        #11283c;
+    --aepf-radius:      16px;
+    --aepf-shadow:      0 24px 64px rgba(0,0,0,.35);
+    --aepf-font:        'Be Vietnam Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+}
+
+/* ── Overlay ─────────────────────────────────────────────────────────────────
+   Luôn display:flex, ẩn/hiện qua opacity+visibility+pointer-events.
+   Không dùng display:none để tránh conflict với theme và để transition hoạt động.
+*/
+.aepf-overlay {
+    position: fixed !important;
+    inset: 0 !important;
+    z-index: 999999 !important;
+    background: rgba(0, 0, 0, .55);
+    backdrop-filter: blur(4px);
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-family: var(--aepf-font) !important;
+
+    /* Trạng thái mặc định: ẩn hoàn toàn, không block click */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .28s ease, visibility .28s ease;
+}
+
+/* Trạng thái mở: hiện, cho phép click */
+.aepf-overlay.aepf-open {
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+}
+
+/* ── Popup box ───────────────────────────────────────────────────────────────*/
+.aepf-popup {
+    background: var(--aepf-bg);
+    border-radius: var(--aepf-radius);
+    box-shadow: var(--aepf-shadow);
+    width: 100%;
+    max-width: 880px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    transform: translateY(32px) scale(.97);
+    transition: transform .32s cubic-bezier(.34, 1.56, .64, 1);
+    font-family: var(--aepf-font) !important;
+}
+.aepf-overlay.aepf-open .aepf-popup {
+    transform: translateY(0) scale(1);
+}
+
+/* Inline mode (shortcode [aepf_form]) */
+.aepf-inline-wrap {
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.aepf-popup--inline {
+    max-height: none !important;
+    overflow-y: visible !important;
+    transform: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+/* Bỏ nền cam cột trái, bỏ nền kem cột phải — để trang tự quyết màu */
+.aepf-popup--inline .aepf-left {
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+.aepf-popup--inline .aepf-heading { color: var(--aepf-orange) !important; }
+.aepf-popup--inline .aepf-desc    { color: var(--aepf-text) !important; }
+.aepf-popup--inline .aepf-right {
+    background: transparent !important;
+    border-radius: 0 !important;
+}
+
+/* ── Close button ───────────────────────────────────────────────────────────*/
+.aepf-close {
+    position: absolute !important;
+    top: 14px !important;
+    right: 16px !important;
+    background: rgba(0, 0, 0, .15) !important;
+    border: none !important;
+    border-radius: 50% !important;
+    width: 34px !important;
+    height: 34px !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    color: #fff !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transition: background .2s, transform .2s !important;
+    z-index: 10 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    font-family: Arial, sans-serif !important;
+}
+.aepf-close:hover {
+    background: rgba(0, 0, 0, .35) !important;
+    transform: scale(1.12) !important;
+}
+
+/* ── Inner grid ─────────────────────────────────────────────────────────────*/
+.aepf-inner {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+}
+
+/* ── Left column ────────────────────────────────────────────────────────────*/
+.aepf-left {
+    background: var(--aepf-orange);
+    border-radius: var(--aepf-radius) 0 0 var(--aepf-radius);
+    padding: 48px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+/* Image mode: hình cover toàn cột, không padding */
+.aepf-left--image {
+    background-color: #111;
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+    padding: 0 !important;
+    min-height: 320px;
+}
+.aepf-heading {
+    font-family: var(--aepf-font) !important;
+    font-size: clamp(1.2rem, 2.6vw, 1.6rem) !important;
+    font-weight: 800 !important;
+    color: #fff !important;
+    line-height: 1.35 !important;
+    margin: 0 0 18px !important;
+}
+.aepf-desc {
+    font-family: var(--aepf-font) !important;
+    font-size: 0.93rem !important;
+    color: rgba(255, 255, 255, .92) !important;
+    line-height: 1.75 !important;
+}
+
+/* ── Right column ───────────────────────────────────────────────────────────*/
+.aepf-right {
+    padding: 32px 36px 36px;
+    background: var(--aepf-bg);
+    border-radius: 0 var(--aepf-radius) var(--aepf-radius) 0;
+    overflow-y: auto;
+}
+
+/* Form title */
+.aepf-form-title {
+    font-family: var(--aepf-font) !important;
+    font-size: .78rem !important;
+    font-weight: 700 !important;
+    letter-spacing: .1em !important;
+    color: var(--aepf-orange) !important;
+    text-transform: uppercase !important;
+    margin: 0 0 10px !important;
+}
+
+/* 2-column row */
+.aepf-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 14px;
+}
+
+/* Required asterisk */
+.aepf-req { color: #e53e3e; margin-left: 2px; }
+
+/* ── Form fields ────────────────────────────────────────────────────────────*/
+.aepf-right .aepf-field,
+.aepf-form .aepf-field { margin-bottom: 9px; }
+
+.aepf-right label,
+.aepf-form label {
+    display: block !important;
+    font-family: var(--aepf-font) !important;
+    font-size: .8rem !important;
+    font-weight: 600 !important;
+    color: var(--aepf-text) !important;
+    margin-bottom: 4px !important;
+}
+
+.aepf-right input,
+.aepf-right textarea,
+.aepf-form input,
+.aepf-form textarea {
+    font-family: var(--aepf-font) !important;
+    width: 100% !important;
+    border: 1.5px solid #ddd !important;
+    border-radius: 6px !important;
+    padding: 8px 10px !important;
+    font-size: .88rem !important;
+    color: #333 !important;
+    background: #fff !important;
+    box-sizing: border-box !important;
+    transition: border-color .2s, box-shadow .2s !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+.aepf-right input:focus,
+.aepf-right textarea:focus,
+.aepf-form input:focus,
+.aepf-form textarea:focus {
+    border-color: var(--aepf-orange) !important;
+    box-shadow: 0 0 0 3px rgba(30, 120, 194, .18) !important;
+}
+.aepf-right textarea,
+.aepf-form textarea { resize: vertical; min-height: 58px; }
+
+/* ── Submit button ──────────────────────────────────────────────────────────*/
+.aepf-submit {
+    font-family: var(--aepf-font) !important;
+    background: var(--aepf-orange) !important;
+    color: #fff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    padding: 12px 36px !important;
+    font-size: .97rem !important;
+    font-weight: 700 !important;
+    letter-spacing: .04em !important;
+    cursor: pointer !important;
+    transition: background .2s, transform .15s, box-shadow .2s !important;
+    box-shadow: 0 4px 14px rgba(30, 120, 194, .4) !important;
+    margin-top: 4px !important;
+    width: 100% !important;
+}
+.aepf-submit:hover {
+    background: var(--aepf-orange-dark) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 20px rgba(30, 120, 194, .5) !important;
+}
+.aepf-submit:active  { transform: translateY(0) !important; }
+.aepf-submit:disabled { opacity: .65 !important; cursor: not-allowed !important; transform: none !important; }
+
+/* ── Message ────────────────────────────────────────────────────────────────*/
+.aepf-msg {
+    font-family: var(--aepf-font) !important;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-size: .88rem;
+    margin-bottom: 12px;
+    display: none;
+}
+.aepf-msg.success { background: #e6f9ed; color: #1a7a3e; border: 1px solid #a3e4b7; }
+.aepf-msg.error   { background: #fff0f0; color: #b91c1c; border: 1px solid #fca5a5; }
+
+/* ── Trigger button (shortcode) ─────────────────────────────────────────────*/
+.aepf-trigger-btn {
+    font-family: var(--aepf-font) !important;
+    background: var(--aepf-orange);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 13px 28px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background .2s, transform .15s, box-shadow .2s;
+    box-shadow: 0 4px 14px rgba(30, 120, 194, .4);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.aepf-trigger-btn:hover {
+    background: var(--aepf-orange-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(30, 120, 194, .5);
+}
+
+/* ── Select custom ──────────────────────────────────────────────────────────*/
+.aepf-select-wrap {
+    position: relative;
+}
+.aepf-select-wrap::after {
+    content: '';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid var(--aepf-orange);
+    pointer-events: none;
+}
+.aepf-right select,
+.aepf-form select {
+    font-family: var(--aepf-font) !important;
+    width: 100% !important;
+    border: 1.5px solid #ddd !important;
+    border-radius: 6px !important;
+    padding: 8px 26px 8px 10px !important;
+    font-size: .88rem !important;
+    color: #333 !important;
+    background: #fff !important;
+    box-sizing: border-box !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    cursor: pointer !important;
+    transition: border-color .2s, box-shadow .2s !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+}
+.aepf-right select:focus,
+.aepf-form select:focus {
+    border-color: var(--aepf-orange) !important;
+    box-shadow: 0 0 0 3px rgba(30, 120, 194, .18) !important;
+    outline: none !important;
+}
+.aepf-right select option[value=""],
+.aepf-form select option[value=""] { color: #999; }
+
+/* ── Responsive ─────────────────────────────────────────────────────────────*/
+@media (max-width: 640px) {
+    .aepf-inner {
+        grid-template-columns: 1fr;
+    }
+    .aepf-row { grid-template-columns: 1fr; gap: 0; }
+
+    /* Hình/text (left) làm banner lên trước, Form (right) xuống dưới */
+    .aepf-left  { order: 1; }
+    .aepf-right { order: 2; }
+
+    .aepf-left {
+        border-radius: var(--aepf-radius) var(--aepf-radius) 0 0;
+        padding: 28px 24px 24px;
+    }
+    
+    /* Ẩn cột hình ảnh trên mobile theo yêu cầu */
+    .aepf-left--image {
+        display: none !important;
+    }
+    
+    /* Khi ẩn hình ảnh, form đăng ký bên phải sẽ nhận bo tròn toàn bộ 4 góc */
+    .aepf-left--image + .aepf-right {
+        border-radius: var(--aepf-radius) !important;
+    }
+
+    .aepf-right {
+        border-radius: 0 0 var(--aepf-radius) var(--aepf-radius);
+        padding: 24px 20px 20px;
+    }
+}
