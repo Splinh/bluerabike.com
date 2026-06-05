@@ -9,6 +9,12 @@
 
 \defined('ABSPATH') || die;
 
+// TEMP DEBUG — remove after fixing
+if (isset($_GET['sddebug'])) {
+    ini_set('display_errors', 1);
+    error_reporting(E_ALL);
+}
+
 get_header();
 
 if (have_posts()) {
