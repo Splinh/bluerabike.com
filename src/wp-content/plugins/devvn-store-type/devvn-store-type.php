@@ -15,14 +15,15 @@ if (!defined('ABSPATH')) exit;
 //     Filter này bật lại để có URL /cua-hang/ten-cua-hang/
 // ════════════════════════════════════════════════════════════
 
-add_filter('register_post_type_args', 'sdt_enable_store_single_page', 99, 2);
-function sdt_enable_store_single_page($args, $post_type)
-{
-    if ($post_type === 'local_store') {
-        $args['publicly_queryable'] = true;
-    }
-    return $args;
-}
+// TEMPORARILY DISABLED — investigating critical error
+// add_filter('register_post_type_args', 'sdt_enable_store_single_page', 99, 2);
+// function sdt_enable_store_single_page($args, $post_type)
+// {
+//     if ($post_type === 'local_store') {
+//         $args['publicly_queryable'] = true;
+//     }
+//     return $args;
+// }
 
 // ════════════════════════════════════════════════════════════
 //  1. ĐĂNG KÝ TAXONOMY "store_type"
