@@ -115,7 +115,9 @@ final class Theme
         if ( ! defined( 'SPLAT_URL' ) ) {
             define( 'SPLAT_URL', get_template_directory_uri() . '/inc/Modules/SPLAT/' );
         }
-        \SPLAT\Plugin::bootInstance();
+        if ( class_exists( '\\SPLAT\\Plugin' ) ) {
+            \SPLAT\Plugin::bootInstance();
+        }
 
         // PLLModule: replaces polylang-wc (WC integration) and polylang-pro features
         // Guards inside PLLModule auto-skip WC features if polylang-wc is still active,
