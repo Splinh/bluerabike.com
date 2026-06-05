@@ -11,197 +11,197 @@
     "file": "js/vendor-swiper.js",
     "name": "vendor-swiper"
   },
-  "src/wp-content/themes/spl/resources/scripts/admin.js": {
+  "resources/scripts/admin.js": {
     "file": "js/admin.js",
     "name": "admin",
-    "src": "src/wp-content/themes/spl/resources/scripts/admin.js",
+    "src": "resources/scripts/admin.js",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/scripts/components/home.js": {
+  "resources/scripts/components/home.js": {
     "file": "js/components/home.js",
     "name": "components/home",
-    "src": "src/wp-content/themes/spl/resources/scripts/components/home.js",
+    "src": "resources/scripts/components/home.js",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/scripts/components/preload-polyfill.js": {
+  "resources/scripts/components/preload-polyfill.js": {
     "file": "js/components/preload-polyfill.js",
     "name": "components/preload-polyfill",
-    "src": "src/wp-content/themes/spl/resources/scripts/components/preload-polyfill.js",
+    "src": "resources/scripts/components/preload-polyfill.js",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/scripts/components/social-share.js": {
+  "resources/scripts/components/social-share.js": {
     "file": "js/components/social-share.js",
     "name": "components/social-share",
-    "src": "src/wp-content/themes/spl/resources/scripts/components/social-share.js",
+    "src": "resources/scripts/components/social-share.js",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/scripts/components/store-detail.js": {
+  "resources/scripts/components/store-detail.js": {
     "file": "js/components/store-detail.js",
     "name": "components/store-detail",
-    "src": "src/wp-content/themes/spl/resources/scripts/components/store-detail.js",
+    "src": "resources/scripts/components/store-detail.js",
     "isEntry": true,
     "imports": [
       "_vendor-swiper.js"
     ]
   },
-  "src/wp-content/themes/spl/resources/scripts/components/swiper.js": {
+  "resources/scripts/components/swiper.js": {
     "file": "js/components/swiper.js",
     "name": "components/swiper",
-    "src": "src/wp-content/themes/spl/resources/scripts/components/swiper.js",
+    "src": "resources/scripts/components/swiper.js",
     "isEntry": true,
     "imports": [
       "_vendor-swiper.js"
     ]
   },
-  "src/wp-content/themes/spl/resources/scripts/components/woocommerce.js": {
+  "resources/scripts/components/woocommerce.js": {
     "file": "js/components/woocommerce.js",
     "name": "components/woocommerce",
-    "src": "src/wp-content/themes/spl/resources/scripts/components/woocommerce.js",
+    "src": "resources/scripts/components/woocommerce.js",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/scripts/index.js": {
+  "resources/scripts/index.js": {
     "file": "js/index.js",
     "name": "index",
-    "src": "src/wp-content/themes/spl/resources/scripts/index.js",
+    "src": "resources/scripts/index.js",
     "isEntry": true,
     "imports": [
       "_vendor-foundation.js",
-      "src/wp-content/themes/spl/resources/scripts/components/social-share.js"
+      "resources/scripts/components/social-share.js"
     ],
     "css": [
       "css/_vendor.css"
     ]
   },
-  "src/wp-content/themes/spl/resources/scripts/popup-promo.js": {
+  "resources/scripts/popup-promo.js": {
     "file": "js/popup-promo.js",
     "name": "popup-promo",
-    "src": "src/wp-content/themes/spl/resources/scripts/popup-promo.js",
+    "src": "resources/scripts/popup-promo.js",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/scripts/seasonal-effect.js": {
+  "resources/scripts/seasonal-effect.js": {
     "file": "js/seasonal-effect.js",
     "name": "seasonal-effect",
-    "src": "src/wp-content/themes/spl/resources/scripts/seasonal-effect.js",
+    "src": "resources/scripts/seasonal-effect.js",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/admin.scss": {
+  "resources/styles/admin.scss": {
     "file": "css/admin.css",
-    "src": "src/wp-content/themes/spl/resources/styles/admin.scss",
+    "src": "resources/styles/admin.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/components/about.scss": {
+  "resources/styles/components/about.scss": {
     "file": "css/components/about.css",
-    "src": "src/wp-content/themes/spl/resources/styles/components/about.scss",
+    "src": "resources/styles/components/about.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/components/cohoi.scss": {
+  "resources/styles/components/cohoi.scss": {
     "file": "css/components/cohoi.css",
-    "src": "src/wp-content/themes/spl/resources/styles/components/cohoi.scss",
+    "src": "resources/styles/components/cohoi.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/components/home.scss": {
+  "resources/styles/components/home.scss": {
     "file": "css/components/home.css",
-    "src": "src/wp-content/themes/spl/resources/styles/components/home.scss",
+    "src": "resources/styles/components/home.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/components/landing-cohoi.scss": {
+  "resources/styles/components/landing-cohoi.scss": {
     "file": "css/components/landing-cohoi.css",
-    "src": "src/wp-content/themes/spl/resources/styles/components/landing-cohoi.scss",
+    "src": "resources/styles/components/landing-cohoi.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/components/swiper.scss": {
+  "resources/styles/components/swiper.scss": {
     "file": "css/components/swiper.css",
-    "src": "src/wp-content/themes/spl/resources/styles/components/swiper.scss",
+    "src": "resources/styles/components/swiper.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/components/woocommerce.scss": {
+  "resources/styles/components/woocommerce.scss": {
     "file": "css/components/woocommerce.css",
-    "src": "src/wp-content/themes/spl/resources/styles/components/woocommerce.scss",
+    "src": "resources/styles/components/woocommerce.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/editor-style.scss": {
+  "resources/styles/editor-style.scss": {
     "file": "css/editor-style.css",
-    "src": "src/wp-content/themes/spl/resources/styles/editor-style.scss",
+    "src": "resources/styles/editor-style.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/index.scss": {
+  "resources/styles/index.scss": {
     "file": "css/index.css",
-    "src": "src/wp-content/themes/spl/resources/styles/index.scss",
+    "src": "resources/styles/index.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/popup-promo.scss": {
+  "resources/styles/popup-promo.scss": {
     "file": "css/popup-promo.css",
-    "src": "src/wp-content/themes/spl/resources/styles/popup-promo.scss",
+    "src": "resources/styles/popup-promo.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/seasonal-effect.scss": {
+  "resources/styles/seasonal-effect.scss": {
     "file": "css/seasonal-effect.css",
-    "src": "src/wp-content/themes/spl/resources/styles/seasonal-effect.scss",
+    "src": "resources/styles/seasonal-effect.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-banner.scss": {
+  "resources/styles/sections/section-banner.scss": {
     "file": "css/sections/section-banner.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-banner.scss",
+    "src": "resources/styles/sections/section-banner.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-broadcast-banner.scss": {
+  "resources/styles/sections/section-broadcast-banner.scss": {
     "file": "css/sections/section-broadcast-banner.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-broadcast-banner.scss",
+    "src": "resources/styles/sections/section-broadcast-banner.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-cta.scss": {
+  "resources/styles/sections/section-cta.scss": {
     "file": "css/sections/section-cta.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-cta.scss",
+    "src": "resources/styles/sections/section-cta.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-doitac.scss": {
+  "resources/styles/sections/section-doitac.scss": {
     "file": "css/sections/section-doitac.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-doitac.scss",
+    "src": "resources/styles/sections/section-doitac.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-form.scss": {
+  "resources/styles/sections/section-form.scss": {
     "file": "css/sections/section-form.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-form.scss",
+    "src": "resources/styles/sections/section-form.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-latest-news.scss": {
+  "resources/styles/sections/section-latest-news.scss": {
     "file": "css/sections/section-latest-news.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-latest-news.scss",
+    "src": "resources/styles/sections/section-latest-news.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-map.scss": {
+  "resources/styles/sections/section-map.scss": {
     "file": "css/sections/section-map.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-map.scss",
+    "src": "resources/styles/sections/section-map.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-product-cat.scss": {
+  "resources/styles/sections/section-product-cat.scss": {
     "file": "css/sections/section-product-cat.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-product-cat.scss",
+    "src": "resources/styles/sections/section-product-cat.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-products-new.scss": {
+  "resources/styles/sections/section-products-new.scss": {
     "file": "css/sections/section-products-new.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-products-new.scss",
+    "src": "resources/styles/sections/section-products-new.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-products.scss": {
+  "resources/styles/sections/section-products.scss": {
     "file": "css/sections/section-products.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-products.scss",
+    "src": "resources/styles/sections/section-products.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-slide-shadow.scss": {
+  "resources/styles/sections/section-slide-shadow.scss": {
     "file": "css/sections/section-slide-shadow.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-slide-shadow.scss",
+    "src": "resources/styles/sections/section-slide-shadow.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-store-detail.scss": {
+  "resources/styles/sections/section-store-detail.scss": {
     "file": "css/sections/section-store-detail.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-store-detail.scss",
+    "src": "resources/styles/sections/section-store-detail.scss",
     "isEntry": true
   },
-  "src/wp-content/themes/spl/resources/styles/sections/section-tabs.scss": {
+  "resources/styles/sections/section-tabs.scss": {
     "file": "css/sections/section-tabs.css",
-    "src": "src/wp-content/themes/spl/resources/styles/sections/section-tabs.scss",
+    "src": "resources/styles/sections/section-tabs.scss",
     "isEntry": true
   }
 }
