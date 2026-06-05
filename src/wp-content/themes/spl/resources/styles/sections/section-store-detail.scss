@@ -9,18 +9,18 @@
 // ── Design Tokens (CSS Custom Properties) ──
 :root {
   --sd-font: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, Ubuntu, Arial, sans-serif;
-  --sd-text: vars.$Primary-03;       // #11283c
+  --sd-text: #{vars.$Primary-03};       // #11283c
   --sd-text-muted: #5a6d7e;
   --sd-text-light: #8a9bae;
   --sd-surface: #f5f7fa;
   --sd-surface-card: #ffffff;
-  --sd-accent: vars.$Primary-01;     // #1e78c2
+  --sd-accent: #{vars.$Primary-01};     // #1e78c2
   --sd-accent-hover: #155fa0;
   --sd-green: #1b7a3d;
   --sd-green-hover: #145f2e;
   --sd-orange: #d4600a;
   --sd-orange-hover: #b54f08;
-  --sd-border: vars.$Secondary-01;   // #c7cfd6
+  --sd-border: #{vars.$Secondary-01};   // #c7cfd6
   --sd-radius-sm: 4px;
   --sd-radius-md: 8px;
   --sd-radius-lg: 12px;

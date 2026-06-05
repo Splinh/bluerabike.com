@@ -35,6 +35,15 @@
     "src": "src/wp-content/themes/spl/resources/scripts/components/social-share.js",
     "isEntry": true
   },
+  "src/wp-content/themes/spl/resources/scripts/components/store-detail.js": {
+    "file": "js/components/store-detail.js",
+    "name": "components/store-detail",
+    "src": "src/wp-content/themes/spl/resources/scripts/components/store-detail.js",
+    "isEntry": true,
+    "imports": [
+      "_vendor-swiper.js"
+    ]
+  },
   "src/wp-content/themes/spl/resources/scripts/components/swiper.js": {
     "file": "js/components/swiper.js",
     "name": "components/swiper",
@@ -183,6 +192,11 @@
   "src/wp-content/themes/spl/resources/styles/sections/section-slide-shadow.scss": {
     "file": "css/sections/section-slide-shadow.css",
     "src": "src/wp-content/themes/spl/resources/styles/sections/section-slide-shadow.scss",
+    "isEntry": true
+  },
+  "src/wp-content/themes/spl/resources/styles/sections/section-store-detail.scss": {
+    "file": "css/sections/section-store-detail.css",
+    "src": "src/wp-content/themes/spl/resources/styles/sections/section-store-detail.scss",
     "isEntry": true
   },
   "src/wp-content/themes/spl/resources/styles/sections/section-tabs.scss": {

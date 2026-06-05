@@ -26,6 +26,8 @@ body.login form.shake + #nav {
 #login {
   position: relative;
   z-index: 99;
+  /* login form */
+  /* OTP form */
 }
 #login h1 a {
   width: auto;
@@ -45,17 +47,11 @@ body.login form.shake + #nav {
 #login :where(.privacy-policy-link) {
   display: none;
 }
-#login {
-  /* login form */
-}
 #login .otp-loginform input[type=submit] {
   width: 100%;
 }
 #login .otp-loginform #rememberme {
   display: none !important;
-}
-#login {
-  /* OTP form */
 }
 #login .otp-prompt {
   margin-bottom: 1rem;

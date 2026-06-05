@@ -1,1 +1,27 @@
-document.addEventListener("DOMContentLoaded",()=>{const t=t=>{t._isAnimated||(t._isAnimated=!0,$(t).prop("Counter",0).animate({Counter:t.dataset.counter},{duration:5e3,easing:"linear",step:function(t){const e=Math.ceil(t).toLocaleString("en-US").split(",").map(t=>`<span class="count">${t}</span>`).join(",");$(this).html(e)}}))},e=(e,n)=>{e.forEach(e=>{e.isIntersecting&&t(e.target)})};$("[data-counter]").each((t,n)=>{new IntersectionObserver(e).observe(n)})});
+document.addEventListener("DOMContentLoaded", () => {
+  const animNum = (EL) => {
+    if (EL._isAnimated) return;
+    EL._isAnimated = true;
+    $(EL).prop("Counter", 0).animate({
+      Counter: EL.dataset.counter
+    }, {
+      duration: 5e3,
+      easing: "linear",
+      step: function(now) {
+        const text = Math.ceil(now).toLocaleString("en-US");
+        const html = text.split(",").map((n) => `<span class="count">${n}</span>`).join(",");
+        $(this).html(html);
+      }
+    });
+  };
+  const inViewport = (entries, observer) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) animNum(entry.target);
+    });
+  };
+  $("[data-counter]").each((i, EL) => {
+    const observer = new IntersectionObserver(inViewport);
+    observer.observe(EL);
+  });
+});
+//# sourceMappingURL=home.js.map

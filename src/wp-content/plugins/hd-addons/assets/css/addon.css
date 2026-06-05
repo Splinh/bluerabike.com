@@ -130,6 +130,8 @@
   background-color: #ffffff;
   padding: 20px 30px 30px;
   width: 100%;
+  /** */
+  /** */
 }
 #_settings_form #_content .group:not(.show) {
   display: none;
@@ -141,7 +143,7 @@
 #_settings_form #_content .group h2 + .desc {
   margin-top: -5px;
 }
-#_settings_form #_content {
+#_settings_form #_content .section {
   /** */
 }
 #_settings_form #_content .section .controls.control-img {
@@ -298,9 +300,6 @@
   font-size: 13px;
   color: #666666;
 }
-#_settings_form #_content .section {
-  /** */
-}
 #_settings_form #_content .section.section-radio > .desc {
   color: #888888;
   font-size: 13px;
@@ -376,9 +375,6 @@
   font-weight: 500;
   font-size: 14px;
   color: #666666;
-}
-#_settings_form #_content {
-  /** */
 }
 #_settings_form #_content .save-bar {
   display: block;

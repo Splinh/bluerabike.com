@@ -1,1 +1,38 @@
-(async()=>{const e="is-lighthouse",n={ua:!1,backend:!1};if(n.ua=navigator.userAgent.includes("Lighthouse")||navigator.userAgent.includes("HeadlessChrome")||!0===navigator.webdriver,n.ua)document.documentElement.classList.add(e);else if(void 0!==window.hdConfig){try{const e=await fetch(window.hdConfig.restApiUrl+"global/lighthouse",{method:"GET",credentials:"same-origin",headers:{"X-WP-Nonce":window.hdConfig.restToken}}),t=await e.json();n.backend=t.success&&t.detected}catch(t){}n.backend&&document.documentElement.classList.add(e)}})(),(()=>{function e(){let e=.01*window.innerHeight;document.documentElement.style.setProperty("--vh",`${e}px`)}window.addEventListener("resize",e),e()})();
+(async () => {
+  const DETECTION_CLASS = "is-lighthouse";
+  const indicators = {
+    ua: false,
+    backend: false
+  };
+  indicators.ua = navigator.userAgent.includes("Lighthouse") || navigator.userAgent.includes("HeadlessChrome") || navigator.webdriver === true;
+  if (indicators.ua) {
+    document.documentElement.classList.add(DETECTION_CLASS);
+    return;
+  }
+  if (typeof window.hdConfig !== "undefined") {
+    try {
+      const res = await fetch(window.hdConfig.restApiUrl + "global/lighthouse", {
+        method: "GET",
+        credentials: "same-origin",
+        headers: {
+          "X-WP-Nonce": window.hdConfig.restToken
+        }
+      });
+      const json = await res.json();
+      indicators.backend = json.success && json.detected;
+    } catch (err) {
+    }
+    if (indicators.backend) {
+      document.documentElement.classList.add(DETECTION_CLASS);
+    }
+  }
+})();
+(() => {
+  function setViewportProperty() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+  }
+  window.addEventListener("resize", setViewportProperty);
+  setViewportProperty();
+})();
+//# sourceMappingURL=preload-polyfill.js.map
