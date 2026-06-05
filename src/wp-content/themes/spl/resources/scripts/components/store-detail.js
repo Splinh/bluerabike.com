@@ -10,7 +10,6 @@ import {
   Pagination,
   Thumbs,
   FreeMode,
-  Keyboard,
 } from "swiper/modules";
 
 // ── Gallery Thumbs ──
@@ -38,14 +37,13 @@ const initGalleryMain = (thumbsSwiper) => {
   if (!mainEl) return null;
 
   const opts = {
-    modules: [Navigation, Thumbs, Keyboard],
+    modules: [Navigation, Thumbs],
     spaceBetween: 0,
     loop: false,
     navigation: {
       nextEl: mainEl.querySelector(".swiper-button-next"),
       prevEl: mainEl.querySelector(".swiper-button-prev"),
     },
-    keyboard: { enabled: true },
   };
 
   if (thumbsSwiper) {
@@ -71,7 +69,7 @@ const initLightbox = () => {
 
     if (!lbSwiper) {
       lbSwiper = new Swiper(lbSwiperEl, {
-        modules: [Navigation, Pagination, Keyboard],
+        modules: [Navigation, Pagination],
         spaceBetween: 0,
         initialSlide: index || 0,
         navigation: {
@@ -82,7 +80,6 @@ const initLightbox = () => {
           el: lbSwiperEl.querySelector(".swiper-pagination"),
           clickable: true,
         },
-        keyboard: { enabled: true },
         on: {
           slideChange: function () {
             if (lbCounter) lbCounter.textContent = this.activeIndex + 1;
