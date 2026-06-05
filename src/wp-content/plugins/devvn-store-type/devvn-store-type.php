@@ -15,14 +15,11 @@ if (!defined('ABSPATH')) exit;
 //     Filter này bật lại để có URL /cua-hang/ten-cua-hang/
 // ════════════════════════════════════════════════════════════
 
-add_filter('register_post_type_args', 'sdt_enable_store_single_page', 10, 2);
+add_filter('register_post_type_args', 'sdt_enable_store_single_page', 99, 2);
 function sdt_enable_store_single_page($args, $post_type)
 {
     if ($post_type === 'local_store') {
         $args['publicly_queryable'] = true;
-        $args['public'] = true;
-        $args['has_archive'] = false;
-        $args['rewrite'] = ['slug' => 'cua-hang', 'with_front' => false];
     }
     return $args;
 }
