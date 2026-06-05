@@ -9,12 +9,6 @@
 
 \defined('ABSPATH') || die;
 
-// TEMP DEBUG — remove after fixing
-if (isset($_GET['sddebug'])) {
-    ini_set('display_errors', 1);
-    error_reporting(E_ALL);
-}
-
 get_header();
 
 if (have_posts()) {
@@ -327,108 +321,17 @@ $store_page_url = $store_page ? get_permalink($store_page->ID) : home_url('/he-t
     <div class="sd__lightbox-counter" aria-live="polite"><span id="sd-lb-current">1</span> / <?php echo count($gallery_ids); ?></div>
 </div>
 
-<!-- ═══ Gallery + Lightbox JS ═══ -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    if (typeof Swiper === 'undefined') return;
-
-    // ── Gallery Thumbs ──
-    var thumbsSwiper = null;
-    var thumbsEl = document.getElementById('sd-gallery-thumbs');
-    if (thumbsEl) {
-        thumbsSwiper = new Swiper(thumbsEl, {
-            spaceBetween: 8,
-            slidesPerView: 5,
-            freeMode: true,
-            watchSlidesProgress: true,
-            breakpoints: {
-                0:   { slidesPerView: 4 },
-                640: { slidesPerView: 5 },
-                1024:{ slidesPerView: 5 }
-            }
-        });
-    }
-
-    // ── Gallery Main ──
-    var mainEl = document.getElementById('sd-gallery-main');
-    var mainSwiper = null;
-    if (mainEl) {
-        var mainOpts = {
-            spaceBetween: 0,
-            loop: false,
-            navigation: {
-                nextEl: mainEl.querySelector('.swiper-button-next'),
-                prevEl: mainEl.querySelector('.swiper-button-prev'),
-            },
-            keyboard: { enabled: true },
-        };
-        if (thumbsSwiper) mainOpts.thumbs = { swiper: thumbsSwiper };
-        mainSwiper = new Swiper(mainEl, mainOpts);
-    }
-
-    // ── Lightbox ──
-    var lightbox   = document.getElementById('sd-lightbox');
-    var lbSwiperEl = document.getElementById('sd-lightbox-swiper');
-    var lbCounter  = document.getElementById('sd-lb-current');
-    var lbSwiper   = null;
-
-    function openLightbox(index) {
-        if (!lightbox || !lbSwiperEl) return;
-        lightbox.hidden = false;
-        document.body.style.overflow = 'hidden';
-
-        if (!lbSwiper) {
-            lbSwiper = new Swiper(lbSwiperEl, {
-                spaceBetween: 0,
-                initialSlide: index || 0,
-                navigation: {
-                    nextEl: lbSwiperEl.querySelector('.swiper-button-next'),
-                    prevEl: lbSwiperEl.querySelector('.swiper-button-prev'),
-                },
-                pagination: { el: lbSwiperEl.querySelector('.swiper-pagination'), clickable: true },
-                keyboard: { enabled: true },
-                on: {
-                    slideChange: function() {
-                        if (lbCounter) lbCounter.textContent = this.activeIndex + 1;
-                    }
-                }
-            });
-        } else {
-            lbSwiper.slideTo(index || 0, 0);
-        }
-        if (lbCounter) lbCounter.textContent = (index || 0) + 1;
-
-        // Focus trap
-        setTimeout(function() { lightbox.querySelector('.sd__lightbox-close').focus(); }, 100);
-    }
-
-    function closeLightbox() {
-        if (!lightbox) return;
-        lightbox.hidden = true;
-        document.body.style.overflow = '';
-    }
-
-    // Click zoom buttons
-    document.querySelectorAll('.sd__gallery-zoom').forEach(function(btn) {
-        btn.addEventListener('click', function() { openLightbox(parseInt(this.dataset.index) || 0); });
-    });
-
-    // Close button
-    var closeBtn = lightbox ? lightbox.querySelector('.sd__lightbox-close') : null;
-    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
-
-    // Click backdrop
-    if (lightbox) {
-        lightbox.addEventListener('click', function(e) {
-            if (e.target === lightbox) closeLightbox();
-        });
-    }
-
-    // Escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && lightbox && !lightbox.hidden) closeLightbox();
-    });
-});
-</script>
+<!-- ═══ Gallery + Lightbox JS (loaded as ES module) ═══ -->
+<?php
+\HD_Asset::enqueueScript(
+    'store-detail-js',
+    ASSETS_URL . 'js/components/store-detail.js',
+    ['swiper-js'],
+    \HD_Helper::assetVersion('js/components/store-detail.js'),
+    true,
+    ['module', 'defer']
+);
+?>
 
 <?php get_footer(); ?>
+
