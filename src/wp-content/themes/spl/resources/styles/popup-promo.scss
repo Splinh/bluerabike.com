@@ -12,20 +12,23 @@
   background: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   z-index: 99999;
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
   transition: opacity 0.3s ease, visibility 0.3s ease;
   padding: 20px;
   overflow-y: auto;
 }
 
 .promo-popup-overlay.active {
+  display: flex !important;
   opacity: 1;
   visibility: visible;
+  pointer-events: auto;
 }
 
 .promo-popup-overlay.active .promo-popup-container {

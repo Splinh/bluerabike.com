@@ -26,7 +26,7 @@ if (!$popup_enabled) {
 }
 ?>
 
-<div id="promo-popup-overlay" class="promo-popup-overlay" data-cookie-days="<?= esc_attr($cookie_duration) ?>" data-delay="<?= esc_attr($popup_delay) ?>" data-effect="<?= esc_attr($popup_seasonal_effect) ?>">
+<div id="promo-popup-overlay" class="promo-popup-overlay" style="display: none;" data-cookie-days="<?= esc_attr($cookie_duration) ?>" data-delay="<?= esc_attr($popup_delay) ?>" data-effect="<?= esc_attr($popup_seasonal_effect) ?>">
     <!-- Snow Container (if enabled) - Full Overlay Background -->
     <?php if ($popup_seasonal_effect && $popup_seasonal_effect !== 'none') : ?>
         <div class="promo-popup-effect" aria-hidden="true"></div>

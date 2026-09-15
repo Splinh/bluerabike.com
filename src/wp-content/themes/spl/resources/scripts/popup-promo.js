@@ -47,6 +47,8 @@
    * Show Popup
    */
   function showPopup() {
+    popupOverlay.style.display = "flex";
+    void popupOverlay.offsetHeight;
     popupOverlay.classList.add("active");
     document.body.style.overflow = "hidden";
 
@@ -62,8 +64,11 @@
   function hidePopup() {
     popupOverlay.classList.remove("active");
     document.body.style.overflow = "";
-    // Don't save cookie - popup will show again on next page load
-    // setCookie(COOKIE_NAME, "true", cookieDays);
+    setTimeout(() => {
+      if (!popupOverlay.classList.contains("active")) {
+        popupOverlay.style.display = "none";
+      }
+    }, 300);
   }
 
   /**
